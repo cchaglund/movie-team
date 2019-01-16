@@ -3,6 +3,10 @@
     <div class="movies">
   <!---  <p>{{ msg }}</p> -->
       <div class="col testimage">
+        <iframe width="375" height="315"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY?">
+        <!-- ?modestbranding=1&autohide=1&showinfo=0&controls=0 -->
+        </iframe> 
       </div>
 
       <div class="col title">
@@ -46,7 +50,6 @@
         </div>
         <i class="fas fa-chevron-up" v-on:click="myFunction()"></i>
       </div>
-      </div>
     </div>
   </div>
 </template>
@@ -77,9 +80,14 @@ export default {
 }
 </script>
 <style>
+  div div.ytp-title-text{
+    display: none!important;
+  }
+  iframe{
+    border:none;
+  }
   .testimage{
-    height:300px;
-    background-image: url("https://cdn.flickeringmyth.com/wp-content/uploads/2018/07/Aquaman-1-600x352.jpg");
+    padding:0;
   }
   #myDIV{
     display: none;

@@ -13,7 +13,7 @@ import AllMovies from '@/components/AllMovies.vue'
 export default {
   	name: 'home',
   	components: {
-  		AllMovies
+		AllMovies
   }
 }	
 </script>
