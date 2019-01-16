@@ -1,22 +1,19 @@
 <template>
 	<div class="movies">
 		<h2>Alla filmer</h2>
-		<MovieShort></MovieShort>
-		<MovieLong></MovieLong>
+		<AllMovies></AllMovies>
 	</div>
 </template>
 
 
 <script>
 // @ is an alias to /src
-import MovieLong from '@/components/MovieLong.vue'
-import MovieShort from '@/components/MovieShort.vue'
+import AllMovies from '@/components/AllMovies.vue'
 
 export default {
   	name: 'home',
   	components: {
-  		MovieLong,
-  		MovieShort
+  		AllMovies
   }
 }	
 </script>
