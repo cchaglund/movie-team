@@ -1,8 +1,8 @@
 <template>
 	<div 
 		class="seat"
-		:class="{'selected': isSelected, 'unselected': !isSelected}"
-		@click="selectSeat()"
+		:class="classObject"
+		@click="selectSeat"
 	>
 	{{id}}
 		
@@ -23,11 +23,36 @@
 			}
 		},
 		props: {
-			id: Number
+			row_num: Number,
+			seat_num: Number,
+			takenSeats: Array
 		},
 		methods: {
 			selectSeat() {
-				this.isSelected = true
+				if (!this.isTaken) {
+					this.isSelected = true
+					this.$emit('seat-selected', [this.row_num, this.seat_num])
+				}
+				
+			}
+		},
+		computed: {
+			id: function() {
+				return this.row_num + '-' + this.seat_num
+			},
+			classObject: function() {
+				return {
+					'selected': this.isSelected, 
+					'unselected': !this.isSelected && !this.isTaken,
+					'taken': this.isTaken && !this.isSelected
+				}
+			},
+			isTaken: function() {
+				for (let takenSeat of this.takenSeats) {
+					if (takenSeat[0] == this.row_num && takenSeat[1] == this.seat_num) {
+						return true
+					}
+				}
 			}
 		}
 	}
@@ -50,7 +75,14 @@
 		background-color: yellow;
 	}
 
+	.taken {
+		background-color: black;
+	}
+
 	.selected {
 		background-color: green;
+		border: 1px solid green;
 	}
+
+
 </style>

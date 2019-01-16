@@ -1,14 +1,21 @@
 <template>
 	<div>
 		<div class="container">
-			<div 
-				class="seats-row"
-				v-for="(seatsPerRow, index) in this.salonger[0].seatsPerRow">
-
-				<Seat
-					v-for="index in seatsPerRow"
-					:id="setID"
-				/>
+			<Row 
+				v-for="(seatsPerRow, index) in this.salonger[0].seatsPerRow"
+				:total="seatsPerRow"
+				:row_num="index+1"
+				:takenSeats="takenSeats"
+				:key="index"
+				@seat-selected="bookSeat"
+			/>
+			{{selectedSeats}}
+				
+	<!-- 			<Seat
+					v-for="seatIndex in seatsPerRow"
+					:seat_index="seatIndex"
+					:key="seatIndex"
+				/> -->
 					
 			</div>
 		</div>
@@ -16,8 +23,8 @@
 </template>
 
 <script>
-	var json = require('@/assets/film-data.json');
-	import Seat from '@/components/Seat.vue'
+	// var json = require('@/assets/filmer.json');
+	import Row from '@/components/Row.vue'
 
 	export default {
 		name: 'Placering',
@@ -25,20 +32,31 @@
 
 		},
 		components: {
-			Seat
+			Row
 		},
 		computed: {
-			setID: function() {
-				this.counter = this.counter + 1
-				console.log(this.counter)
-				console.log(json)
-				return this.counter
+			setId: function() {
+				console.log()
+				return 
+			},
+			formattedSeats: function() {
+				console.log(this.selectedSeats)
+
+				this.selectedSeats.forEach(function(item, index) {
+					return `${item[0]}-${item[1]}`
+				})
 			}
 		},
 		data() {
 			return {
-				counter: 0,
-				takenSeats: [12, 3, 24],
+				idCounter: 0,
+				selectedSeats: [],
+				takenSeats:
+					[
+						[4, 3],
+						[1, 7],
+						[8, 2]
+					],
 				salonger: [  
 				  {
 				    "name": "Stora Salongen",
@@ -70,9 +88,9 @@
 			}
 		},
 		methods: {
-			buildSeatPlan() {
-				Filmerdata[0]
-
+			bookSeat(seatLocation) {
+				this.takenSeats.push(seatLocation)
+				this.selectedSeats.push(seatLocation)
 			}
 		}
 	}
@@ -92,8 +110,6 @@
 	padding: 0.5rem;
 }
 
-.seats-row {
-	display: flex;
-}
+
 	
 </style>
