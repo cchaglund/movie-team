@@ -54,6 +54,7 @@
   </div>
 </template>
 <script>
+var json = require('@/assets/filmer.json');
 export default {
   name: 'AllMovies',
   props: {
