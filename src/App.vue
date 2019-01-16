@@ -6,8 +6,8 @@
       <router-link to="/barnfilmer">Barnfilmer</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/user">User</router-link> |
-      <router-link to="/user">Confirmation</router-link> |
-      <router-link to="/user">Salonger</router-link> |
+      <router-link to="/confirmation">Confirmation</router-link> |
+      <router-link to="/salonger">Salonger</router-link> |
     </div>
     <router-view/>
   </div>
