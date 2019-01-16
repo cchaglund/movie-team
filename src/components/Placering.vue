@@ -16,7 +16,7 @@
 </template>
 
 <script>
-
+	var json = require('@/assets/film-data.json');
 	import Seat from '@/components/Seat.vue'
 
 	export default {
@@ -31,6 +31,7 @@
 			setID: function() {
 				this.counter = this.counter + 1
 				console.log(this.counter)
+				console.log(json)
 				return this.counter
 			}
 		},
@@ -70,6 +71,7 @@
 		},
 		methods: {
 			buildSeatPlan() {
+				Filmerdata[0]
 
 			}
 		}
