@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <div class="movies">
-  <!---  <p>{{ msg }}</p> -->
+    <div class="movies"
+         v-for="filmer in $options.allMoviesJson">
+
       <div class="col testimage">
         <iframe width="375" height="315"
         src="https://www.youtube.com/embed/tgbNymZ7vqY?">
@@ -10,14 +11,15 @@
       </div>
 
       <div class="col title">
-        <h4>Titel</h4>
-        <h6>Längd | Genre | Ålder</h6>
+        <h4>{{ filmer.title }}</h4>
+        <h6>{{ filmer.length }} min | 
+            {{ filmer.genre }} | 
+            {{ filmer.ageRequired }} år</h6>
         <i id="arrowdown" class="fas fa-chevron-down" v-on:click="myFunction()"></i>
       </div>
       <div div id="myDIV">
         <div class="description">
-          <p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p>
-          <p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>
+          <p>{{ filmer.description }}</p>
        </div>
 
        <div class="rating">
@@ -29,12 +31,10 @@
        </div>
 
        <div class="movieInfo">
-        <p>Skådespelare: Leonardo DiCaprio, Johnny Depp, Bruce Willys.</p>
+        <p>Skådespelare: {{ filmer.actors | toStringFunction }}</p>
 
-        <p>Språk: Engelska<br>
-        Text: Svenska</p>
-
-        <p>Premiär: 25 Januari</p>
+        <p>Språk: {{ filmer.language }}<br>
+           Text: {{ filmer.subtitles }}</p>
        </div>
 
        <div class="dropdown">
@@ -53,14 +53,24 @@
     </div>
   </div>
 </template>
+
+
+
 <script>
 var json = require('@/assets/filmer.json');
 export default {
   name: 'AllMovies',
+  allMoviesJson: json,
   props: {
     msg: String
-
   },
+  filters: {
+  toStringFunction(value) {
+    if (!value) return ''
+    value = value.toString().replace(/,/g, ", ")
+    return value 
+  }
+},
   methods: {
     myFunction() {
       var x = document.getElementById("myDIV");
@@ -79,6 +89,8 @@ export default {
     }
   }
 }
+
+
 </script>
 <style>
   div div.ytp-title-text{
