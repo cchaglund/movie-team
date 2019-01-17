@@ -3,18 +3,21 @@
   <img alt="Vue logo" src="../assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <h2>Alla filmer</h2>
-  <AllMovies></AllMovies>
+  <MoviesInfo></MoviesInfo>
 </div>
 </template>
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import AllMovies from '@/components/AllMovies.vue'
+import MoviesInfo from '@/components/MoviesInfo.vue'
+
 export default {
 name: 'home',
   components: {
     HelloWorld,
-  	AllMovies
+  	AllMovies,
+    MoviesInfo
   }
 } 
 </script>
