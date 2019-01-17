@@ -15,7 +15,9 @@
         <h6>{{ filmer.length }} min | 
             {{ filmer.genre }} | 
             {{ filmer.ageRequired }} år</h6>
-        <i id="arrowdown" class="fas fa-chevron-down" v-on:click="myFunction()"></i>
+        <i id="arrowdown" class="fas fa-chevron-down"
+           v-bind:class="{'active': this.isActive}"
+           v-on:click="toggleExpand"></i>
       </div>
       <div div id="myDIV">
         <div class="description">
@@ -48,7 +50,9 @@
               <li><a href="#">Datum 6</a></li>
             </ul>
         </div>
-        <i class="fas fa-chevron-up" v-on:click="myFunction()"></i>
+        <i class="fas fa-chevron-up"
+           v-bind:class="{'active': this.isActive}"
+           v-on:click="toggleExpand"></i>
       </div>
     </div>
   </div>
@@ -58,40 +62,31 @@
 
 <script>
 var json = require('@/assets/filmer.json');
+
 export default {
   name: 'AllMovies',
-  allMoviesJson: json,
   props: {
     msg: String
   },
-  filters: {
-  toStringFunction(value) {
-    if (!value) return ''
-    value = value.toString().replace(/,/g, ", ")
-    return value 
-  }
-},
   methods: {
-    myFunction() {
-      var x = document.getElementById("myDIV");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-      var z = document.getElementById("arrowdown");
-      if (x.style.display === "block"){
-        z.style.display = "none";
-      }
-      else {
-        z .style.display = "block";
-      }
+    toggleExpand() {
+      this.isActive = true
+    },
+    toStringFunction(value) {
+      if (!value) return ''
+      value = value.toString().replace(/,/g, ", ")
+      return value 
+    }
+  },
+  data(){
+    return{
+      isActive: false,
+      allMoviesJson: json
     }
   }
 }
-
-
 </script>
+
 <style>
   div div.ytp-title-text{
     display: none!important;
@@ -141,3 +136,12 @@ export default {
    margin: 15px;
  }
 </style>
+
+<!-- filters: {
+    toStringFunction(value) {
+      if (!value) return ''
+      value = value.toString().replace(/,/g, ", ")
+      return value 
+    }
+  
+}, -->
