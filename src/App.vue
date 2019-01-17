@@ -6,7 +6,7 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png"></img>
+      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png">
     </div>
   </div>
   <div class="nav-btn">
@@ -26,9 +26,9 @@
     <router-link to="anvandare">Användare</router-link>
     <router-link to="bekraftelse">Bekräftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
+    <router-link to="information">Information</router-link>
   </div>
 </div>
-</nav>
 
 
 

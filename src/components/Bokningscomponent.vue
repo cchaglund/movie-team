@@ -116,22 +116,6 @@
 
 
 </div>
-
-<script src="js/bokning.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
   
 </template>
