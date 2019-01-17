@@ -1,9 +1,5 @@
 [
   {
-<<<<<<< HEAD
-    "id": 1,
-=======
->>>>>>> master
     "title": "Call me by your name",
     "productionCountries": [
       "Italien",
@@ -16,20 +12,14 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Luca Guadagnino",
-<<<<<<< HEAD
     "ageRequired": 15,
-=======
->>>>>>> master
     "actors": [
       "Armie Hammer",
       "Timothée Chalamet",
       "Michael Stuhlbarg"
     ],
-<<<<<<< HEAD
+
     "description": "Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj. Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.",
-=======
-    "description": "<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>",
->>>>>>> master
     "images": [
        "call-me-poster1.jpg",
        "call-me-poster2.jpg"
@@ -38,13 +28,11 @@
       "Z9AYPxH5NTM"
     ], 
     "reviews": [
-<<<<<<< HEAD
     
     ]
   },
 
   {
-    "id": 2,
      "title": "Destroyer",
     "productionCountries": [
       "USA"
@@ -82,7 +70,6 @@
   },
 
   {
-    "id": 3,
      "title": "BlacKkKlansman",
     "productionCountries": [
       "USA"
@@ -116,7 +103,6 @@
   },
 
     {
-      "id": 4,
      "title": "Stora stygga vargen",
     "productionCountries": [
       "Frankrike",
@@ -148,7 +134,6 @@
   },
 
   {
-    "id": 5,
      "title": "Ploey - ett vinteräventyr",
     "productionCountries": [
 
@@ -171,8 +156,6 @@
       "gPRgdId4OlU"
     ], 
     "reviews": [
-
-=======
       {
         "source": "Sydsvenskan",
         "quote": "ett drama berättat med stor ömhet",
@@ -191,7 +174,6 @@
         "stars": 4,
         "max": 5
       }
->>>>>>> master
     ]
   }
 ]
