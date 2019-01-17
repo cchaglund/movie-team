@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="movies"
-         v-for="filmer in $options.allMoviesJson">
+         v-for="filmer in $options.allMoviesJson" :key="">
 
       <div class="col testimage">
         <iframe width="375" height="315"
@@ -15,40 +15,42 @@
         <h6>{{ filmer.length }} min | 
             {{ filmer.genre }} | 
             {{ filmer.ageRequired }} år</h6>
-        <i id="arrowdown" class="fas fa-chevron-down" v-on:click="myFunction()"></i>
       </div>
-      <div div id="myDIV">
-        <div class="description">
-          <p>{{ filmer.description }}</p>
-       </div>
+      <div>
+        <i id="arrowdown" class="fas fa-chevron-down" v-on:click="myFunction()"></i>
+        <div div id="myDIV">
+          <div class="description">
+            <p>{{ filmer.description }}</p>
+         </div>
 
-       <div class="rating">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-       </div>
+         <div class="rating">
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+         </div>
 
-       <div class="movieInfo">
-        <p>Skådespelare: {{ filmer.actors | toStringFunction }}</p>
+         <div class="movieInfo">
+          <p>Skådespelare: {{ filmer.actors | toStringFunction }}</p>
 
-        <p>Språk: {{ filmer.language }}<br>
-           Text: {{ filmer.subtitles }}</p>
-       </div>
+          <p>Språk: {{ filmer.language }}<br>
+             Text: {{ filmer.subtitles }}</p>
+         </div>
 
-       <div class="dropdown">
-        <button class="btn dropdown-toggle movieBookButton" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
-            <ul class="dropdown-menu scrollable">
-              <li><a href="#">Datum 1</a></li>
-              <li><a href="#">Datum 2</a></li>
-              <li><a href="#">Datum 3</a></li>
-              <li><a href="#">Datum 4</a></li>
-              <li><a href="#">Datum 5</a></li>
-              <li><a href="#">Datum 6</a></li>
-            </ul>
+         <div class="dropdown">
+          <button class="btn dropdown-toggle movieBookButton" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
+              <ul class="dropdown-menu scrollable dropdown-menu-right dropdownback">
+                <li class="whiteborder"><a href="#">Datum 1, klockan 18.00, salong 1</a></li>
+                <li class="whiteborder"><a href="#">Datum 2</a></li>
+                <li class="whiteborder"><a href="#">Datum 3</a></li>
+                <li class="whiteborder"><a href="#">Datum 4</a></li>
+                <li class="whiteborder"><a href="#">Datum 5</a></li>
+                <li class="whiteborder"><a href="#">Datum 6</a></li>
+              </ul>
+          </div>
+          <i class="fas fa-chevron-up" v-on:click="myFunction()"></i>
         </div>
-        <i class="fas fa-chevron-up" v-on:click="myFunction()"></i>
       </div>
     </div>
   </div>
@@ -73,6 +75,7 @@ export default {
 },
   methods: {
     myFunction() {
+
       var x = document.getElementById("myDIV");
       if (x.style.display === "none") {
         x.style.display = "block";
@@ -131,13 +134,31 @@ export default {
    color: white;
  }
  .scrollable {
-   height: auto;
-   max-height: 65px;
-   overflow-x: hidden;
+  height: auto;
+  overflow-x: hidden;
+  max-height: 80px;
+  border:2px solid #6F2232;
+  width:97.5%;
+  text-align: center;
+  background-color: black;
  }
  .fa-chevron-up,
  .fa-chevron-down{
    font-size: 40px;
    margin: 15px;
+ }
+ .btn:focus{
+  box-shadow:none;
+  background-color:red;
+  color:black;
+ }
+ .whiteborder{
+  border-bottom:2px solid #6F2232;
+ }
+ li.whiteborder a{
+  color:white;
+ }
+ .dropdown-menu{
+  border-radius:0;
  }
 </style>
