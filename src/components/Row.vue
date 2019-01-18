@@ -6,7 +6,11 @@
 			:seat_num="seat"
 			:key="seat"
 			:takenSeats="takenSeats"
+			:seatsToAssign="seatsToAssign"
+			:seatsToHover="seatsToHover"
+			@hovered-seat="passHoveredSeat"
 			@seat-selected="seatSelected"
+			@remove-seat="removeSeat"
 		/>
 	</div>
 </template>
@@ -20,7 +24,9 @@
 		props: {
 			total: Number,
 			row_num: Number,
-			takenSeats: Array
+			takenSeats: Array,
+			seatsToAssign: Number,
+			seatsToHover: Array
 		},
 		components: {
 			Seat
@@ -64,8 +70,14 @@
 			}
 		},
 		methods: {
-			seatSelected(seatLocation) {
-				this.$emit('seat-selected', seatLocation)
+			seatSelected(id) {
+				this.$emit('seat-selected', id)
+			},
+			removeSeat(seatLocation) {
+				this.$emit('remove-seat', seatLocation)
+			},
+			passHoveredSeat(id) {
+				this.$emit('hovered-seat', id)
 			}
 		}
 	}
