@@ -5,12 +5,6 @@
 			:row_num="row_num"
 			:seat_num="seat"
 			:key="seat"
-			:takenSeats="takenSeats"
-			:seatsToAssign="seatsToAssign"
-			:seatsToHover="seatsToHover"
-			@hovered-seat="passHoveredSeat"
-			@seat-selected="seatSelected"
-			@remove-seat="removeSeat"
 		/>
 	</div>
 </template>
@@ -23,18 +17,14 @@
 		name: 'Placering',
 		props: {
 			total: Number,
-			row_num: Number,
-			takenSeats: Array,
-			seatsToAssign: Number,
-			seatsToHover: Array
+			row_num: Number
 		},
 		components: {
 			Seat
 		},
 		computed: {
 			setId: function() {
-				console.log()
-				return 
+	
 			}
 		},
 		data() {

@@ -2,22 +2,16 @@
 	<div>
 		<div class="cinema">
 			<Row 
-				v-for="(seatsPerRow, index) in this.salonger[0].seatsPerRow"
+				v-for="(seatsPerRow, index) in this.salong"
 				:total="seatsPerRow"
 				:row_num="index+1"
-				:takenSeats="takenSeats"
-				:seatsToAssign="seatsToAssign"
-				:seatsToHover="seatsToHover"
 				:key="index"
-				@hovered-seat="setHoveredSeat"
-				@seat-selected="selectSeat"
-				@remove-seat="removeSeat"
 			/>
 			<h3>Valda säten</h3>
-			{{selectedSeats}}
-			<h3>Välj {{seatsToAssign}}</h3>
+			{{this.selectedSeats[0]}}
+			
 			<button @click="changeMsg">Button</button>
-			{{testStore}}
+			
 				
 	<!-- 			<Seat
 					v-for="seatIndex in seatsPerRow"
@@ -46,8 +40,8 @@
 			Row
 		},
 		computed: {
-			...mapState([
-				'msg'
+			...mapGetters([
+				'salong'
 			]),
 			testStore: function() {
 				return this.$store.state.msg
@@ -76,61 +70,30 @@
 				// 	console.log("END of ROW")
 				// }
 				// }
-				let sameRow = this.hoveredSeat[0]
-				let seatsToHover = []
-				let counter = 0
-				let somethingToHover = this.hoveredSeat != []
 
-				if (somethingToHover) {
-					while (counter < this.seatsToAssign) {
-						seatsToHover.push([ sameRow, this.hoveredSeat[1] + counter ])
-						counter++
-					}
-				}
+
+				// let sameRow = this.hoveredSeat[0]
+				// let seatsToHover = []
+				// let counter = 0
+				// let somethingToHover = this.hoveredSeat != []
+
+				// if (somethingToHover) {
+				// 	while (counter < this.seatsToAssign) {
+				// 		seatsToHover.push([ sameRow, this.hoveredSeat[1] + counter ])
+				// 		counter++
+				// 	}
+				// }
 				
-				return seatsToHover
+				return "lul"
 			}
 		},
 		data() {
 			return {
-				idCounter: 0,
-				seatsToAssign: 3,
-				hoveredSeat: [],
-				selectedSeats: [],
-				takenSeats:
-					[
-						[4, 3],
-						[1, 7],
-						[8, 2]
-					],
-				salonger: [  
-				  {
-				    "name": "Stora Salongen",
-				    "seats": 81,
-				    "seatsPerRow": [
-				      8,
-				      9,
-				      10,
-				      10,
-				      10,
-				      10,
-				      12,
-				      12
-				    ]
-				  },
-				  {
-				    "name": "Lilla Salongen",
-				    "seats": 55,
-				    "seatsPerRow": [
-				      6,
-				      8,
-				      9,
-				      10,
-				      10,
-				      12
-				    ]
-				  }
-				]
+				...mapState([
+					'takenSeats',
+					'seatsToAssign',
+					'selectedSeats'
+				])
 			}
 		},
 		methods: {
@@ -146,32 +109,6 @@
 				this.seatsToAssign = this.seatsToAssign - 1
 				// this.takenSeats.push(id) don't need to make it taken yet? that's determined by db
 				this.selectedSeats.push(id)
-			},
-			removeSeat(seatLocation) {
-				console.log(seatLocation)
-				this.selectedSeats.forEach(function(seat, index) {
-					console.log("seat", seat)
-					console.log("seatLocation", seatLocation)
-					if (seat[0] == seatLocation[0] && seat[1] == seatLocation[1])
-						console.log(seat[0] + seat[1])
-						console.log("seat", seat)
-						console.log("index", index)
-						this.selectedSeats.splice(index)
-				})
-
-				console.log("seatLoc:", seatLocation)
-				
-				console.log(indexOfSeat)
-				// let toRemove =	this.selectedSeats.find(function(seat) {
-				// 	console.log("seat", seat)
-				// 	console.log("seatLocation", seatLocation)
-
-				// 	return seat == seatLocation
-
-				// })
-				// console.log(toRemove)
-				// console.log("this.selectedSeats", this.selectedSeats)
-
 			}
 		}
 	}
@@ -179,7 +116,6 @@
 
 
 <style>
-
 .cinema {
 	display: flex;
 	flex-direction: column;
@@ -190,8 +126,5 @@
 	width: 300px;
 	height: 300px;
 	
-}
-
-
-	
+}	
 </style>
