@@ -47,7 +47,6 @@ export default new Vuex.Store({
 },
 
   mutations: {
-  	// Note how different this looks compared to the others. It consists of string type and handler
   	updateHoveredSeat (state, payload) {
   		state.hoveredSeat = payload
   	},
@@ -60,44 +59,57 @@ export default new Vuex.Store({
   	updateHoveredSeat ({commit}, payload) {
   		commit('updateHoveredSeat', payload)
   	},
-  	selectSeats (context) {
+  	async selectSeats ({state, commit, dispatch, getters}) {
   		let seatsToSelect = []
-  		let seatsToAssign = context.state.seatsToAssign
+  		let seatsToAssign = state.seatsToAssign
+  		let occupied = false
   		
   		for (let i = 0; i < seatsToAssign; i++) {
-  			seatsToSelect.push([ context.state.hoveredSeat[0], context.state.hoveredSeat[1] + i ])
+  			seatsToSelect.push([ state.hoveredSeat[0], state.hoveredSeat[1] + i ])
   		}
 
-  		let occupied = 0
-  		  		//if (a seat in the payload array is reflected in this.takenSeats, do not change the payload, instead return error
-  		for (let takenSeat of context.state.takenSeats) {
-  			console.log(takenSeat)
-  			for (let seat of seatsToSelect) {
-  				console.log("seatsToSelect: " + seat)
-  				if (takenSeat[0] == seat[0] && takenSeat[1] == seat[1]) {
-  					console.log("occupied:",occupied)
-  					occupied++
-  				} else {
-  					console.log("occupied:",occupied)
-  				}
-  			}
+  		function validateSelection() {
+	  		let multipleSeats = seatsToSelect.length > 1
+	  		if (multipleSeats) {
+	  			let secondSeat = seatsToSelect[1]
+	  			let secondSeatNum = secondSeat[1]
+	  			let rowLength = getters.seatsPerRow[secondSeat[0] - 1]
+	  			let outsideRow = secondSeatNum >= rowLength
+
+	  			if (outsideRow) {
+		  			return false
+		  		}
+	  		}
+
+	  		let takenSeats = state.takenSeats
+	  		for (let takenSeat of takenSeats) {
+	  			for (let seat of seatsToSelect) {
+	  				let sameRow = takenSeat[0] == seat[0]
+	  				let sameSeat = takenSeat[1] == seat[1]
+
+	  				if (sameRow && sameSeat) {
+	  					return false
+	  				}
+	  			}
+	  		}
+	  		return true
+	  	}
+
+  		if (!validateSelection()) {
+  			return 'Outside row'
   		}
 
-
-  		if (occupied === 0) {
-  			context.commit('selectSeats', seatsToSelect)
-  		}
+  		commit('selectSeats', seatsToSelect)
   	}
   },
 
   getters: {
-  	salong: state => {
+  	seatsPerRow: state => {
   		return state.salonger[0].seatsPerRow
   	},
   	shouldHover: state => (id) => {
   		for (let i = 0; i < state.seatsToAssign; i++) {
   			if (id[0] == state.hoveredSeat[0] && id[1] == state.hoveredSeat[1] + i) {
-  				// state.hoveredSeats.push(id)
   				return true
   			}
   		}
@@ -108,11 +120,6 @@ export default new Vuex.Store({
   				return true
   			}
   		}
-  	},
-  	// Allows for params to be passed store.getters.getTodoById(2) 
-  	// Passing getters allows this one to access the other getters
-  	getTodoById: (state, getters) => (id) => {
-	    return state.todos.find(todo => todo.id === id)
-	  }
+  	}
   }
 })
