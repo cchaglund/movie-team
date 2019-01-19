@@ -1,28 +1,30 @@
 <template>
 	<div>
 		<div class="cinema">
+			<h6>{{choices.title}}, {{choices.time}} den {{choices.date}}</h6>
 			<Row 
 				v-for="(row, index) in this.seatsPerRow"
 				:total="row"
 				:row_num="index+1"
 				:key="index"
 			/>
-			<h3>Valda säten</h3>
-			{{this.selectedSeats}}
 			
-			<button @click="">Button</button>
-					
+
+			
+			<button @click="bookTickets" type="button" class="btn btn-primary">Boka</button>
+			<div v-if="choices.ready">
+				<h5>skicka till servern</h5>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-	// var json = require('@/assets/filmer.json');
+	let val = require('@/assets/filmer.json');
 	import Row from '@/components/Row.vue'
 	import { mapState } from 'vuex'
 	import { mapGetters } from 'vuex'
-	import { mapMutations } from 'vuex'
+	import { mapActions } from 'vuex'
 
 	export default {
 		name: 'Placering',
@@ -41,7 +43,8 @@
 			...mapState([
 				'takenSeats',
 				'seatsToAssign',
-				'selectedSeats'
+				'selectedSeats',
+				'choices'
 			]),
 			...mapGetters([
 				'seatsPerRow'
@@ -53,7 +56,9 @@
 			}
 		},
 		methods: {
-	
+			...mapActions([
+				'bookTickets'
+			])
 		}
 	}
 </script>

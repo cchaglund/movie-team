@@ -5,9 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  	msg: "hello",
-  	idCounter: 0,
-	seatsToAssign: 3,
+  	choices: {
+  		ready: false,
+  		title: "Titanic",
+  		date: "4/10",
+  		time: "20:45",
+  		guests: {
+  			adults: 0,
+  			pensioners: 0,
+  			children: 0
+  		},
+  		seats: [/*and array of seats, [4, 6], [4, 8]*/]
+  	},
+	seatsToAssign: 1,
 	hoveredSeat: [],
 	hoveredSeats: [],
 	selectedSeats: [],
@@ -52,6 +62,14 @@ export default new Vuex.Store({
   	},
   	selectSeats (state, payload) {
   		state.selectedSeats = payload
+  	},
+  	addingTickets (state, payload) {
+  		console.log("mutation: addingTickets - moving selected seats to final choices")
+  		state.choices.seats = [...state.selectedSeats]
+  		state.choices.ready = true
+  	},
+  	setNumSeats (state, payload) {
+  		state.seatsToAssign = payload
   	}
   },
 
@@ -71,10 +89,10 @@ export default new Vuex.Store({
   		function validateSelection() {
 	  		let multipleSeats = seatsToSelect.length > 1
 	  		if (multipleSeats) {
-	  			let secondSeat = seatsToSelect[1]
-	  			let secondSeatNum = secondSeat[1]
-	  			let rowLength = getters.seatsPerRow[secondSeat[0] - 1]
-	  			let outsideRow = secondSeatNum >= rowLength
+	  			let lastSeat = seatsToSelect[seatsToSelect.length - 1]
+	  			let lastSeatNum = lastSeat[1]
+	  			let rowLength = getters.seatsPerRow[lastSeat[0] - 1]
+	  			let outsideRow = lastSeatNum > rowLength
 
 	  			if (outsideRow) {
 		  			return false
@@ -100,6 +118,21 @@ export default new Vuex.Store({
   		}
 
   		commit('selectSeats', seatsToSelect)
+  	},
+  	bookTickets (context) {
+  		console.log("action: bookTickets - attempting to book")
+
+  		if (context.state.selectedSeats.length == 0) {
+  			console.log("action: bookTickets - no seats selected!")
+  			return false
+  		}
+
+  		context.commit('addingTickets')
+  		console.log("action: bookTickets - ready to send to server")
+  	},
+  	setNumSeats ({commit}, payload) {
+  		commit('setNumSeats', payload)
+  		commit('selectSeats')
   	}
   },
 
@@ -114,12 +147,17 @@ export default new Vuex.Store({
   			}
   		}
   	},
-  	isSelected: state => (id) => {
-  		for (let seat of state.selectedSeats) {  			
-  			if (id[0] == seat[0] && id[1] == seat[1]) {
-  				return true
-  			}
+  	isSelected: (state, dispatch) => (id) => {
+  		if (state.selectedSeats != undefined) {
+  			for (let seat of state.selectedSeats) {  			
+	  			if (id[0] == seat[0] && id[1] == seat[1]) {
+	  				return true
+	  			}
+	  		}
   		}
+  	},
+  	choices: state => {
+  		return state.choices
   	}
   }
 })
