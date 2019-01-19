@@ -38,7 +38,8 @@
 			...mapGetters([
 				'shouldHover',
 				'isSelected',
-				'getTodoById'
+				'getTodoById',
+				'seatsToAssign'
 			]),
 			id: function() {
 				return [this.row_num, this.seat_num]
@@ -68,9 +69,14 @@
 			]),
 			...mapActions([
 				'updateHoveredSeat',
-				'selectSeats'
+				'selectSeats',
+				'addGuest'
 			]),
 			seatClicked() {
+
+				if (this.seatsToAssign == 0) {
+					this.addGuest('adults')	
+				}
 				this.selectSeats(this.id)
 			},
 			mouseEnter() {

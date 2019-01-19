@@ -4,7 +4,7 @@
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex align-items-center">
 				<i @click="min('adults')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{adults}}</span>
+				<span class="icon">{{choices.guests.adults}}</span>
 				<i @click="add('adults')" class="fas fa-chevron-right icon"></i>
 			</div>
 			<h5>Adult</h5>
@@ -13,16 +13,16 @@
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex align-items-center">
 				<i @click="min('pensioners')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{pensioners}}</span>
+				<span class="icon">{{choices.guests.pensioners}}</span>
 				<i @click="add('pensioners')" class="fas fa-chevron-right icon"></i>
 			</div>
-			<h5>Pensioner</h5>
+			<h5>Pensionärer</h5>
 		</div>
 
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex align-items-center">
 				<i @click="min('children')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{children}}</span>
+				<span class="icon">{{choices.guests.children}}</span>
 				<i @click="add('children')" class="fas fa-chevron-right icon"></i>
 			</div>
 			<h5>Barn</h5>
@@ -46,9 +46,7 @@
 		},
 		data() {
 			return {
-				adults: 1,
-				pensioners: 0,
-				children: 0
+
 			}
 		},
 		computed: {
@@ -62,27 +60,25 @@
 				'seatsPerRow'
 			]),
 			totalSeats: function() {
-				return this.adults + this.pensioners + this.children
+				return this.choices.guests.adults + this.choices.guests.pensioners + this.choices.guests.children
 			}
 		},
 		methods: {
 			...mapActions([
 				'bookTickets',
-				'setNumSeats'
+				'setNumSeats',
+				'addGuest',
+				'removeGuest'
 			]),
 			min(typeGuest) {
-				console.log("min typeGuest", this[typeGuest])
-				if (this[typeGuest] > 0) {
-					this[typeGuest]--	
+				if (this.choices.guests[typeGuest] > 0) {
+					this.removeGuest(typeGuest)
 				}
-				this.setNumSeats(this.totalSeats)
 			},
 			add(typeGuest) {
-				console.log("add typeGuest", typeGuest)
 				if (this.totalSeats < 8) {
-					this[typeGuest]++
+					this.addGuest(typeGuest)
 				}
-				this.setNumSeats(this.totalSeats)
 			}
 		}
 	}

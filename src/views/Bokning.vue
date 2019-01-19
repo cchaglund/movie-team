@@ -3,6 +3,7 @@
 	<div class="bokning">
 		<Placering />
 		<Type />
+		<Total />
 	</div>
 	
 </template>
@@ -13,11 +14,12 @@
 
 	import Placering from '@/components/Placering.vue'
 	import Type from '@/components/Type.vue'
+	import Total from '@/components/Total.vue'
 
 	export default {
 		name: 'bokning',
 		components: {
-			Placering, Type
+			Placering, Type, Total
 		}
 	}
 	

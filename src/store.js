@@ -11,13 +11,17 @@ export default new Vuex.Store({
   		date: "4/10",
   		time: "20:45",
   		guests: {
-  			adults: 0,
+  			adults: 1,
   			pensioners: 0,
   			children: 0
   		},
-  		seats: [/*and array of seats, [4, 6], [4, 8]*/]
+  		seats: [/*an array of seats, [4, 6], [4, 8]*/]
   	},
-	seatsToAssign: 1,
+  	prices: {
+  		adults: 100,
+  		pensioners: 80,
+  		children: 60
+  	},
 	hoveredSeat: [],
 	hoveredSeats: [],
 	selectedSeats: [],
@@ -68,8 +72,15 @@ export default new Vuex.Store({
   		state.choices.seats = [...state.selectedSeats]
   		state.choices.ready = true
   	},
-  	setNumSeats (state, payload) {
-  		state.seatsToAssign = payload
+  	addGuest (state, payload) {
+  		state.choices.guests[payload]++
+  	},
+  	removeGuest (state, payload) {
+  		state.choices.guests[payload]--
+  		state.selectedSeats.pop()
+  	},
+  	clearSelectedSeats (state) {
+  		state.selectedSeats = []
   	}
   },
 
@@ -79,7 +90,7 @@ export default new Vuex.Store({
   	},
   	async selectSeats ({state, commit, dispatch, getters}) {
   		let seatsToSelect = []
-  		let seatsToAssign = state.seatsToAssign
+  		let seatsToAssign = getters.seatsToAssign
   		let occupied = false
   		
   		for (let i = 0; i < seatsToAssign; i++) {
@@ -127,12 +138,22 @@ export default new Vuex.Store({
   			return false
   		}
 
+  		if (context.getters.seatsToAssign != context.state.selectedSeats.length) {
+  			console.log("Mismatch b/w ticket number and selected seats. Please click on seats to select")
+  			context.commit('clearSelectedSeats')
+  			return false
+  		}
+
   		context.commit('addingTickets')
   		console.log("action: bookTickets - ready to send to server")
   	},
-  	setNumSeats ({commit}, payload) {
-  		commit('setNumSeats', payload)
-  		commit('selectSeats')
+  	addGuest ({commit}, payload) {
+  		commit('clearSelectedSeats')
+  		commit('addGuest', payload)
+  	},
+  	removeGuest ({commit}, payload) {
+  		commit('clearSelectedSeats')
+  		commit('removeGuest', payload)
   	}
   },
 
@@ -140,14 +161,14 @@ export default new Vuex.Store({
   	seatsPerRow: state => {
   		return state.salonger[0].seatsPerRow
   	},
-  	shouldHover: state => (id) => {
-  		for (let i = 0; i < state.seatsToAssign; i++) {
+  	shouldHover: (state, getters) => (id) => {
+  		for (let i = 0; i < getters.seatsToAssign; i++) {
   			if (id[0] == state.hoveredSeat[0] && id[1] == state.hoveredSeat[1] + i) {
   				return true
   			}
   		}
   	},
-  	isSelected: (state, dispatch) => (id) => {
+  	isSelected: (state) => (id) => {
   		if (state.selectedSeats != undefined) {
   			for (let seat of state.selectedSeats) {  			
 	  			if (id[0] == seat[0] && id[1] == seat[1]) {
@@ -156,8 +177,12 @@ export default new Vuex.Store({
 	  		}
   		}
   	},
-  	choices: state => {
-  		return state.choices
+  	seatsToAssign: state => {
+  		let total = 0
+  		for (let typeGuest in state.choices.guests) {
+  			total = total + state.choices.guests[typeGuest]
+  		}
+  		return total
   	}
   }
 })
