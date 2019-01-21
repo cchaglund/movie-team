@@ -18,15 +18,15 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-    <router-link to="home">Home</router-link>
-    <router-link to="movies">Filmsida</router-link>
-    <router-link to="barnfilmer">Barnfilmer</router-link>
-    <router-link to="bokning">Bokning</router-link>
-    <router-link to="inloggning">Inloggning</router-link>
-    <router-link to="anvandare">Användare</router-link>
-    <router-link to="bekraftelse">Bekräftelse</router-link>
-    <router-link to="salonger">Salonger</router-link>
-    <router-link to="information">Information</router-link>
+    <router-link to="/">Home</router-link>
+    <router-link to="/movies">Filmsida</router-link>
+    <router-link to="/barnfilmer">Barnfilmer</router-link>
+    <router-link to="/bokning">Bokning</router-link>
+    <router-link to="/inloggning">Inloggning</router-link>
+    <router-link to="/anvandare">Användare</router-link>
+    <router-link to="/bekraftelse">Bekräftelse</router-link>
+    <router-link to="/salonger">Salonger</router-link>
+    <router-link to="/information">Information</router-link>
   </div>
 </div>
 
