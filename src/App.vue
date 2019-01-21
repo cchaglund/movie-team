@@ -6,7 +6,11 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
+<<<<<<< HEAD
       <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png">
+=======
+      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png"></img>
+>>>>>>> master
     </div>
   </div>
   <div class="nav-btn">
@@ -18,6 +22,7 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
+<<<<<<< HEAD
     <router-link to="/">Home</router-link>
     <router-link to="/movies">Filmsida</router-link>
     <router-link to="/barnfilmer">Barnfilmer</router-link>
@@ -27,16 +32,28 @@
     <router-link to="/bekraftelse">Bekräftelse</router-link>
     <router-link to="/salonger">Salonger</router-link>
     <router-link to="/information">Information</router-link>
+=======
+  
+    <router-link to="home">Home</router-link>
+    <router-link to="movies">Filmsida</router-link>
+    <router-link to="barnfilmer">Barnfilmer</router-link>
+    <router-link to="bokning">Bokning</router-link>
+    <router-link to="inloggning">Inloggning</router-link>
+    <router-link to="anvandare">Användare</router-link>
+    <router-link to="bekraftelse">Bekräftelse</router-link>
+    <router-link to="salonger">Salonger</router-link>
+>>>>>>> master
   </div>
 </div>
-
-
 
       
     </div>
     <router-view/>
   </div>
+  
 </template>
+
+
 
 <style>
 #app {
@@ -45,7 +62,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 * {
@@ -58,10 +74,12 @@ body {
 }
 
 .nav {
-  height: 50px;
+  height: 70px;
   width: 100%;
   background-color: #4d4d4d;
-  position: relative;
+  position: fixed;
+  z-index: 6500; 
+  opacity: 0.8;
 }
 
 .nav > .nav-header {
@@ -87,7 +105,7 @@ body {
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 20px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
@@ -100,7 +118,11 @@ body {
   display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:1024px) {
+  .nav {
+    z-index: 7000;
+    opacity: 1;
+  }
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -109,9 +131,8 @@ body {
   }
   .nav > .nav-btn > label {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
+    height: 70px;
+    padding: 20px;
   }
   .nav > .nav-btn > label:hover {
     background-color: rgba(0, 0, 0, 0.3);
@@ -130,8 +151,9 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: 69px;
     left: 0px;
+    font-size: 25px;
   }
   .nav > .nav-links > a {
     display: block;
@@ -146,6 +168,4 @@ body {
   }
 }
 </style>
-
-
 
