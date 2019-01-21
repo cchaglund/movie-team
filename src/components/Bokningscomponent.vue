@@ -1,5 +1,7 @@
 
 <template>
+
+	
   <div class="Bookningscomponent">
 
   	<h1> Bokningscomponent</h1>
