@@ -31,6 +31,7 @@
             <h5 class="card-title">Maila oss!</h5>
             <p class="card-text">movie-team@movieteam.se</p>
             <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
+            <p class="card-text">Svar inom 1-2 arbetsdagar</p>
         </div>
     </div>
     </div>
@@ -64,6 +65,10 @@ h1 {
     width: 50%;
     height: 50%;
     padding-top: 2vh;
+}
+
+.card-body {
+    padding: 10px !important;
 }
 
 .information-panels {
