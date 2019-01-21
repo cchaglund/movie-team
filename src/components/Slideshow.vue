@@ -5,21 +5,21 @@
     <input type="radio" name="slider" class="trigger" id="one" checked="checked" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
+        <img class="slide-img" src="../images/img19.jpg" />
         <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="two" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
+        <img class="slide-img" src="../images/img19.jpg" />
         <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="three" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
+        <img class="slide-img" src="../images/img19.jpg" />
         <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
@@ -74,7 +74,7 @@ img {
 }
 
 .slide-img {
-  filter: brightness(50%);
+  filter: brightness(80%);
   height: 100%;
   object-fit: fill;
   display: block;
