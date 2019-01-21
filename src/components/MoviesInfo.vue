@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="block">
 
-      <div class="col testimage">
-        <iframe width="375" height="315"
+      <div class=" testimage">
+        <iframe width="320" height="315"
         src="https://www.youtube.com/embed/tgbNymZ7vqY?">
         <!-- ?modestbranding=1&autohide=1&showinfo=0&controls=0 -->
         </iframe> 
@@ -13,9 +13,9 @@
         <h6>{{ movie.length }} min | 
             {{ movie.genre }} | 
             {{ movie.ageRequired }} år</h6>
-        <i id="arrowdown" class="fas fa-chevron-down"
-           v-on:click="toggleExpand"></i>
       </div>
+      <i id="arrowdown" class="fas fa-chevron-down"
+           v-on:click="toggleExpand"></i>
       <div id="myDIV" v-bind:class="{'active': isActive}">
         <div class="description">
           <p>{{ movie.description }}</p>
@@ -39,17 +39,19 @@
        <div class="dropdown">
         <button class="btn dropdown-toggle movieBookButton" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
             <ul class="dropdown-menu scrollable">
-              <li><a href="#">Datum 1</a></li>®
-              <li><a href="#">Datum 2</a></li>
-              <li><a href="#">Datum 3</a></li>
-              <li><a href="#">Datum 4</a></li>
-              <li><a href="#">Datum 5</a></li>
-              <li><a href="#">Datum 6</a></li>
+             <li class="whiteborder"><a href="#">Datum 1</a></li>
+             <li class="whiteborder"><a href="#">Datum 2</a></li>
+             <li class="whiteborder"><a href="#">Datum 3</a></li>
+             <li class="whiteborder"><a href="#">Datum 4</a></li>
+             <li class="whiteborder"><a href="#">Datum 5</a></li>
+             <li class="whiteborder"><a href="#">Datum 6</a></li>
             </ul>
         </div>
         <i class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
-           v-on:click="toggleExpand"></i>
+           v-on:click="toggleExpand">
+             
+           </i>
       </div>
 </div>
 </template>
@@ -67,6 +69,9 @@ export default {
     toggleExpand() {
       console.log(this.isActive)
       this.isActive = !this.isActive;
+      if(this.isActive){
+        console.log(this.isActive)
+      }
     },
     toStringFunction(value) {
       if (!value) return '' 
@@ -119,14 +124,50 @@ export default {
    background-color: #6F2232;
    color: white;
  }
- .scrollable {
+.scrollable {
    height: auto;
-   max-height: 65px;
    overflow-x: hidden;
- }
- .fa-chevron-up,
- .fa-chevron-down{
-   font-size: 40px;
-   margin: 15px;
- }
+   max-height: 80px;
+   border:2px solid #6F2232;
+   width:97.5%;
+   text-align: center;
+   background-color: black;
+  }
+  .fa-chevron-up,
+  .fa-chevron-down{
+    font-size: 40px;
+    margin: 15px;
+  }
+  .btn:focus{
+   box-shadow:none;
+   background-color:red;
+   color:black;
+  }
+  .whiteborder{
+   border-bottom:2px solid #6F2232;
+  }
+  li.whiteborder a{
+   color:white;
+  }
+  .dropdown-menu{
+   border-radius:0;
+  }
+  #id{
+    display: none;
+  }
+  .block{
+    width: 45%;
+    display: inline-block;
+  }
+
+
+
+
+  @media screen and (max-width: 740px) {
+    .block{
+    width: 100%;
+    margin-right: 0;
+    display: block;
+  }
+  }
 </style>
