@@ -2,8 +2,7 @@
   <div class="block">
 
       <div class="col testimage">
-        <iframe v-bind:src="movie.youtubeTrailers"></iframe>
-        <!-- ?modestbranding=1&autohide=1&showinfo=0&controls=0 -->
+        <iframe v-bind:src="movie.youtubeTrailers" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
 
       <div class="col title mobileinfo">
@@ -45,7 +44,7 @@
               <li class="whiteborder"><a href="#">Datum 6</a></li>
             </ul>
         </div>
-        <i class="fas fa-chevron-up"
+        <i id="arrowup"class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
            v-on:click="toggleExpand"></i>
       </div>
@@ -217,6 +216,10 @@ export default {
    .rating{
     display: none;
    }
+   i#arrowdown.fas.fa-chevron-down:hover, i#arrowup.fas.fa-chevron-up:hover{
+    color:#6F2232;
+    text-shadow: 0 0 10px #ffffff;
+   }
    @media screen and (max-width: 1024px) {
     .block{
     width:100%;
@@ -228,8 +231,8 @@ export default {
    .descriptiontwo{
     display: none;
    }
-   #arrowdown{
-    display: block;
+   #arrowdown, #arrowup{
+    display: inline-block;
    }
    iframe{
     width:100%;
