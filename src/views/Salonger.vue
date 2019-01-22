@@ -48,14 +48,13 @@
 
 
 <script>
-import Salong from '@/components/Salong.vue'
 export default {
   name: 'salonger',
   props: {
     msg: String
   },
   components: {
-  	Salong
+  	
   }
 }
 </script>
