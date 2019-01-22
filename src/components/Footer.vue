@@ -78,8 +78,7 @@
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
-	padding: 55px 50px;
+    padding: 55px 50px;
 	margin-top: 80px;
 }
 
@@ -237,7 +236,9 @@
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-
+.footer-links{
+	font-size: 17px;
+}
 }
 
 </style>

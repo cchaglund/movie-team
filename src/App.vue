@@ -4,12 +4,24 @@
   <div id="app">
     <div id="nav">
       <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Josefin+Sans|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
       <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png"></img>
     </div>
   </div>
+    <form class="navbar-form navbar-left" style="padding:16px;"action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
+
+        <div class="input-group-btn">
+          <button class="btn btn-default" style="color:white;" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>s
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -20,7 +32,7 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
   
-    <router-link to="home">Home</i></router-link>
+    <router-link to="home"><i class="fas fa-home fa-2x"></i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
@@ -47,7 +59,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
 }
 
 * {
@@ -86,19 +98,23 @@ body {
 .nav > .nav-links {
   display: inline;
   float: left;
-  font-size: 20px;
+  font-size: 17px;
   margin-left: auto;
+  margin-right: 15px;
+  margin-top: -11px;
 }
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px 25px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color:black;
+  height: auto;
 }
 
 .nav > #nav-check {
@@ -153,6 +169,12 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+
+  @media (max-width:1024px) {
+  .navbar-form.navbar-left {
+    display: none;
+  }
+}
 }
 </style>
 
