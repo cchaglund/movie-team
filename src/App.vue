@@ -106,7 +106,7 @@ body {
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 20px 10px 25px 10px;
+  padding: 30px 10px 15px 10px;
   text-decoration: none;
   color: #efefef;
 }
