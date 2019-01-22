@@ -8,20 +8,9 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png"></img>
+      <router-link to="home"><img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png"></img></router-link>
     </div>
   </div>
-    <form class="navbar-form navbar-left" style="padding:16px;"action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
-
-        <div class="input-group-btn">
-          <button class="btn btn-default" style="color:white;" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>s
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -32,7 +21,7 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
   
-    <router-link to="home"><i class="fas fa-home fa-2x"></i></router-link>
+    <router-link to="home">Home</i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
@@ -110,11 +99,8 @@ body {
   text-decoration: none;
   color: #efefef;
 }
-
 .nav > .nav-links > a:hover {
-  background-color: white;
-  color:black;
-  height: auto;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .nav > #nav-check {
@@ -124,7 +110,7 @@ body {
 @media (max-width:1024px) {
   .nav {
     z-index: 7000;
-    opacity: 0.9;
+    opacity: 1;
   }
   .nav > .nav-btn {
     display: inline-block;
@@ -174,7 +160,6 @@ body {
   .navbar-form.navbar-left {
     display: none;
   }
-}
 }
 </style>
 

@@ -69,7 +69,6 @@
 		</footer>
 	</div>
 </template>
-
 <style>
 	.footer-distributed{
 	background-color: black;
@@ -78,7 +77,8 @@
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-    padding: 55px 50px;
+
+	padding: 55px 50px;
 	margin-top: 80px;
 }
 
@@ -114,6 +114,7 @@
 	margin: 20px 0 12px;
 	padding: 0;
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	font-size:20px;
 }
 
 .footer-distributed .footer-links a{
@@ -236,8 +237,7 @@
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-.footer-links{
-	font-size: 17px;
+
 }
 }
 
