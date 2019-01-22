@@ -113,6 +113,9 @@ export default {
 </script>
 
 <style>
+  div.block{
+    border-bottom:1px solid #6F2232;
+  }
   .block{
     width:100%;
     margin-right:5px;
@@ -130,7 +133,7 @@ export default {
     background-color: #6F2232;
     padding: 15px;
   }
-  .description, .movieInfo{ 
+  .movieInfo{ 
     font-size: 12px;
   }
   .mobileinfo{
@@ -140,7 +143,7 @@ export default {
     margin-left:10px;
     width:97%;
   }
-  .Allinfotext, .movieInfo{
+  .Allinfotext, .movieInfo, .description{
     text-align: left;
     padding:20px;
     margin-top: 10px;
@@ -196,7 +199,7 @@ export default {
     color:#6F2232;
     text-shadow: 0 0 10px #ffffff;
   }
-  /*---------Inte användt---------*/
+  /*---------Inte använt---------*/
   .fa-star{
     color: gold;
     font-size: 25px;
