@@ -6,6 +6,7 @@
   </Footer>
 </div>
 </template>
+
 <script>
 // @ is an alias to /src
 import Slideshow from '@/components/Slideshow.vue'
