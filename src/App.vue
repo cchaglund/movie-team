@@ -3,6 +3,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Josefin+Sans|ZCOOL+QingKe+HuangYou" rel="stylesheet">
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
@@ -19,13 +20,13 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
   
-    <router-link to="home">Home</router-link>
+    <router-link to="home">Home</i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
     <router-link to="inloggning">Inloggning</router-link>
-    <router-link to="anvandare">Användare</router-link>
-    <router-link to="bekraftelse">Bekräftelse</router-link>
+    <router-link to="anvandare">Anvandare</router-link>
+    <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
   </div>
 </div>
@@ -42,7 +43,7 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family:'ZCOOL QingKe HuangYou', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -61,7 +62,7 @@ body {
 .nav {
   height: 70px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: black;
   position: fixed;
   z-index: 6500; 
   opacity: 0.8;
@@ -84,13 +85,14 @@ body {
 
 .nav > .nav-links {
   display: inline;
-  float: right;
-  font-size: 18px;
+  float: left;
+  font-size: 20px;
+  margin-left: auto;
 }
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 20px 10px 23px 10px;
+  padding: 20px 10px 20px 10px;
   text-decoration: none;
   color: #efefef;
 }
@@ -106,7 +108,7 @@ body {
 @media (max-width:1024px) {
   .nav {
     z-index: 7000;
-    opacity: 1;
+    opacity: 0.9;
   }
   .nav > .nav-btn {
     display: inline-block;
@@ -132,7 +134,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: black;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
