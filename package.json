@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "font-awesome": "^4.7.0",
+    "hooper": "0.0.6",
     "vue": "^2.5.21",
     "vue-router": "^3.0.1"
   },
