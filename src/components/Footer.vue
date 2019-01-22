@@ -26,7 +26,7 @@
 					<router-link to="salonger">Salonger</router-link>
 				</p>
 
-				<p class="footer-company-name">&copy Movie Team 2019</p>
+				<p class="footer-company-name">&copy; Movie Team 2019</p>
 			</div>
 
 			<div class="footer-center">

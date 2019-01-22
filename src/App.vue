@@ -8,10 +8,10 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png"></img>
+      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png">
     </div>
   </div>
-    <form class="navbar-form navbar-left" style="padding:16px;"action="/action_page.php">
+    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
       <div class="input-group">
         <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
 
@@ -42,7 +42,6 @@
     <router-link to="salonger">Salonger</router-link>
   </div>
 </div>
-</nav>
 
       
     </div>
