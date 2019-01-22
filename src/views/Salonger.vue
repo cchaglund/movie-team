@@ -42,19 +42,23 @@
         Du kan välja bort direktmarknadsföring genom att följa instruktionerna i varje marknadsföringsutskick. Om du är medlem i vårt lojalitetsprogram kan du också göra detta på dina medlemsidor under uppdatera medlemsprofil..</p>
       </div>
     </div>
+    <Footer>
+  </Footer>
   </div>
   </div>
+  
 </template>
 
 
 <script>
+import Footer from '@/components/Footer.vue'
 export default {
   name: 'salonger',
   props: {
     msg: String
   },
   components: {
-  	
+  	Footer
   }
 }
 </script>
@@ -64,7 +68,7 @@ export default {
   .card{
     text-align: center;
     margin: auto;
-    margin-top: 30px;
+    
     padding: 30px;
     color:black;
   }

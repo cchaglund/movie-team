@@ -1,6 +1,5 @@
 <template>
   <div class="Bokning">
-   <h1>hej</h1>
   </div>
 </template>
 
