@@ -1,10 +1,11 @@
+
 <template>
   <div class="block">
 
       <div class="col testimage">
         <iframe 
         src="https://www.youtube.com/embed/tgbNymZ7vqY?">
-        <!-- ?modestbranding=1&autohide=1&showinfo=0&controls=0 -->
+        <!--?modestbranding=1&autohide=1&showinfo=0&controls=0-->
         </iframe> 
       </div>
 
@@ -88,7 +89,7 @@
        </div>
       </div>
 </div>
-</template>
+</template> 
 
 <script>
 
@@ -248,5 +249,4 @@ export default {
    }
    }
 </style>
-
 
