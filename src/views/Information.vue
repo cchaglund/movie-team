@@ -6,7 +6,7 @@
     <h1>Information</h1>
     
     <div class="row information-panels justify-content-around">
-    <div class="card text-white col-lg-3">
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
             <i class="fa fa-phone"></i>
         </div>
@@ -18,17 +18,19 @@
         </div>
     </div>
     
-    <div class="card text-white col-lg-3">
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
             <i class="fa fa-map-marker"></i>
         </div>
         <div class="card-body">
             <h5 class="card-title">Adress</h5>
             <p class="card-text">Krokvägen 666</p>
+            <p class="card-text">111 11, Kiruna</p>
+            <p class="card-text">Mån-Sön 10.00 - 23.00</p>
         </div>
     </div>
 
-    <div class="card text-white col-lg-3">
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
 			<i class="fa fa-envelope"></i>
         </div>
@@ -57,7 +59,8 @@ h5 {
 .card {
     background-color: rgb(0, 0, 0);
     border: 1px solid red;
-    margin-bottom: 0 !important;
+    margin-bottom: 5vh !important;
+    margin-top: 10vh;
 }
 
 .card p, h5 {
@@ -75,7 +78,6 @@ h5 {
 
 .information-panels {
     margin: 0 !important;
-    margin-top: 18vh !important;
     padding-left: 10vw;
     padding-right: 10vw;
 }
@@ -85,35 +87,34 @@ i.fa-map-marker, i.fa-envelope, i.fa-phone {
 }
 
 .col-lg-3 {
-    height: 28vh !important;
+    height: 40vh !important;
 }
 
 /* Media queries for smaller devices */
 
-@media (max-width: 880px) {
-    .information-panels {
-        margin-top: 5vh !important;
-        margin-bottom: 5vh !important;
-    }
-
+@media (max-width: 768px) {
     .card {
-        margin: 2vh !important;
-        height: 25vh !important;
-    }
-
-    .card-body {
-        padding: 5px !important;
-    }
-
-    .card-text {
-        font-size: 15px !important;
+        margin: 2vh;
+        margin-top: 3vh !important;
+        height: 23vh !important;
     }
 
     i.fa-map-marker, i.fa-envelope, i.fa-phone {
-        font-size: 40px;
+        font-size: 30px;
     }
-    
 
+    h5 {
+        font-size: 20px;
+    }
+
+    .card-text {
+        font-size: 14px !important;
+    }
+
+    .card-header {
+        padding: 5px;
+        padding-top: 10px;
+    }
 }
 
 </style>
