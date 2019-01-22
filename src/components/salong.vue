@@ -1,5 +1,5 @@
 <template>
-	<div class="salong">
+	<div class="stylealong">
     <div class="card" style="width: 100vw;">
       <br>
       <h1 class="card-title">Salong 1</h1>
@@ -43,6 +43,8 @@
     </div>
   </div>
 </template>
+
+
 <style>
   .card{
     text-align: center;
