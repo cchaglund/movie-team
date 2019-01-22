@@ -155,6 +155,7 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
 
   @media (max-width:1024px) {
   .navbar-form.navbar-left {
