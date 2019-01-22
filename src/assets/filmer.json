@@ -24,11 +24,10 @@
        "call-me-poster1.jpg",
        "call-me-poster2.jpg"
     ],
-    "youtubeTrailers": [
-      "Z9AYPxH5NTM"
-    ], 
-    "reviews": [
-    
+    "youtubeTrailers":[
+    "https://www.youtube.com/embed/Z9AYPxH5NTM?"
+    ],
+    "reviews": [   
     ]
   },
 
@@ -62,7 +61,7 @@
 
     ],
     "youtubeTrailers": [
-      "cjoh3B1OPgU"
+      "https://www.youtube.com/embed/cjoh3B1OPgU?"
     ], 
     "reviews": [
 
@@ -95,7 +94,7 @@
 
     ],
     "youtubeTrailers": [
-      "0vWHEuhEuno"
+      "https://www.youtube.com/embed/0vWHEuhEuno?"
     ], 
     "reviews": [
 
@@ -126,7 +125,7 @@
 
     ],
     "youtubeTrailers": [
-      "sgFY-WYZ1sI"
+      "https://www.youtube.com/embed/sgFY-WYZ1sI?"
     ], 
     "reviews": [
 
@@ -153,7 +152,7 @@
 
     ],
     "youtubeTrailers": [
-      "gPRgdId4OlU"
+      "https://www.youtube.com/embed/gPRgdId4OlU?"
     ], 
     "reviews": [
       {
