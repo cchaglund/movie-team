@@ -66,5 +66,6 @@ export default {
     margin: auto;
     margin-top: 30px;
     padding: 30px;
+    color:black;
   }
 </style>
