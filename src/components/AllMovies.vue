@@ -4,8 +4,10 @@
   </div>
 </template>
 <script>
+
 import json from '@/assets/filmer.json'
 import MoviesInfo from '@/components/MoviesInfo.vue'
+
 export default {
   name: 'AllMovies',
   components: {
@@ -18,6 +20,8 @@ export default {
   }
 }
 </script>
+
+
 <!-- filters: {
     toStringFunction(value) {
       if (!value) return ''

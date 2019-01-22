@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-  </div>
+ <div class="home">
+ </div>
 </template>
 
 <script>
@@ -11,21 +11,21 @@ import MoviesInfo from '@/components/MoviesInfo.vue'
 
 export default {
 name: 'home',
-  components: {
-    HelloWorld,
-  	AllMovies,
-    MoviesInfo
-  }
-} 
+ components: {
+   HelloWorld,
+   AllMovies,
+   MoviesInfo
+ }
+}
 </script>
 
 
 <style>
-  @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
+ @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
 
-  #app,
-  html{
-    background-color: black;
-    color: white;
-  }
+ #app,
+ html{
+   background-color: black;
+   color: white;
+ }
 </style>

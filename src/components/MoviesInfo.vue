@@ -49,7 +49,9 @@
         </div>
         <i class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
-           v-on:click="toggleExpand"></i>
+           v-on:click="toggleExpand">
+             
+           </i>
       </div>
       <div class="descriptiontwo">
         <div class="col title fullwidthinfo">
@@ -101,6 +103,9 @@ export default {
     toggleExpand() {
       console.log(this.isActive)
       this.isActive = !this.isActive;
+      if(this.isActive){
+        console.log(this.isActive)
+      }
     },
     toStringFunction(value) {
       if (!value) return '' 
