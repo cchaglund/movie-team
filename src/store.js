@@ -10,6 +10,7 @@ export default new Vuex.Store({
   		title: "Titanic",
   		date: "4/10",
   		time: "20:45",
+      filmData: require('@/assets/filmer.json'),
   		guests: {
   			adults: 1,
   			pensioners: 0,
@@ -88,13 +89,13 @@ export default new Vuex.Store({
   	updateHoveredSeat ({commit}, payload) {
   		commit('updateHoveredSeat', payload)
   	},
-  	async selectSeats ({state, commit, dispatch, getters}) {
+  	async selectSeats ({state, commit, dispatch, getters}, payload) {
   		let seatsToSelect = []
   		let seatsToAssign = getters.seatsToAssign
   		let occupied = false
   		
   		for (let i = 0; i < seatsToAssign; i++) {
-  			seatsToSelect.push([ state.hoveredSeat[0], state.hoveredSeat[1] + i ])
+  			seatsToSelect.push([ payload[0], payload[1] + i ])
   		}
 
   		function validateSelection() {
@@ -132,6 +133,8 @@ export default new Vuex.Store({
   	},
   	bookTickets (context) {
   		console.log("action: bookTickets - attempting to book")
+
+
 
   		if (context.state.selectedSeats.length == 0) {
   			console.log("action: bookTickets - no seats selected!")

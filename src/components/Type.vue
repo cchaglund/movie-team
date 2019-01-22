@@ -1,33 +1,37 @@
 <template>
-	<div class="type d-flex justify-content-around w-100">
+	<div class="container">
+		<div class="row no-gutters">
+			<div class="col col-lg-9 m-auto type d-flex justify-content-around">
 
-		<div class="d-flex flex-column align-items-center">
-			<div class="d-flex align-items-center">
-				<i @click="min('adults')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{choices.guests.adults}}</span>
-				<i @click="add('adults')" class="fas fa-chevron-right icon"></i>
+				<div class="guest">
+					<div class="counter">
+						<i @click="min('adults')" class="fas fa-minus icon"></i>
+						<h5 class="number">{{choices.guests.adults}}</h5>
+						<i @click="add('adults')" class="fas fa-plus icon"></i>
+					</div>
+					<h5>Vuxen</h5>
+				</div>
+
+				<div class="guest">
+					<div class="counter">
+						<i @click="min('pensioners')" class="fas fa-minus icon"></i>
+						<h5 class="number">{{choices.guests.pensioners}}</h5>
+						<i @click="add('pensioners')" class="fas fa-plus icon"></i>
+					</div>
+					<h5>Pensionär</h5>
+				</div>
+
+				<div class="guest">
+					<div class="counter">
+						<i @click="min('children')" class="fas fa-minus icon"></i>
+						<h5 class="number">{{choices.guests.children}}</h5>
+						<i @click="add('children')" class="fas fa-plus icon"></i>
+					</div>
+					<h5>Barn</h5>
+				</div>
+
 			</div>
-			<h5>Adult</h5>
 		</div>
-
-		<div class="d-flex flex-column align-items-center">
-			<div class="d-flex align-items-center">
-				<i @click="min('pensioners')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{choices.guests.pensioners}}</span>
-				<i @click="add('pensioners')" class="fas fa-chevron-right icon"></i>
-			</div>
-			<h5>Pensionärer</h5>
-		</div>
-
-		<div class="d-flex flex-column align-items-center">
-			<div class="d-flex align-items-center">
-				<i @click="min('children')" class="fas fa-chevron-left icon"></i>
-				<span class="icon">{{choices.guests.children}}</span>
-				<i @click="add('children')" class="fas fa-chevron-right icon"></i>
-			</div>
-			<h5>Barn</h5>
-		</div>
-
 	</div>
 </template>
 
@@ -86,7 +90,30 @@
 
 
 <style>
+	.type {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
 	.icon {
 		padding: 0.2rem;
+		color: black;
+		background-color: #e9e9e9;
+		border-radius: 30%;
+	}
+	.guest {
+		display: flex;
+		flex-direction: column;
+		align-items: center
+	}
+	.counter {
+		display: flex;
+		align-items: center;
+	}
+	.number {
+		padding: 0.5rem;
+		margin: 0;
+	}
+	.icon:hover {
+		background-color: white;
 	}
 </style>

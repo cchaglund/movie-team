@@ -1,10 +1,13 @@
 <template>
 	<div 
-		class="seat"
-		:class="classObject"
+		class="seat-container"
 		@click="seatClicked"
 		@mouseover="mouseEnter"
 	>
+		<div 
+			class="seat"
+			:class="classObject"
+		/>
 	</div>
 </template>
 
@@ -15,7 +18,7 @@
 	import { mapState } from 'vuex'
 	import { mapGetters } from 'vuex'
 	import { mapActions } from 'vuex'
-	import { mapMutations } from 'vuex'
+
 
 	export default {
 		name: 'Seat',
@@ -31,7 +34,8 @@
 		computed: {
 			...mapState([
 				'msg',
-				'takenSeats'
+				'takenSeats',
+				'choices'
 				// alternatively
 				// customName: 'msg'
 			]),
@@ -64,16 +68,12 @@
 			}
 		},
 		methods: {
-			...mapMutations([
-				'changeMsg'
-			]),
 			...mapActions([
 				'updateHoveredSeat',
 				'selectSeats',
 				'addGuest'
 			]),
 			seatClicked() {
-
 				if (this.seatsToAssign == 0) {
 					this.addGuest('adults')	
 				}
@@ -89,28 +89,30 @@
 
 
 <style>
-	.seat {
-		min-height: 20px;
-		min-width: 19px;
-		background-color: white;
-		margin: 2px;
-		border-radius: 0px 0px 4px 4px;
+
+	.seat-container {
+		height: 28px;
+		width: 25px;
+		padding: 3px;
 	}
 
-	.unselected:hover {
-		background-color: yellow;
+	.seat {
+		width: 100%;
+		height: 100%;
+		background-color: #e9e9e9;
+		
+		border-radius: 0px 0px 5px 5px;
 	}
 
 	.hover {
-		background-color: yellow
+		background-color: #F39943
 	}
 
 	.taken {
-		background-color: black;
+		background-color: #DA3724;
 	}
 
 	.selected {
-		background-color: green;
-		border: 1px solid green;
+		background-color: #7C956B;
 	}
 </style>

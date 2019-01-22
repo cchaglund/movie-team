@@ -1,20 +1,12 @@
 <template>
-	<div>
+	<div class="d-flex justify-content-center">
 		<div class="cinema">
-			<h6>{{choices.title}}, {{choices.time}} den {{choices.date}}</h6>
 			<Row 
 				v-for="(row, index) in this.seatsPerRow"
 				:total="row"
 				:row_num="index+1"
 				:key="index"
 			/>
-			
-
-			
-			<button @click="bookTickets" type="button" class="btn btn-primary">Boka</button>
-			<div v-if="choices.ready">
-				<h5>skicka till servern</h5>
-			</div>
 		</div>
 	</div>
 </template>
@@ -71,8 +63,9 @@
 		justify-content: center;
 
 		align-items: center;
-		background-color: lightgray;
-		width: 300px;
-		height: 300px;
+		/*background-color: lightgray;*/
+		width: 320px;
+		height: 260px;
+		margin: 0.5rem;
 	}	
 </style>
