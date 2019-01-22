@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="block">
 
       <div class="col testimage">
-        <iframe width="375" height="315"
+        <iframe 
         src="https://www.youtube.com/embed/tgbNymZ7vqY?">
         <!-- ?modestbranding=1&autohide=1&showinfo=0&controls=0 -->
         </iframe> 
       </div>
 
-      <div class="col title">
+      <div class="col title mobileinfo">
         <h4>{{ movie.title }}</h4>
         <h6>{{ movie.length }} min | 
             {{ movie.genre }} | 
@@ -50,6 +50,40 @@
         <i class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
            v-on:click="toggleExpand"></i>
+      </div>
+      <div class="descriptiontwo">
+        <div class="col title fullwidthinfo">
+          <h4>{{ movie.title }}</h4>
+          <h6>{{ movie.length }} min | 
+              {{ movie.genre }} | 
+              {{ movie.ageRequired }} år</h6>
+        </div>
+          <p class="Allinfotext">{{ movie.description }}</p>
+          <div class="rating">
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+        </div>
+        <div class="movieInfo">
+          <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
+
+          <p>Språk: {{ movie.language }}<br>
+             Text: {{ movie.subtitles }}</p>
+         </div>
+        <div class="dropdown">
+        <button class="btn dropdown-toggle movieBookButtontwo" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
+            <ul class="dropdown-menu scrollable">
+              <li class="whiteborder"><a href="#">Datum 1</a></li>
+              <li class="whiteborder"><a href="#">Datum 2</a></li>
+              <li class="whiteborder"><a href="#">Datum 3</a></li>
+              <li class="whiteborder"><a href="#">Datum 4</a></li>
+              <li class="whiteborder"><a href="#">Datum 5</a></li>
+              <li class="whiteborder"><a href="#">Datum 6</a></li>
+            </ul>
+        </div>
+       </div>
       </div>
 </div>
 </template>
@@ -115,16 +149,16 @@ export default {
    font-size: 25px;
    margin: 2px 2px 16px 2px;
  }
- .movieBookButton{
+ .movieBookButton, .movieBookButtontwo{
    background-color: #6F2232;
    color: white;
  }
   .scrollable {
     height: auto;
     overflow-x: hidden;
-    max-height: 80px;
+    max-height: 140px;
     border:2px solid #6F2232;
-    width:97.5%;
+    width:60.5%;
     text-align: center;
     background-color: black;
    }
@@ -146,6 +180,67 @@ export default {
    }
    .dropdown-menu{
     border-radius:0;
+   }
+   .block{
+    width:100%;
+    margin-right:5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    margin:0;
+   }
+   #arrowdown{
+    display: none;
+   }
+   iframe{
+    width:40vw;
+    height:30vw;
+    margin-right: 80px;
+   }
+   .mobileinfo{
+    display: none;
+   }
+   .fullwidthinfo{
+    margin-left:10px;
+    width:97%;
+   }
+   .movieBookButtontwo{
+    margin-bottom: 10px;
+   }
+   .Allinfotext, .movieInfo{
+    text-align: left;
+    padding:20px;
+    margin-top: 10px;
+   }
+
+   .block{
+    padding:70px 90px 70px 90px;
+   }
+   .rating{
+    display: none;
+   }
+   @media screen and (max-width: 1024px) {
+    .block{
+    width:100%;
+    margin:0;
+    margin-right:0;
+    display:block;
+    padding:0;
+   }
+   .descriptiontwo{
+    display: none;
+   }
+   #arrowdown{
+    display: block;
+   }
+   iframe{
+    width:100%;
+    height:300px;
+    margin:0;
+   }
+   .mobileinfo{
+    display: block;
+   }
    }
 </style>
 
