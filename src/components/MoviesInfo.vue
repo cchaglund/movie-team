@@ -1,7 +1,7 @@
 <template>
   <div class="block">
 
-      <div class="col testimage">
+      <div class="col videoplayer">
         <iframe v-bind:src="movie.youtubeTrailers" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
 
@@ -113,43 +113,44 @@ export default {
 </script>
 
 <style>
-  div div.ytp-title-text{
-    display: none!important;
-  }
-  iframe{
-    border:none;
-  }
-  .testimage{
-    padding:0;
+  .block{
+    width:100%;
+    margin-right:5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    margin:0;
+    padding:70px 90px 70px 90px;
   }
   #myDIV:not(.active){
     display: none;
   }
+  /*---------Film info---------*/
   .title{
-   background-color: #6F2232;
-   padding: 15px;
- }
- .movieTrailer{
-   background-color: gray;
-   height: 200px;
-   text-align: center;
-   /*margin-bottom: 5px;*/
- }
- .description,
- .movieInfo{
-   padding: 15px;
-   text-align: left;
-   font-size: 12px;
- }
- .fa-star{
-   color: gold;
-   font-size: 25px;
-   margin: 2px 2px 16px 2px;
- }
- .movieBookButton, .movieBookButtontwo{
-   background-color: #6F2232;
-   color: white;
- }
+    background-color: #6F2232;
+    padding: 15px;
+  }
+  .description, .movieInfo{ 
+    font-size: 12px;
+  }
+  .mobileinfo{
+    display: none;
+  }
+  .fullwidthinfo{
+    margin-left:10px;
+    width:97%;
+  }
+  .Allinfotext, .movieInfo{
+    text-align: left;
+    padding:20px;
+    margin-top: 10px;
+  }
+  /*---------Boka knapp---------*/
+  .movieBookButton, .movieBookButtontwo{
+    background-color: #6F2232;
+    margin-bottom: 10px;
+    color: white;
+  }
   .scrollable {
     height: auto;
     overflow-x: hidden;
@@ -158,91 +159,75 @@ export default {
     width:60.5%;
     text-align: center;
     background-color: black;
-   }
-   .fa-chevron-up,
-   .fa-chevron-down{
-     font-size: 40px;
-     margin: 15px;
-   }
-   .btn:focus{
+  }
+  .btn:focus{
     box-shadow:none;
     background-color:red;
     color:black;
-   }
-   .whiteborder{
+  }
+  .whiteborder{
     border-bottom:2px solid #6F2232;
-   }
-   li.whiteborder a{
+  }
+  li.whiteborder a{
     color:white;
-   }
-   .dropdown-menu{
+  }
+  .dropdown-menu{
     border-radius:0;
-   }
-   .block{
-    width:100%;
-    margin-right:5px;
-    margin-left: 5px;
-    display: flex;
-    flex-direction: row;
-    margin:0;
-   }
-   #arrowdown{
-    display: none;
-   }
-   iframe{
+  }
+  /*---------Videospelare---------*/
+  iframe{
+    border:none;
     width:40vw;
     height:30vw;
     margin-right: 80px;
-   }
-   .mobileinfo{
+  }
+  .videoplayer{
+    padding:0;
+  }
+  /*---------Pilknappar---------*/
+  .fa-chevron-up, .fa-chevron-down{
+     font-size: 40px;
+     margin: 15px;
+  }
+  #arrowdown{
     display: none;
-   }
-   .fullwidthinfo{
-    margin-left:10px;
-    width:97%;
-   }
-   .movieBookButtontwo{
-    margin-bottom: 10px;
-   }
-   .Allinfotext, .movieInfo{
-    text-align: left;
-    padding:20px;
-    margin-top: 10px;
-   }
-
-   .block{
-    padding:70px 90px 70px 90px;
-   }
-   .rating{
-    display: none;
-   }
-   i#arrowdown.fas.fa-chevron-down:hover, i#arrowup.fas.fa-chevron-up:hover{
+  }
+  i#arrowdown.fas.fa-chevron-down:hover, i#arrowup.fas.fa-chevron-up:hover{
     color:#6F2232;
     text-shadow: 0 0 10px #ffffff;
-   }
-   @media screen and (max-width: 1024px) {
-    .block{
-    width:100%;
-    margin:0;
-    margin-right:0;
-    display:block;
-    padding:0;
-   }
-   .descriptiontwo{
+  }
+  /*---------Inte användt---------*/
+  .fa-star{
+    color: gold;
+    font-size: 25px;
+    margin: 2px 2px 16px 2px;
+  }
+  .rating{
     display: none;
-   }
-   #arrowdown, #arrowup{
-    display: inline-block;
-   }
-   iframe{
-    width:100%;
-    height:300px;
-    margin:0;
-   }
-   .mobileinfo{
-    display: block;
-   }
-   }
+  }
+  @media screen and (max-width: 1024px) {
+    .block{
+      width:100%;
+      margin:0;
+      margin-right:0;
+      display:block;
+      padding:0;
+    }
+    .descriptiontwo{
+      display: none;
+    }
+    #arrowdown, #arrowup{
+      display: inline-block;
+    }
+    iframe{
+      width:100%;
+      height:300px;
+      margin:0;
+    }
+    .mobileinfo{
+      display: block;
+    }
+  }
 </style>
 
 
