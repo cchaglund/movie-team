@@ -12,7 +12,7 @@ export default {
   props: {
     msg: String
   },
-  component: {
+  components: {
   	Salong
   }
 }
