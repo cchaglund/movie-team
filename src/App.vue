@@ -29,6 +29,7 @@
     <router-link to="anvandare">Användare</router-link>
     <router-link to="bekraftelse">Bekräftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
+    <router-link to="information">Information</router-link>
 
   </div>
 </div>
