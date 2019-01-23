@@ -1,8 +1,3 @@
-
-
-
-
-
 <template>
   <div id="app">
     <div id="nav">
@@ -61,7 +56,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: #2c3e50;
+  background-color: #89ACCE;
+  min-height: 100vh;
+  height: 100%;
 }
 
 * {
