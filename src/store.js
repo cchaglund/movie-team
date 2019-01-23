@@ -16,7 +16,7 @@ export default new Vuex.Store({
   			pensioners: 0,
   			children: 0
   		},
-  		seats: [/*an array of seats, [4, 6], [4, 8]*/]
+  		seats: {}
   	},
   	prices: {
   		adults: 100,
@@ -70,7 +70,18 @@ export default new Vuex.Store({
   	},
   	addingTickets (state, payload) {
   		console.log("mutation: addingTickets - moving selected seats to final choices")
-  		state.choices.seats = [...state.selectedSeats]
+
+      let formattedSeats = {
+        row: 0,
+        seats: []
+      }
+
+      for (let seat of state.selectedSeats) {
+        formattedSeats.row = seat[0]
+        formattedSeats.seats.push(seat[1])
+      }
+
+  		state.choices.seats = formattedSeats
   		state.choices.ready = true
   	},
   	addGuest (state, payload) {
@@ -186,6 +197,13 @@ export default new Vuex.Store({
   			total = total + state.choices.guests[typeGuest]
   		}
   		return total
-  	}
+  	},
+   calcTotal: state => {
+      let total = 0
+      total = total + state.prices.adults * state.choices.guests.adults
+      total = total + state.prices.pensioners * state.choices.guests.pensioners
+      total = total + state.prices.children * state.choices.guests.children
+      return total
+   }
   }
 })

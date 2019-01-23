@@ -3,14 +3,17 @@
 	<div class="bokning container">
 		<div class="row no-gutters page">
 			<div class="col col-lg-10 mt-3 mb-3">
+
 				<div class="header">
 					<h2>{{choices.title}}, {{choices.time}} den {{choices.date}}</h2>
 				</div>
+
 				<Placering />
 				<Type />
 				<Total />
 
-				<button @click="bookTickets" type="button" class="book-btn btn">Boka</button>
+				<button @click="buyTickets" type="button" class="book-btn btn">Boka</button>
+
 				<div v-if="choices.ready">
 					<h5>skicka till servern</h5>
 				</div>
@@ -24,6 +27,7 @@
 <script>
 	import { mapState } from 'vuex'
 	import { mapActions } from 'vuex'
+	import { mapGetters } from 'vuex'
 
 	import Placering from '@/components/Placering.vue'
 	import Type from '@/components/Type.vue'
@@ -35,11 +39,30 @@
 			Placering, Type, Total
 		},
 		computed: {
+			...mapGetters([
+				'calcTotal'
+			]),
 			...mapState([
 				'choices'
 			])
 		},
 		methods: {
+			buyTickets() {
+				this.bookTickets()
+				if (this.choices.ready) {
+					this.$router.push({ 
+						name: 'bekraftelse', 
+						params: {
+							title: this.choices.title, 
+							date: this.choices.date, 
+							time: this.choices.time, 
+							seats: this.choices.seats, 
+							guests: this.choices.guests,
+							price: this.calcTotal
+						}
+					})
+				}
+			},
 			...mapActions([
 				'bookTickets'
 			])

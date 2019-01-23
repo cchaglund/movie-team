@@ -4,7 +4,7 @@
 			<!-- d-flex align-items-start flex-column -->
 			<div class="col col-sm-9 col-md-7 total">
 				<div class="text">
-					<h4>Total: {{total}} kr</h4>
+					<h4>Total: {{calcTotal}} kr</h4>
 					<div v-if="choices.guests.adults != 0">
 						Vuxna: {{choices.guests.adults}}x
 					</div>
@@ -23,6 +23,7 @@
 <script>
 	import { mapState } from 'vuex'
 	import { mapActions } from 'vuex'
+	import { mapGetters } from 'vuex'
 
 	export default {
 		name: 'Total',
@@ -41,13 +42,9 @@
 				'choices',
 				'prices'
 			]),
-			total: function() {
-				let total = 0
-				total = total + this.prices.adults * this.choices.guests.adults
-				total = total + this.prices.pensioners * this.choices.guests.pensioners
-				total = total + this.prices.children * this.choices.guests.children
-				return total
-			}
+			...mapGetters([
+				'calcTotal'
+			])
 		},
 		methods: {
 			...mapActions([
