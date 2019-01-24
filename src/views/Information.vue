@@ -1,12 +1,15 @@
 <template>
-    <div class="information">
-        <h1>Information</h1>
+    <div id="information">
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <h1>Information</h1>
+    
     <div class="row information-panels justify-content-around">
-    <div class="card text-white mb-3" style="max-width: 250px;">
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
-            <img src="../images/telephone.png" class="card-image">
-            </div>
+            <i class="fa fa-phone"></i>
+        </div>
         <div class="card-body">
             <h5 class="card-title">Ring oss!</h5>
             <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
@@ -14,19 +17,23 @@
             <p class="card-text">Söndag: Stängt</p>
         </div>
     </div>
-    <div class="card text-white mb-3" style="max-width: 250px;">
+    
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
-            <img src="../images/location.png" class="card-image">
-            </div>
+            <i class="fa fa-map-marker"></i>
+        </div>
         <div class="card-body">
             <h5 class="card-title">Adress</h5>
             <p class="card-text">Krokvägen 666</p>
+            <p class="card-text">111 11, Kiruna</p>
+            <p class="card-text">Mån-Sön 10.00 - 23.00</p>
         </div>
     </div>
-    <div class="card text-white mb-3" style="max-width: 250px;">
+
+    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
-            <img src="../images/email.png" class="card-image">
-            </div>
+			<i class="fa fa-envelope"></i>
+        </div>
         <div class="card-body">
             <h5 class="card-title">Maila oss!</h5>
             <p class="card-text">movie-team@movieteam.se</p>
@@ -45,15 +52,15 @@ body {
     background-color: black;
 }
 
-h1 {
-    color: rgb(200, 0, 20)
+h5 {
+    font-weight: bold;
 }
 
 .card {
     background-color: rgb(0, 0, 0);
     border: 1px solid red;
-    margin-bottom: 0 !important;
-    border-radius: 0 !important;    
+    margin-bottom: 5vh !important;
+    margin-top: 10vh;
 }
 
 .card p, h5 {
@@ -61,10 +68,8 @@ h1 {
     margin-bottom: 0;
 }
 
-.card-image {
-    width: 50%;
-    height: 50%;
-    padding-top: 2vh;
+.card-header {
+    border: none;
 }
 
 .card-body {
@@ -73,9 +78,43 @@ h1 {
 
 .information-panels {
     margin: 0 !important;
-    margin-top: 18vh !important;
     padding-left: 10vw;
     padding-right: 10vw;
+}
+
+i.fa-map-marker, i.fa-envelope, i.fa-phone {
+    font-size: 50px;
+}
+
+.col-lg-3 {
+    height: 40vh !important;
+}
+
+/* Media queries for smaller devices */
+
+@media (max-width: 768px) {
+    .card {
+        margin: 2vh;
+        margin-top: 3vh !important;
+        height: 23vh !important;
+    }
+
+    i.fa-map-marker, i.fa-envelope, i.fa-phone {
+        font-size: 30px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    .card-text {
+        font-size: 14px !important;
+    }
+
+    .card-header {
+        padding: 5px;
+        padding-top: 10px;
+    }
 }
 
 </style>
