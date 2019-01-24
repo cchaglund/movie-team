@@ -12,7 +12,7 @@
     
     </div>
   </div>
-    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
+    <form class="navbar-form navbar-left" style="padding:16px;">
       <div class="input-group">
         <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
 
@@ -48,7 +48,6 @@
     </div>
     <router-view/>
   </div>
-  
 </template>
 
 
@@ -113,11 +112,9 @@ body {
   text-decoration: none;
   color: #efefef;
 }
-
 .nav > .nav-links > a:hover {
   background-color: white;
   color:black;
-  height: auto;
 }
 
 .nav > #nav-check {
@@ -127,7 +124,7 @@ body {
 @media (max-width:1024px) {
   .nav {
     z-index: 7000;
-    opacity: 0.9;
+    opacity: 1;
   }
   .nav > .nav-btn {
     display: inline-block;
@@ -172,12 +169,12 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
 
   @media (max-width:1024px) {
   .navbar-form.navbar-left {
     display: none;
   }
-}
 }
 </style>
 

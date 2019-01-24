@@ -1,5 +1,6 @@
 
 <template>
+  <div class="home">
   <div class="block">
 
       <div class="col videoplayer">
@@ -83,7 +84,7 @@
         </div>
        </div>
       </div>
-</div>
+  </div>
 </template> 
 
 <script>
@@ -97,7 +98,6 @@ export default {
   },
   methods: {
     toggleExpand() {
-      console.log(this.isActive)
       this.isActive = !this.isActive;
     },
     toStringFunction(value) {
@@ -110,7 +110,7 @@ export default {
       isActive: false
     }
   }
-}
+};
 </script>
 
 <style>

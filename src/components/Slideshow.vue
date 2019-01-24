@@ -6,21 +6,18 @@
     <div class="slide">
       <figure class="slide-figure">
         <img class="slide-img" src="../images/img19.jpg" />
-        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="two" />
     <div class="slide">
       <figure class="slide-figure">
         <img class="slide-img" src="../images/img19.jpg" />
-        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="three" />
     <div class="slide">
       <figure class="slide-figure">
         <img class="slide-img" src="../images/img19.jpg" />
-        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
   </div><!-- .slider -->
@@ -36,17 +33,6 @@
 
 
 </template>
-
-
-<script>
-// @ is an alias to /src
-export default {
-name: 'FluxImage',
-components: {
-  
-}
-};
-</script>
 
 
 <style>
@@ -78,7 +64,7 @@ img {
 }
 
 .slide-img {
-  filter: brightness(80%);
+  filter: brightness(60%);
   height: 100%;
   object-fit: fill;
   display: block;
