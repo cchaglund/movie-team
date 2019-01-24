@@ -19,7 +19,7 @@
           </button>
         </div>
       </div>
-    </form>s
+    </form>
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -151,7 +151,7 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 69px;
+    top: 73px;
     left: 0px;
     font-size: 25px;
   }
