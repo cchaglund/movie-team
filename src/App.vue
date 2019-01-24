@@ -37,7 +37,7 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-    <router-link to="home"><i class="fas fa-home fa-2x"></i></router-link>
+    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>

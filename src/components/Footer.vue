@@ -9,7 +9,7 @@
 				
 
 				<p class="footer-links">
-					<router-link to="inloggning"><i class="fas fa-home-alt fa-1.5x"></i></router-link>
+					<router-link to="/"><i class="fas fa-home fa-1x"></i></router-link>
 					·
 					<router-link to="movies">Filmsida</router-link>
 					·
