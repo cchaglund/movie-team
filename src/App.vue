@@ -6,7 +6,10 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png">
+
+      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png">
+
+    
     </div>
   </div>
     <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
@@ -29,8 +32,8 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-  
-    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
+     <router-link to="home">Home</router-link>
+     
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
@@ -38,6 +41,8 @@
     <router-link to="anvandare">Anvandare</router-link>
     <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
+    <router-link to="information">Information</router-link>
+
   </div>
 </div>
 
