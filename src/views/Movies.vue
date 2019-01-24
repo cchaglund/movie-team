@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-      <h2>Alla filmer</h2>      
+      <h2 class="allafilmerhtwo">Alla filmer</h2>      
       <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>     
     </div>
 </template>
