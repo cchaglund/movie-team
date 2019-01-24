@@ -84,7 +84,6 @@ h5 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(21, 15, 16);
 }
 
 i.fa-map-marker, i.fa-envelope, i.fa-phone {
