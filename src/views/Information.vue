@@ -5,6 +5,7 @@
 
     <h1>Information</h1>
     
+    <div class="container">
     <div class="row information-panels justify-content-around">
     <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
         <div class="card-header ring-oss">
@@ -42,6 +43,7 @@
         </div>
     </div>
     </div>
+    </div>
 
     </div>
 </template>
@@ -58,14 +60,14 @@ h5 {
 
 .card {
     background-color: rgb(0, 0, 0);
-    border: 1px solid red;
-    margin-bottom: 5vh !important;
-    margin-top: 10vh;
+    border: 1px solid white;
+    margin: 2%;
 }
 
 .card p, h5 {
     color: white;
     margin-bottom: 0;
+    font-size: 22px;
 }
 
 .card-header {
@@ -76,10 +78,12 @@ h5 {
     padding: 10px !important;
 }
 
-.information-panels {
-    margin: 0 !important;
-    padding-left: 10vw;
-    padding-right: 10vw;
+.container {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 i.fa-map-marker, i.fa-envelope, i.fa-phone {
