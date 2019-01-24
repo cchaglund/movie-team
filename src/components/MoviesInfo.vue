@@ -129,6 +129,9 @@ export default {
   #myDIV:not(.active){
     display: none;
   }
+  .allafilmerhtwo{
+    padding-top: 75px;
+  }
   /*---------Film info---------*/
   .title{
     background-color: #6F2232;
@@ -146,8 +149,16 @@ export default {
   }
   .Allinfotext, .movieInfo, .description{
     text-align: left;
-    padding:20px;
-    margin-top: 10px;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    margin:0;
+  }
+  .descriptiontwo{
+    font-size: 19px;
+  }
+  .movieInfo{
+    font-size: 16px;
   }
   /*---------Boka knapp---------*/
   .movieBookButton, .movieBookButtontwo{
