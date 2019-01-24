@@ -62,8 +62,6 @@
 
 h1 {
     color: white;
-    padding-top: 5%;
-    font-size: 50px;
 }
 
 h5 {
@@ -87,7 +85,6 @@ h5 {
 
 .card-header {
     border: none;
-    background-color: rgb(111, 34, 50);
 }
 
 .card-body {
@@ -102,7 +99,7 @@ h5 {
   transform: translate(-50%, -50%);
 }
 
-i.fa {
+i.fa-map-marker, i.fa-envelope, i.fa-phone {
     font-size: 50px;
 }
 
