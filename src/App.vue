@@ -14,7 +14,7 @@
       <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png">
     </div>
   </div>
-    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
+    <form class="navbar-form navbar-left" style="padding:16px;">
       <div class="input-group">
         <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
 
@@ -24,7 +24,7 @@
           </button>
         </div>
       </div>
-    </form>s
+    </form>
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -39,10 +39,10 @@
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
-    <router-link to="inloggning">Inloggning</router-link>
     <router-link to="anvandare">Anvandare</router-link>
     <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
+    <router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
 </div>
 
@@ -50,7 +50,6 @@
     </div>
     <router-view/>
   </div>
-  
 </template>
 
 
@@ -113,7 +112,8 @@ body {
   color: #efefef;
 }
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color:black;
 }
 
 .nav > #nav-check {
@@ -153,7 +153,7 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 69px;
+    top: 73px;
     left: 0px;
     font-size: 25px;
   }

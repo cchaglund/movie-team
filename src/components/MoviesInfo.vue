@@ -1,5 +1,6 @@
 
 <template>
+  <div class="home">
   <div class="block">
 
       <div class="col testimage">
@@ -88,7 +89,7 @@
         </div>
        </div>
       </div>
-</div>
+  </div>
 </template> 
 
 <script>
@@ -102,11 +103,7 @@ export default {
   },
   methods: {
     toggleExpand() {
-      console.log(this.isActive)
       this.isActive = !this.isActive;
-      if(this.isActive){
-        console.log(this.isActive)
-      }
     },
     toStringFunction(value) {
       if (!value) return '' 
@@ -118,7 +115,7 @@ export default {
       isActive: false
     }
   }
-}
+};
 </script>
 
 <style>
