@@ -1,7 +1,6 @@
 
 <template>
   	<div class="Bookningscomponent">
-  		<h1> Bokningscomponent</h1>
   
 		<div class="container">
 	  		<div class="row">
