@@ -1,8 +1,3 @@
-
-
-
-
-
 <template>
   <div id="app">
     <div id="nav">
@@ -11,7 +6,10 @@
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png">
+
+      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png">
+
+    
     </div>
   </div>
     <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
@@ -24,7 +22,7 @@
           </button>
         </div>
       </div>
-    </form>s
+    </form>
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -34,15 +32,15 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-  
-    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
+     <router-link to="home">Home</router-link>
+     
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
-    <router-link to="inloggning">Inloggning</router-link>
     <router-link to="anvandare">Anvandare</router-link>
     <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
+    <router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
 </div>
 
@@ -61,7 +59,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: #2c3e50;
+  background-color: #89ACCE;
+  min-height: 100vh;
+  height: 100%;
 }
 
 * {
@@ -156,7 +157,7 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 69px;
+    top: 73px;
     left: 0px;
     font-size: 25px;
   }

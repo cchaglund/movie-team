@@ -1,6 +1,5 @@
 <template>
-    <div class="home">
-      <h2>Alla filmer</h2>      
+    <div class="home">      
       <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>     
     </div>
 </template>
@@ -28,6 +27,6 @@ export default {
     #app,
     html{
         background-color: black;
-        color: white;
+        color: black;
     }
 </style>
