@@ -1,8 +1,8 @@
-
-
 <template>
   <div id="app">
     <div id="nav">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Josefin+Sans|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
@@ -12,6 +12,17 @@
     
     </div>
   </div>
+    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
+
+        <div class="input-group-btn">
+          <button class="btn btn-default" style="color:white;" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>s
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -27,8 +38,8 @@
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
     <router-link to="inloggning">Inloggning</router-link>
-    <router-link to="anvandare">Användare</router-link>
-    <router-link to="bekraftelse">Bekräftelse</router-link>
+    <router-link to="anvandare">Anvandare</router-link>
+    <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
     <router-link to="information">Information</router-link>
 
@@ -46,11 +57,14 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family:'ZCOOL QingKe HuangYou', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #89ACCE;
+  min-height: 100vh;
+  height: 100%;
 }
 
 * {
@@ -65,7 +79,7 @@ body {
 .nav {
   height: 70px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: black;
   position: fixed;
   z-index: 6500; 
   opacity: 0.8;
@@ -88,19 +102,24 @@ body {
 
 .nav > .nav-links {
   display: inline;
-  float: right;
-  font-size: 18px;
+  float: left;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: 15px;
+  margin-top: -11px;
 }
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 20px 10px 13px 10px;
+  padding: 30px 10px 15px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color:black;
+  height: auto;
 }
 
 .nav > #nav-check {
@@ -110,7 +129,7 @@ body {
 @media (max-width:1024px) {
   .nav {
     z-index: 7000;
-    opacity: 1;
+    opacity: 0.9;
   }
   .nav > .nav-btn {
     display: inline-block;
@@ -136,7 +155,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: black;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -155,6 +174,12 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+
+  @media (max-width:1024px) {
+  .navbar-form.navbar-left {
+    display: none;
+  }
+}
 }
 </style>
 

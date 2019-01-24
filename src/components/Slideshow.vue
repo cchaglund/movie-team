@@ -5,22 +5,22 @@
     <input type="radio" name="slider" class="trigger" id="one" checked="checked" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
-        <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
+        <img class="slide-img" src="../images/img19.jpg" />
+        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="two" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
-        <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
+        <img class="slide-img" src="../images/img19.jpg" />
+        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
     <input type="radio" name="slider" class="trigger" id="three" />
     <div class="slide">
       <figure class="slide-figure">
-        <img class="slide-img" src="../images/img1.png" />
-        <figcaption class="slide-caption"><p>NAMNET</p></figcaption>
+        <img class="slide-img" src="../images/img19.jpg" />
+        <figcaption class="slide-caption"></figcaption>
       </figure><!-- .slide-figure -->
     </div><!-- .slide -->
   </div><!-- .slider -->
@@ -78,11 +78,12 @@ img {
 }
 
 .slide-img {
-  filter: brightness(50%);
+  filter: brightness(80%);
   height: 100%;
   object-fit: fill;
   display: block;
   margin: 0 auto;
+  padding-top: 70px;
 }
 
 .slide-figure {
@@ -117,7 +118,7 @@ img {
 
 .slider-nav__label {
   font-size: 13px;
-  background-color: #333;
+  background-color: black;
   display: block;
   height: 2em;
   line-height: 2em;
@@ -161,7 +162,6 @@ img {
 @media only screen and (min-width: 768px) {
   .slide-img {
     width: 100%;
-    height: auto;
   }
 }
 </style>

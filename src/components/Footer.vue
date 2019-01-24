@@ -19,14 +19,14 @@
 					·
 					<router-link to="inloggning">Inloggning</router-link>
 					·
-					<router-link to="anvandare">Användare</router-link>
+					<router-link to="anvandare">Anvandare</router-link>
 					·
-					<router-link to="bekraftelse">Bekräftelse</router-link>
+					<router-link to="bekraftelse">Bekraftelse</router-link>
 					·
 					<router-link to="salonger">Salonger</router-link>
 				</p>
 
-				<p class="footer-company-name">&copy Movie Team 2019</p>
+				<p class="footer-company-name">&copy; Movie Team 2019</p>
 			</div>
 
 			<div class="footer-center">
@@ -72,14 +72,13 @@
 
 <style>
 	.footer-distributed{
-	background-color: #292c2f;
+	background-color: black;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
-	padding: 55px 50px;
+    padding: 55px 50px;
 	margin-top: 80px;
 }
 
@@ -100,7 +99,7 @@
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 36px 'ZCOOL QingKe HuangYou', cursive;;
 	margin: 0;
 }
 
@@ -114,6 +113,7 @@
 	color:  #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 .footer-distributed .footer-links a{
@@ -231,13 +231,14 @@
 		display: block;
 		width: 100%;
 		margin-bottom: 40px;
-		text-align: center;
 	}
 
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-
+.footer-links{
+	font-size: 17px;
+}
 }
 
 </style>

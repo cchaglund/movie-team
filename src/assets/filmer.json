@@ -12,22 +12,20 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Luca Guadagnino",
-    "ageRequired": 15,
     "actors": [
       "Armie Hammer",
       "Timothée Chalamet",
       "Michael Stuhlbarg"
     ],
-    "description": "Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj. Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.",
+    "description": "<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>",
     "images": [
        "call-me-poster1.jpg",
        "call-me-poster2.jpg"
     ],
-    "youtubeTrailers": [
-      "Z9AYPxH5NTM"
-    ], 
-    "reviews": [
-    
+    "youtubeTrailers":[
+    "https://www.youtube.com/embed/Z9AYPxH5NTM?"
+    ],
+    "reviews": [   
     ]
   },
 
@@ -61,7 +59,7 @@
 
     ],
     "youtubeTrailers": [
-      "cjoh3B1OPgU"
+      "https://www.youtube.com/embed/cjoh3B1OPgU?"
     ], 
     "reviews": [
 
@@ -94,7 +92,7 @@
 
     ],
     "youtubeTrailers": [
-      "0vWHEuhEuno"
+      "https://www.youtube.com/embed/0vWHEuhEuno?"
     ], 
     "reviews": [
 
@@ -125,7 +123,7 @@
 
     ],
     "youtubeTrailers": [
-      "sgFY-WYZ1sI"
+      "https://www.youtube.com/embed/sgFY-WYZ1sI?"
     ], 
     "reviews": [
 
@@ -152,10 +150,27 @@
 
     ],
     "youtubeTrailers": [
-      "gPRgdId4OlU"
+      "https://www.youtube.com/embed/gPRgdId4OlU?"
     ], 
     "reviews": [
-
+      {
+        "source": "Sydsvenskan",
+        "quote": "ett drama berättat med stor ömhet",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "en film att förälska sig i",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "en het romans i åttiotalskostym",
+        "stars": 4,
+        "max": 5
+      }
     ]
   }
 ]

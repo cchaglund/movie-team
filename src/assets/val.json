@@ -1,0 +1,22 @@
+[
+  {
+    "film": "Titanic",
+    "datum": "4/10",
+    "tid": "20:30",
+    "platser": [
+      {
+        "rad": "",
+        "stol": ""
+      },
+      {
+        "rad": "",
+        "stol": ""
+      },
+      {
+        "rad": "",
+        "stol": ""
+      }
+    ],
+    "pris":
+  }
+]
