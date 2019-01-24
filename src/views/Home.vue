@@ -3,7 +3,8 @@
 <div class="home">
 	<Slideshow>
 	</Slideshow>
-
+<br>
+<br>
   <Bokningscomponent>
   </Bokningscomponent>
 
