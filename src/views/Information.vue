@@ -7,8 +7,8 @@
     
     <div class="container">
     <div class="row information-panels justify-content-around">
-    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header ring-oss">
+    <div class="card ring-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+        <div class="card-header">
             <i class="fa fa-phone"></i>
         </div>
         <div class="card-body">
@@ -18,12 +18,9 @@
             <p class="card-text">Söndag: Stängt</p>
         </div>
     </div>
-    
-    <!-- only loads when in col-md range -->
-    <div class="w-100"></div>
 
-    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header ring-oss">
+    <div class="card hitta-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+        <div class="card-header">
             <i class="fa fa-map-marker"></i>
         </div>
         <div class="card-body">
@@ -34,11 +31,8 @@
         </div>
     </div>
 
-    <!-- only loads when in col-md range -->
-    <div class="w-100"></div>
-
-    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header ring-oss">
+    <div class="card maila-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+        <div class="card-header">
 			<i class="fa fa-envelope"></i>
         </div>
         <div class="card-body">
@@ -62,19 +56,16 @@
 
 h1 {
     color: white;
+    padding-top: 5%;
+    font-size: 50px;
 }
 
 h5 {
     font-weight: bold;
 }
 
-.w-100 {
-    display: none;
-}
-
 .card {
-    background-color: rgb(111, 34, 50);
-    border: 1px solid white;
+    background-color: black;
 }
 
 .card p, h5 {
@@ -84,7 +75,7 @@ h5 {
 }
 
 .card-header {
-    border: none;
+    background-color: black;
 }
 
 .card-body {
@@ -99,43 +90,61 @@ h5 {
   transform: translate(-50%, -50%);
 }
 
-i.fa-map-marker, i.fa-envelope, i.fa-phone {
+i.fa-phone, i.fa-map-marker, i.fa-envelope {
     font-size: 50px;
 }
 
 /* Media queries for smaller devices */
 
 @media (min-width: 768px) and (max-width: 992px) {
-    .w-100 {
-        display: block;
-    }
 
     .card {
-        height: 28vh;
+        height: 26vh;
     }
 
-    i.fa {
+    i.fa-phone, i.fa-map-marker, i.fa-envelope {
         font-size: 30px;
     }
 
     .container {
-        margin-top: 4vh;
+        margin-top: 8vh;
+    }
+    
+    .card-header {
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    h1 {
+        padding-top: 7%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        padding: 15%;
     }
 }
 
 @media (max-width: 768px) {
     .card {
         margin: 2vh;
-        margin-top: 3vh !important;
         height: 23vh !important;
     }
 
-    i.fa-map-marker, i.fa-envelope, i.fa-phone {
+    i.fa-phone, i.fa-map-marker, i.fa-envelope {
+        font-size: 25px;
+    }
+
+    h1 {
+        padding-top: 20%;
         font-size: 30px;
     }
 
     h5 {
-        font-size: 20px;
+        font-size: 15px;
+        margin-bottom: 0 !important;
     }
 
     .card-text {
@@ -143,8 +152,12 @@ i.fa-map-marker, i.fa-envelope, i.fa-phone {
     }
 
     .card-header {
-        padding: 5px;
-        padding-top: 10px;
+        padding: 0;
+        padding-top: 5px;
+    }
+
+    .container {
+        margin-top: 10vh;
     }
 }
 
