@@ -1,3 +1,4 @@
+
 <template>
   <div class="block">
 
@@ -83,7 +84,7 @@
        </div>
       </div>
 </div>
-</template>
+</template> 
 
 <script>
 
@@ -232,5 +233,4 @@ export default {
     }
   }
 </style>
-
 
