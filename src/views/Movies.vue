@@ -27,6 +27,6 @@ export default {
     #app,
     html{
         background-color: black;
-        color: white;
+        color: black;
     }
 </style>

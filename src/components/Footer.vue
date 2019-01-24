@@ -17,6 +17,7 @@
 					·
 					<router-link to="bokning">Bokning</router-link>
 					·
+					<router-link to="salonger">Salonger</router-link>
 					<router-link to="anvandare">Anvandare</router-link>
 					·
 					<router-link to="bekraftelse">Bekraftelse</router-link>
