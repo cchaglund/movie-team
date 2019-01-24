@@ -9,7 +9,7 @@
 			<section class="colum-layout">
 				<section class="main-column">
 					<div>
-						<p>Cinema Name</p>
+						<p>{{ title }}</p>
 						<p>Hall Name</p>
 						<p>Movie Title</p>
 						<p>Rating</p>
@@ -34,21 +34,34 @@
 		</section>
 
 </div>
-
-  
 </template>
-
-
-
-
- 
 
 <script>
 export default {
-  name: 'Bokningsbekraftelse',
+  name: 'bokningsbekraftelse',
   props: {
-    msg: String
+  },
+  data() {
+      return {
+          title: '',
+          time: '',
+          date: '',
+          price: '',
+          seats: {},
+          guests: {}
+      }
+  },
+  created() {
+      this.title = this.$route.params.title;
+      this.time = this.$route.params.time;
+      this.date = this.$route.params.date;
+      this.price = this.$route.params.price;
+      this.seats = this.$route.params.seats;
+      this.guests = this.$route.params.guests;
   }
+  /*components: {
+  	
+  }*
 }
 
 </script>

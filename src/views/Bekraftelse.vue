@@ -5,7 +5,7 @@
 
         <div class="container" id="container">
             <div class="row justify-content-center">
-                <div class="col" id="container-left">
+                <div class="col">
                     <p>Titel:</p>
                     <p>Tid:</p>
                     <p>Datum:</p>
@@ -13,7 +13,7 @@
                     <p>Platser:</p>
                     <p>Biljetter:</p>
                 </div>
-                <div class="col" id="container-right">
+                <div class="col">
                     <p>{{ title }}</p>
                     <p>{{ time }}</p>
                     <p>{{ date }}</p>
@@ -54,12 +54,6 @@ export default {
   	
   }*/
 }
-
-//jQuery - funkar inte
-/*$(document).ready(function() {
-    $('<p>container-left</p>').appendTo('#container-left');
-    $('<p>container-right</p>').appendTo('#container-right');
-})*/
 
 </script>
 
