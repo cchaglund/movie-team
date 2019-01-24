@@ -28,10 +28,6 @@
   </ul><!-- .slider-nav -->
 </div><!-- .slider-wrapper -->
 </div>
-
-
-
-
 </template>
 
 

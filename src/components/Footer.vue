@@ -9,7 +9,7 @@
 				
 
 				<p class="footer-links">
-					<router-link to="/"><i class="fas fa-home fa-1x"></i></router-link>
+					<router-link to="inloggning"><i class="fas fa-home-alt fa-1.5x"></i></router-link>
 					·
 					<router-link to="movies">Filmsida</router-link>
 					·
@@ -17,7 +17,6 @@
 					·
 					<router-link to="bokning">Bokning</router-link>
 					·
-					<router-link to="salonger">Salonger</router-link>
 					<router-link to="anvandare">Anvandare</router-link>
 					·
 					<router-link to="bekraftelse">Bekraftelse</router-link>
