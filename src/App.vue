@@ -1,14 +1,25 @@
-
-
 <template>
   <div id="app">
     <div id="nav">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Josefin+Sans|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <div class="nav">
   <div class="nav-header">
     <div class="nav-title">
-      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png"></img>
+      <img style="max-width:100px;max-height:70px;margin-top:-10px;" src="../src/images/image333.png">
     </div>
   </div>
+    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
+
+        <div class="input-group-btn">
+          <button class="btn btn-default" style="color:white;" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>s
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -18,34 +29,37 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-    <router-link to="home">Home</router-link>
+  
+    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
     <router-link to="inloggning">Inloggning</router-link>
-    <router-link to="anvandare">Användare</router-link>
-    <router-link to="bekraftelse">Bekräftelse</router-link>
+    <router-link to="anvandare">Anvandare</router-link>
+    <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
   </div>
 </div>
-</nav>
-
-
 
       
     </div>
     <router-view/>
   </div>
+  
 </template>
+
+
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family:'ZCOOL QingKe HuangYou', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #89ACCE;
+  min-height: 100vh;
+  height: 100%;
 }
 
 * {
@@ -58,10 +72,12 @@ body {
 }
 
 .nav {
-  height: 50px;
+  height: 70px;
   width: 100%;
-  background-color: #4d4d4d;
-  position: relative;
+  background-color: black;
+  position: fixed;
+  z-index: 6500; 
+  opacity: 0.8;
 }
 
 .nav > .nav-header {
@@ -81,26 +97,35 @@ body {
 
 .nav > .nav-links {
   display: inline;
-  float: right;
-  font-size: 18px;
+  float: left;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: 15px;
+  margin-top: -11px;
 }
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 30px 10px 15px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color:black;
+  height: auto;
 }
 
 .nav > #nav-check {
   display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:1024px) {
+  .nav {
+    z-index: 7000;
+    opacity: 0.9;
+  }
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -109,9 +134,8 @@ body {
   }
   .nav > .nav-btn > label {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
+    height: 70px;
+    padding: 20px;
   }
   .nav > .nav-btn > label:hover {
     background-color: rgba(0, 0, 0, 0.3);
@@ -126,12 +150,13 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: black;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: 69px;
     left: 0px;
+    font-size: 25px;
   }
   .nav > .nav-links > a {
     display: block;
@@ -144,8 +169,12 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+
+  @media (max-width:1024px) {
+  .navbar-form.navbar-left {
+    display: none;
+  }
+}
 }
 </style>
-
-
 

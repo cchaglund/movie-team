@@ -1,22 +1,26 @@
 <template>
     <div class="home">
-      <h2>Alla filmer</h2>
-      <AllMovies></AllMovies>
+      <h2>Alla filmer</h2>      
+      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>     
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import AllMovies from '@/components/AllMovies.vue'
+import json from '@/assets/filmer.json'
+import MoviesInfo from '@/components/MoviesInfo.vue'
 
 export default {
-     name: 'home',
-     components: {
-        AllMovies
- }
-}    
+  name: 'Movies',
+  components: {
+    MoviesInfo
+  },
+  data(){
+    return{
+      allMoviesJson: json
+    }
+  }
+}  
 </script>
-
 
 <style>
     @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
