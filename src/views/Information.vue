@@ -7,19 +7,22 @@
     
     <div class="container">
     <div class="row information-panels justify-content-around">
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
+    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
         <div class="card-header ring-oss">
             <i class="fa fa-phone"></i>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Ring oss!</h5>
+            <h5 class="card-title">Ring oss</h5>
             <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
             <p class="card-text">Lördag: 14.00 - 18.00</p>
             <p class="card-text">Söndag: Stängt</p>
         </div>
     </div>
     
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
+    <!-- only loads when in col-md range -->
+    <div class="w-100"></div>
+
+    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
         <div class="card-header ring-oss">
             <i class="fa fa-map-marker"></i>
         </div>
@@ -27,16 +30,19 @@
             <h5 class="card-title">Adress</h5>
             <p class="card-text">Krokvägen 666</p>
             <p class="card-text">111 11, Kiruna</p>
-            <p class="card-text">Mån-Sön 10.00 - 23.00</p>
+            <p class="card-text">Mån-Sön: 10.00 - 23.00</p>
         </div>
     </div>
 
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
+    <!-- only loads when in col-md range -->
+    <div class="w-100"></div>
+
+    <div class="card text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
         <div class="card-header ring-oss">
 			<i class="fa fa-envelope"></i>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Maila oss!</h5>
+            <h5 class="card-title">Maila oss</h5>
             <p class="card-text">movie-team@movieteam.se</p>
             <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
             <p class="card-text">Svar inom 1-2 arbetsdagar</p>
@@ -50,18 +56,25 @@
 
 <style>
 
-body {
+#app {
     background-color: black;
+}
+
+h1 {
+    color: white;
 }
 
 h5 {
     font-weight: bold;
 }
 
+.w-100 {
+    display: none;
+}
+
 .card {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(111, 34, 50);
     border: 1px solid white;
-    margin: 2%;
 }
 
 .card p, h5 {
@@ -90,11 +103,25 @@ i.fa-map-marker, i.fa-envelope, i.fa-phone {
     font-size: 50px;
 }
 
-.col-lg-3 {
-    height: 40vh !important;
-}
-
 /* Media queries for smaller devices */
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .w-100 {
+        display: block;
+    }
+
+    .card {
+        height: 28vh;
+    }
+
+    i.fa {
+        font-size: 30px;
+    }
+
+    .container {
+        margin-top: 4vh;
+    }
+}
 
 @media (max-width: 768px) {
     .card {
