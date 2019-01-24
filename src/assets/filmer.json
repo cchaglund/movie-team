@@ -12,18 +12,147 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Luca Guadagnino",
+    "ageRequired": 15,
     "actors": [
       "Armie Hammer",
       "Timothée Chalamet",
       "Michael Stuhlbarg"
     ],
-    "description": "<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>",
+
+    "description": "Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj. Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.",
     "images": [
        "call-me-poster1.jpg",
        "call-me-poster2.jpg"
     ],
+    "youtubeTrailers":[
+    "https://www.youtube.com/embed/Z9AYPxH5NTM?"
+    ],
+    "reviews": [   
+    ]
+  },
+
+  {
+     "title": "Destroyer",
+    "productionCountries": [
+      "USA"
+    ],
+    "productionYear": 2018,
+    "length": 123,
+    "genre": "Action",
+    "distributor": "Scanbox",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Karyn Kusama",
+    "ageRequired": 15,
+    "actors": [
+      "Nicole Kidman",
+      "Toby Kebbell",
+      "Tatiana Maslany",
+      "Sebastian Stan",
+      "Scoot McNairy",
+      "Bradley Withford",
+      "Toby Huss",
+      "James Jordan",
+      "Beau Knapp",
+      "Jade Pettyjohn"
+    ],
+    "description": "LAPD-polisen Erin Bell har påbörjat en moralisk och existentiell resa för att göra upp med sitt mörka förflutna. Som rookie placerades hon undercover med ett kultliknande gäng i den kaliforniska öknen. Ett uppdrag med en tragisk utgång som starkt påverkat hennes liv. När ledaren av det gänget åter dyker upp flera år senare måste hon arbeta sig tillbaka genom de återstående medlemmarna, och sin egen historia med dem, för att äntligen kunna konfrontera de demoner som förföljt henne i alla år.",
+    "images": [
+
+    ],
     "youtubeTrailers": [
-      "Z9AYPxH5NTM"
+      "https://www.youtube.com/embed/cjoh3B1OPgU?"
+    ], 
+    "reviews": [
+
+    ]
+  },
+
+  {
+     "title": "BlacKkKlansman",
+    "productionCountries": [
+      "USA"
+    ],
+    "productionYear": 2018,
+    "length": 128,
+    "genre": "Actiondrama",
+    "distributor": "UIP",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Spike Lee",
+    "ageRequired": 11,
+    "actors": [
+      "John David Washington",
+      "Adam Driver",
+      "Laura Harrier",
+      "Topher Grace",
+      "Robert John Burke",
+      "Japser Pääkönen"
+    ],
+    "description": "Från den visionära filmskaparen Spike Lee kommer nu den otroliga men sanna historien om en amerikanske hjälte. Det är 1970-tal - en kaosartad tid kantad av slaget om medborgliga rättigheter. Ron Stallworth blir den första kriminalaren med afroamerikansk bakgrund på Colorado Springs polisstation. Hans anställning välkomnas med skepticism och öppen hotfullhet av både kollegor och chefer. Helt orädd beslutar sig Stallworth för att göra sig ett namn och skapa förändring i samhället. Han ger sig djärvt ut på ett farligt uppdrag: att infiltrera och avslöja Ku Klux Klan. Förställd till rasist kontaktar Stallworth gruppen och snart blir han inbjuden i den innersta kretsen.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/0vWHEuhEuno?"
+    ], 
+    "reviews": [
+
+    ]
+  },
+
+    {
+     "title": "Stora stygga vargen",
+    "productionCountries": [
+      "Frankrike",
+      "Belgien"
+    ],
+    "productionYear": 2017,
+    "length": 83,
+    "genre": "Animerad familjefilm",
+    "distributor": "Folkets Bio",
+    "language": "svenska",
+    "director": [
+      "Patrick Imbert", 
+      "Benjamin Renner"
+    ],
+    "ageRequired": 5,
+    "actors": [
+
+    ],
+    "description": "Från skaparna av Oscarsnominerade Victor & Josefine kommer en ny rolig och hjärtlig historia för hela familjen. Landsbygden är inte alltid så lugn och fridfull som man kan tro och djuren på den här gården är särskilt underliga: En räv som tar hand om en hel kycklingfamilj, en kanin som spelar stork och en anka som vill vara jultomten.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/sgFY-WYZ1sI?"
+    ], 
+    "reviews": [
+
+    ]
+  },
+
+  {
+     "title": "Ploey - ett vinteräventyr",
+    "productionCountries": [
+
+    ],
+    "length": 83,
+    "genre": "Animerad familjefilm",
+    "distributor": "Njutafilms",
+    "language": "svenska",
+    "subtitle": "svenska",
+    "director": "Árni Ásgeirsson",
+    "ageRequired": 7,
+    "actors": [
+
+    ],
+    "description": "Lilla Ploey har ännu inte lärt sig att flyga när hans familj ska flytta söderut för att undvika den kommande vintern. Han måste nu överleva den arktiska vintern, elaka fiender och andra äventyr för att kunna återförenas med sin familj.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/gPRgdId4OlU?"
     ], 
     "reviews": [
       {
