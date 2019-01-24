@@ -6,49 +6,49 @@
     <h1>Information</h1>
     
     <div class="container">
-    <div class="row information-panels justify-content-around">
-    <div class="card ring-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header">
-            <i class="fa fa-phone"></i>
+        <div class="row information-panels justify-content-around">
+        <div class="card ring-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-phone"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ring oss</h5>
+                <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
+                <p class="card-text">Lördag: 14.00 - 18.00</p>
+                <p class="card-text">Söndag: Stängt</p>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Ring oss</h5>
-            <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
-            <p class="card-text">Lördag: 14.00 - 18.00</p>
-            <p class="card-text">Söndag: Stängt</p>
-        </div>
-    </div>
 
-    <div class="card hitta-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header">
-            <i class="fa fa-map-marker"></i>
+        <div class="card hitta-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Adress</h5>
+                <p class="card-text">Krokvägen 666</p>
+                <p class="card-text">111 11, Kiruna</p>
+                <p class="card-text">Mån-Sön: 10.00 - 23.00</p>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Adress</h5>
-            <p class="card-text">Krokvägen 666</p>
-            <p class="card-text">111 11, Kiruna</p>
-            <p class="card-text">Mån-Sön: 10.00 - 23.00</p>
-        </div>
-    </div>
 
-    <div class="card maila-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-        <div class="card-header">
-			<i class="fa fa-envelope"></i>
+        <div class="card maila-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Maila oss</h5>
+                <p class="card-text">movie-team@movieteam.se</p>
+                <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
+                <p class="card-text">Svar inom 1-2 arbetsdagar</p>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Maila oss</h5>
-            <p class="card-text">movie-team@movieteam.se</p>
-            <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
-            <p class="card-text">Svar inom 1-2 arbetsdagar</p>
         </div>
-    </div>
-    </div>
     </div>
 
     </div>
 </template>
 
-<style>
+<style scoped>
 
 #app {
     background-color: black;
@@ -66,6 +66,7 @@ h5 {
 
 .card {
     background-color: black;
+    border-radius: 0;
 }
 
 .card p, h5 {
