@@ -14,13 +14,6 @@
 
 				<button @click="buyTickets" type="button" class="book-btn btn">Boka</button>
 
-				<h1>ID:</h1>
-				{{id}}
-				{{title}}
-				{{date}}
-				{{time}}
-				{{salong}}
-
 				<div v-if="choices.ready">
 					<h5>skicka till servern</h5>
 				</div>
@@ -59,15 +52,20 @@
 				title: '',
 				date: '',
 				time: '',
-				salong: ''
+				salong: '',
+				seats: [],
+				guests: [],
+				price: ''
 			}
 		},
 		created() {
-			this.id = this.$route.params.id;
 			this.title = this.$route.params.title;
 			this.date = this.$route.params.date;
 			this.time = this.$route.params.time;
 			this.salong = this.$route.params.salong
+			this.seats = this.choices.seats, 
+			this.guests = this.choices.guests,
+			this.price = this.choices.calcTotal
 		},
 		methods: {
 			buyTickets() {
@@ -76,11 +74,12 @@
 					this.$router.push({ 
 						name: 'bekraftelse', 
 						params: {
-							title: this.choices.title, 
-							date: this.choices.date, 
-							time: this.choices.time, 
-							seats: this.choices.seats, 
-							guests: this.choices.guests,
+							title: this.title, 
+							date: this.date, 
+							time: this.time, 
+							salong: this.salong,
+							seats: this.seats, 
+							guests: this.guests,
 							price: this.calcTotal
 						}
 					})
