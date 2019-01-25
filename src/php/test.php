@@ -33,7 +33,7 @@ $request = json_decode(file_get_contents('php://input'), JSON_OBJECT_AS_ARRAY);
 
 try{
 
-	$db = new PDO('mysql:host=127.0.0.1;dbname=movie-team', 'root', 'mysql');
+	$db = new PDO('mysql:host=127.0.0.1;dbname=movie-team', 'root', '');
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->exec("SET CHARACTER SET utf8");
 
@@ -44,10 +44,7 @@ try{
 
 }
 
-$statement = $db->prepare("SELECT * FROM filmer WHERE id = :id");
-$statement->execute(array(
-	'id' => $_GET['id']
-));
+$statement = $db->query("SELECT * FROM filmer");
 $response = $statement->fetchAll(PDO::FETCH_ASSOC);
  
 
