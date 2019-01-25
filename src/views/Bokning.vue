@@ -5,7 +5,7 @@
 			<div class="col col-lg-10 mt-3 mb-3">
 
 				<div class="header">
-					<h2>{{choices.title}}, {{choices.time}} den {{choices.date}}</h2>
+					<h2>{{title}}, {{time}} den {{date}}</h2>
 				</div>
 
 				<Placering />
@@ -13,6 +13,13 @@
 				<Total />
 
 				<button @click="buyTickets" type="button" class="book-btn btn">Boka</button>
+
+				<h1>ID:</h1>
+				{{id}}
+				{{title}}
+				{{date}}
+				{{time}}
+				{{salong}}
 
 				<div v-if="choices.ready">
 					<h5>skicka till servern</h5>
@@ -45,6 +52,22 @@
 			...mapState([
 				'choices'
 			])
+		},
+		data() {
+			return {
+				id: 0,
+				title: '',
+				date: '',
+				time: '',
+				salong: ''
+			}
+		},
+		created() {
+			this.id = this.$route.params.id;
+			this.title = this.$route.params.title;
+			this.date = this.$route.params.date;
+			this.time = this.$route.params.time;
+			this.salong = this.$route.params.salong
 		},
 		methods: {
 			buyTickets() {

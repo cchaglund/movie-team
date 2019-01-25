@@ -6,9 +6,10 @@
 		<h2>Välj Film</h2>
 		<form>
 			<div class="form-group">
-				<select class="form-control" id="sel1">
-					<option v-for="film of filmer">{{film.title}}</option>
+				<select class="form-control" id="filmDropdown">
+					<option v-for="film of filmer" :value="film.title">{{film.title}}</option>
 				</select>
+
 			</div>
 		</form>
 	</div>
@@ -16,8 +17,8 @@
 		<h2>Välj Tid</h2>
 		<form>
 			<div class="form-group">
-				<select class="form-control" id="sel1">
-					<option v-for="film of filmer">{{film.datum}}</option>
+				<select class="form-control" id="timeDropdown">
+					<option v-for="film of filmer" :value="film.datum">{{film.datum}}</option>
 				</select>
 			</div>
 		</form>
@@ -27,7 +28,7 @@
 		<h2>Välja Datum</h2>
 		<form>
 			<div class="form-group">
-				<select class="form-control" id="sel1">
+				<select class="form-control" id="dateDropdown">
 					<option>Måndag</option>
 					<option>Tisdag</option>
 					<option>Onsdag</option>
@@ -44,7 +45,7 @@
 		<h2>Välja Salong</h2>
 		<form>
 			<div class="form-group">
-				<select class="form-control" id="sel1">
+				<select class="form-control" id="salongDropdown">
 					<option>Salong 1</option>
 					<option>Salong 2</option>
 				</select>
@@ -55,7 +56,8 @@
  <template>
     <div class="Välja Plats">
         <h1>{{ msg }}</h1>
-        <router-link :to="{ name: 'bokning', params: { id: 1234 } }"> <button type="button" onclick="">Välja Plats</button>  </router-link>
+        <button @click="bokaPlatser" type="button" onclick="">Välja Plats</button>
+
     </div>
 </template>
 
@@ -71,13 +73,44 @@ export default {
 	},
 	data() {
 		return {
-			filmer:filmer
+			filmer:filmer,
+			title: '',
+			date: '',
+			time: '',
+			salong: ''
+		}
+	},
+	methods: {
+		bokaPlatser() {
+			var filmDropdown = document.getElementById("filmDropdown");
+			this.title = filmDropdown.options[filmDropdown.selectedIndex].value;
+
+			var dateDropdown = document.getElementById("dateDropdown");
+			this.date = dateDropdown.options[dateDropdown.selectedIndex].value;
+
+			var timeDropdown = document.getElementById("timeDropdown");
+			this.time = timeDropdown.options[timeDropdown.selectedIndex].value;
+
+			var salongDropdown = document.getElementById("salongDropdown");
+			this.salong = salongDropdown.options[salongDropdown.selectedIndex].value;
+
+			// var nameValue = document.getElementById("1").value;
+			console.log(this.title, this.date, this.time, this.salong)
+
+			this.$router.push({ 
+						name: 'bokning', 
+						params: {
+							title: this.title, 
+							date: this.date, 
+							time: this.time, 
+							salong: this.salong
+						}
+					})
 		}
 	}
 	
 }
 	
-
 
 
 
