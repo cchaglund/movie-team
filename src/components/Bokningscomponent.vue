@@ -18,7 +18,7 @@
 		<form>
 			<div class="form-group">
 				<select class="form-control" id="timeDropdown">
-					<option v-for="film of filmer" :value="film.datum">{{film.datum}}</option>
+					<option v-for="visning of visningar" :value="visning.timeStart">{{visning.timeStart}}</option>
 				</select>
 			</div>
 		</form>
@@ -29,7 +29,7 @@
 		<form>
 			<div class="form-group">
 				<select class="form-control" id="dateDropdown">
-					<option>Måndag</option>
+					<option v-for="visning of visningar" :value="visning.day">{{visning.day}}</option>
 					<option>Tisdag</option>
 					<option>Onsdag</option>
 					<option>Torsdag</option>
@@ -46,7 +46,7 @@
 		<form>
 			<div class="form-group">
 				<select class="form-control" id="salongDropdown">
-					<option>Salong 1</option>
+					<option v-for="visning of visningar" :value="visning.salong">{{visning.salong}}</option>
 					<option>Salong 2</option>
 				</select>
 			</div>
@@ -65,7 +65,7 @@
 </div>
 </template>
 <script>
-	let filmer = require('@/assets/filmer.json')
+	
 export default {
 	name: 'Bookningscomponent',
 	props: {
@@ -73,12 +73,23 @@ export default {
 	},
 	data() {
 		return {
-			filmer:filmer,
+			filmer:"",
+			visningar: "",
 			title: '',
 			date: '',
 			time: '',
 			salong: ''
 		}
+	},
+	created() {
+		  this.$axios.get('http://localhost/VUE-PROJECTS/movie-team-server/test.php').then((response) => {
+          console.log(response);
+          this.filmer = response.data;
+})
+		  this.$axios.get('http://localhost/VUE-PROJECTS/movie-team-server/visningar.php').then((response) => {
+          console.log(response);
+          this.visningar = response.data;
+})
 	},
 	methods: {
 		bokaPlatser() {
