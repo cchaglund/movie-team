@@ -22,7 +22,7 @@
           </button>
         </div>
       </div>
-    </form>s
+    </form>
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -37,12 +37,10 @@
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
-    <router-link to="inloggning">Inloggning</router-link>
     <router-link to="anvandare">Anvandare</router-link>
     <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
-    <router-link to="information">Information</router-link>
-
+    <router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
 </div>
 
@@ -159,7 +157,7 @@ body {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 69px;
+    top: 73px;
     left: 0px;
     font-size: 25px;
   }

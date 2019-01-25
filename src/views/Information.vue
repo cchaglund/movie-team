@@ -5,51 +5,59 @@
 
     <h1>Information</h1>
     
-    <div class="row information-panels justify-content-around">
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
-        <div class="card-header ring-oss">
-            <i class="fa fa-phone"></i>
+    <div class="container">
+        <div class="row information-panels justify-content-around">
+        <div class="card ring-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-phone"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ring oss</h5>
+                <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
+                <p class="card-text">Lördag: 14.00 - 18.00</p>
+                <p class="card-text">Söndag: Stängt</p>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Ring oss!</h5>
-            <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
-            <p class="card-text">Lördag: 14.00 - 18.00</p>
-            <p class="card-text">Söndag: Stängt</p>
-        </div>
-    </div>
-    
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
-        <div class="card-header ring-oss">
-            <i class="fa fa-map-marker"></i>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Adress</h5>
-            <p class="card-text">Krokvägen 666</p>
-            <p class="card-text">111 11, Kiruna</p>
-            <p class="card-text">Mån-Sön 10.00 - 23.00</p>
-        </div>
-    </div>
 
-    <div class="card text-white col-xs-4 col-s-4 col-md-3 col-lg-3 col-xl-3">
-        <div class="card-header ring-oss">
-			<i class="fa fa-envelope"></i>
+        <div class="card hitta-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Adress</h5>
+                <p class="card-text">Krokvägen 666</p>
+                <p class="card-text">111 11, Kiruna</p>
+                <p class="card-text">Mån-Sön: 10.00 - 23.00</p>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Maila oss!</h5>
-            <p class="card-text">movie-team@movieteam.se</p>
-            <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
-            <p class="card-text">Svar inom 1-2 arbetsdagar</p>
+
+        <div class="card maila-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
+            <div class="card-header">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Maila oss</h5>
+                <p class="card-text">movie-team@movieteam.se</p>
+                <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
+                <p class="card-text">Svar inom 1-2 arbetsdagar</p>
+            </div>
         </div>
-    </div>
+        </div>
     </div>
 
     </div>
 </template>
 
-<style>
+<style scoped>
 
-body {
+#app {
     background-color: black;
+}
+
+h1 {
+    color: white;
+    padding-top: 5%;
+    font-size: 50px;
 }
 
 h5 {
@@ -57,54 +65,87 @@ h5 {
 }
 
 .card {
-    background-color: rgb(0, 0, 0);
-    border: 1px solid red;
-    margin-bottom: 5vh !important;
-    margin-top: 10vh;
+    background-color: black;
+    border-radius: 0;
 }
 
 .card p, h5 {
     color: white;
     margin-bottom: 0;
+    font-size: 22px;
 }
 
 .card-header {
-    border: none;
+    background-color: black;
 }
 
 .card-body {
     padding: 10px !important;
 }
 
-.information-panels {
-    margin: 0 !important;
-    padding-left: 10vw;
-    padding-right: 10vw;
+.container {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-i.fa-map-marker, i.fa-envelope, i.fa-phone {
+i.fa-phone, i.fa-map-marker, i.fa-envelope {
     font-size: 50px;
-}
-
-.col-lg-3 {
-    height: 40vh !important;
 }
 
 /* Media queries for smaller devices */
 
+@media (min-width: 768px) and (max-width: 992px) {
+
+    .card {
+        height: 26vh;
+    }
+
+    i.fa-phone, i.fa-map-marker, i.fa-envelope {
+        font-size: 30px;
+    }
+
+    .container {
+        margin-top: 8vh;
+    }
+    
+    .card-header {
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    h1 {
+        padding-top: 7%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        padding: 15%;
+    }
+}
+
 @media (max-width: 768px) {
     .card {
         margin: 2vh;
-        margin-top: 3vh !important;
         height: 23vh !important;
     }
 
-    i.fa-map-marker, i.fa-envelope, i.fa-phone {
+    i.fa-phone, i.fa-map-marker, i.fa-envelope {
+        font-size: 25px;
+    }
+
+    h1 {
+        padding-top: 20%;
         font-size: 30px;
     }
 
     h5 {
-        font-size: 20px;
+        font-size: 15px;
+        margin-bottom: 0 !important;
     }
 
     .card-text {
@@ -112,8 +153,12 @@ i.fa-map-marker, i.fa-envelope, i.fa-phone {
     }
 
     .card-header {
-        padding: 5px;
-        padding-top: 10px;
+        padding: 0;
+        padding-top: 5px;
+    }
+
+    .container {
+        margin-top: 10vh;
     }
 }
 
