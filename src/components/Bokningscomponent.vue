@@ -3,52 +3,59 @@
 <div class="Bookningscomponent">
 	<h1> Bokningscomponent</h1>
 	<div class="container">
-		<h2>Välj Film</h2>
+		<h2>Film</h2>
 		<form>
-			<div class="form-group">
-				<select class="form-control" id="filmDropdown">
-					<option v-for="film of filmer" :value="film.title">{{film.title}}</option>
+			<div class="form-group d-flex">
+				<select class="form-control" id="filmDropdown" v-model="selected.film">
+					<option disabled value="">Välj film</option>
+					<option v-for="showing in filtered" :value="showing.movie">{{showing.movie}}</option>
 				</select>
-
+				<div v-if="selected.film != ''" class="close-btn" @click="clearFilm">
+					<i class="fas fa-window-close flex-1"></i>
+				</div>
 			</div>
 		</form>
 	</div>
 	<div class="container">
-		<h2>Välj Tid</h2>
+		<h2>Dag</h2>
 		<form>
-			<div class="form-group">
-				<select class="form-control" id="timeDropdown">
-					<option v-for="film of filmer" :value="film.datum">{{film.datum}}</option>
+			<div class="form-group d-flex">
+				<select class="form-control" id="dateDropdown" v-model="selected.date">
+				 	<option disabled value="">Välj dag</option>
+				 	<option v-for="showing in filtered">{{showing.date}}</option>		
 				</select>
+				<div v-if="selected.date != ''" class="close-btn" @click="clearDate">
+					<i class="fas fa-window-close flex-1"></i>
+				</div>
 			</div>
 		</form>
 	</div>
 	
 	<div class="container">
-		<h2>Välja Datum</h2>
+		<h2>Tid</h2>
 		<form>
-			<div class="form-group">
-				<select class="form-control" id="dateDropdown">
-					<option>Måndag</option>
-					<option>Tisdag</option>
-					<option>Onsdag</option>
-					<option>Torsdag</option>
-					<option>Fredag</option>
-					<option>Lördag</option>
-					<option>Söndag</option>
-					
+			<div class="form-group d-flex">
+				<select class="form-control" id="timeDropdown" v-model="selected.time">
+					<option disabled value="">Välj tid</option>
+					<option v-for="showing in filtered">{{showing.timeStart}}</option>
 				</select>
+				<div v-if="selected.time != ''" class="close-btn" @click="clearTime">
+					<i class="fas fa-window-close flex-1"></i>
+				</div>
 			</div>
 		</form>
 	</div>
 	<div class="container">
-		<h2>Välja Salong</h2>
+		<h2>Salong</h2>
 		<form>
-			<div class="form-group">
-				<select class="form-control" id="salongDropdown">
-					<option>Salong 1</option>
-					<option>Salong 2</option>
+			<div class="form-group d-flex">
+				<select class="form-control" id="salongDropdown" v-model="selected.salong">
+					<option disabled value="">Välj salong</option>
+					<option v-for="showing in filtered">{{showing.screen}}</option>
 				</select>
+				<div v-if="selected.salong != ''" class="close-btn" @click="clearSalong">
+					<i class="fas fa-window-close flex-1"></i>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -65,48 +72,94 @@
 </div>
 </template>
 <script>
-	let filmer = require('@/assets/filmer.json')
 export default {
 	name: 'Bookningscomponent',
 	props: {
 		msg: String
 	},
+	created() {
+		this.$axios.get('/getFilmData.php')
+		.then((response) => {
+			this.filmer = response.data
+		})
+		this.$axios.get('/getShowings.php')
+		.then((response) => {
+			this.allShowings = response.data
+		})
+	},
 	data() {
 		return {
-			filmer:filmer,
+			filmer: {},
 			title: '',
 			date: '',
 			time: '',
-			salong: ''
+			salong: '',
+			allShowings: [],
+			selected: {
+				film: '',
+				date: '',
+				time: '',
+				salong: ''
+			}
+		}
+	},
+	computed: {
+		filtered: function() {
+			let that = this	
+
+			let filtered = this.allShowings.filter(function(showing) {
+				let movie = true
+				let date = true
+				let timeStart = true
+				let screen = true
+
+				if (that.selected.film != '') {
+					movie = showing.movie == that.selected.film
+				}
+
+				if (that.selected.date != '') {
+					date = showing.date == that.selected.date
+				}
+
+				if (that.selected.time != '') {
+					timeStart = showing.timeStart == that.selected.time
+				}
+
+				if (that.selected.salong != '') {
+					screen = showing.screen == that.selected.salong
+				}
+
+				return movie && date && timeStart && screen
+			})
+			
+			return filtered
 		}
 	},
 	methods: {
 		bokaPlatser() {
-			var filmDropdown = document.getElementById("filmDropdown");
-			this.title = filmDropdown.options[filmDropdown.selectedIndex].value;
-
-			var dateDropdown = document.getElementById("dateDropdown");
-			this.date = dateDropdown.options[dateDropdown.selectedIndex].value;
-
-			var timeDropdown = document.getElementById("timeDropdown");
-			this.time = timeDropdown.options[timeDropdown.selectedIndex].value;
-
-			var salongDropdown = document.getElementById("salongDropdown");
-			this.salong = salongDropdown.options[salongDropdown.selectedIndex].value;
-
-			// var nameValue = document.getElementById("1").value;
-			console.log(this.title, this.date, this.time, this.salong)
-
 			this.$router.push({ 
-						name: 'bokning', 
-						params: {
-							title: this.title, 
-							date: this.date, 
-							time: this.time, 
-							salong: this.salong
-						}
-					})
-		}
+				name: 'bokning', 
+				params: {
+					visning: this.filtered[0].id,
+					title: this.selected.film, 
+					date: this.selected.date, 
+					time: this.selected.time, 
+					salong: this.selected.salong
+				}
+			})
+		},
+		clearFilm() {
+			this.selected.film = ''
+		},
+		clearDate() {
+			this.selected.date = ''
+		},
+		clearTime() {
+			this.selected.time = ''
+		},
+		clearSalong() {
+			this.selected.salong = ''
+		},
 	}
 	
 }
@@ -128,6 +181,15 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.close-btn {
+	color: #DA3724;
+	font-size: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0.3em;
+}
+
 .jahed{
 display: block;
 }

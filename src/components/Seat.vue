@@ -24,7 +24,8 @@
 		name: 'Seat',
 		props: {
 			row_num: Number,
-			seat_num: Number
+			seat_num: Number,
+			takenSeats: Array
 		},
 		data() {
 			return {
@@ -34,7 +35,6 @@
 		computed: {
 			...mapState([
 				'msg',
-				'takenSeats',
 				'choices'
 				// alternatively
 				// customName: 'msg'
@@ -77,7 +77,11 @@
 				if (this.seatsToAssign == 0) {
 					this.addGuest('adults')	
 				}
-				this.selectSeats(this.id)
+				let payload = {
+					id: this.id,
+					takenSeats: this.takenSeats
+				}
+				this.selectSeats(payload)
 			},
 			mouseEnter() {
 				this.updateHoveredSeat(this.id)

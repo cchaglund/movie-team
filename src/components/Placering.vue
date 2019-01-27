@@ -2,11 +2,18 @@
 	<div class="d-flex justify-content-center">
 		<div class="cinema">
 			<Row 
-				v-for="(row, index) in this.seatsPerRow"
+				v-if="screenSeats"
+				v-for="(row, index) in screenSeats"
 				:total="row"
 				:row_num="index+1"
 				:key="index"
+				:takenSeats="takenSeats"
 			/>
+			<div v-else>
+				{{screenSeats}}
+				lul
+				
+			</div>
 		</div>
 	</div>
 </template>
@@ -21,25 +28,22 @@
 	export default {
 		name: 'Placering',
 		props: {
-
+			screenSeats: Array,
+			takenSeats: Array
 		},
 		components: {
 			Row
 		},
 		data() {
 			return {
-
+				salonger: "lul"
 			}
 		},
 		computed: {
 			...mapState([
-				'takenSeats',
 				'seatsToAssign',
 				'selectedSeats',
 				'choices'
-			]),
-			...mapGetters([
-				'seatsPerRow'
 			]),
 			formattedSeats: function() {
 				this.selectedSeats.forEach(function(item, index) {
@@ -48,6 +52,9 @@
 			}
 		},
 		methods: {
+			...mapGetters([
+				'seatsPerRow'
+			]),
 			...mapActions([
 				'bookTickets'
 			])
