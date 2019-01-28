@@ -1,17 +1,24 @@
 <template>
-    <div class="home">      
-      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>     
+  <div class="body" style="background-color: black;">
+    <div class="home"> 
+    <br>
+      <br>     
+      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>
+      <Footer>
+      </Footer>
     </div>
+  </div>
 </template>
 
 <script>
 import json from '@/assets/filmer.json'
 import MoviesInfo from '@/components/MoviesInfo.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Movies',
   components: {
-    MoviesInfo
+    MoviesInfo, Footer
   },
   data(){
     return{
@@ -24,9 +31,5 @@ export default {
 <style>
     @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
 
-    #app,
-    html{
-        background-color: black;
-        color: black;
-    }
+
 </style>

@@ -3,7 +3,7 @@
     <div class="stylealong">
     <div class="card" style="width: 100vw;">
       <br>
-      <h1 class="card-title">Salong 1</h1>
+      <h1 class="card-title"></h1>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo6tmGUcajpJTWMM8zO7kRw2kgn5zSwcLX4Ly1XWPMgNFPOuhS" class="card-img-top" alt="...">
       <div class="card-body">
         <h3 class="card-title">Allmän Information</h3>
@@ -69,7 +69,7 @@ export default {
     text-align: center;
     margin: auto;
     
-    padding: 30px;
+    padding: 60px;
     color:black;
   }
 </style>

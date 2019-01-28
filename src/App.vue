@@ -1,8 +1,3 @@
-
-
-
-
-
 <template>
   <div id="app">
     <div id="nav">
@@ -12,7 +7,7 @@
   <div class="nav-header">
     <div class="nav-title">
 
-      <img style="max-width:100px;max-height:50px;" src="../src/images/image333.png">
+      <a href="/"><img style="max-width:100px;max-height:50px;" src="../src/images/image333.png"></a>
 
     
     </div>
@@ -68,8 +63,6 @@
 
 * {
   box-sizing: border-box;
-  background-color: black;
-  color: white;
 }
 
 body {

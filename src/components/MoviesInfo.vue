@@ -65,7 +65,7 @@
            <i class="fas fa-star"></i>
            <i class="fas fa-star"></i>
         </div>
-        <div class="movieInfo">
+        <div class="moviesinfo">
           <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
 
           <p>Språk: {{ movie.language }}<br>
@@ -84,15 +84,17 @@
         </div>
        </div>
       </div>
+      <Footer>
+      </Footer>
   </div>
 </template> 
 
 <script>
 
 
-
+import Footer from '@/components/Footer.vue'
 export default {
-  name: 'MoviesInfo',
+  name: 'moviesinfo',
   props: {
     movie: Object
   },
@@ -178,7 +180,7 @@ export default {
   .btn:focus{
     box-shadow:none;
     background-color:red;
-    color:black;
+    color:white;
   }
   .whiteborder{
     border-bottom:2px solid #6F2232;

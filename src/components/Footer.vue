@@ -5,11 +5,11 @@
 
 			<div class="footer-left">
 
-				<img src="../images/image333.png" style="max-width:100px;">
+				<a href="/"><img src="../images/image333.png" style="max-width:100px;"></a>
 				
 
 				<p class="footer-links">
-					<router-link to="/"><i class="fas fa-home fa-1x"></i></router-link>
+					<a href="/"><router-link to="/"><i class="fas fa-home fa-1x"></i></router-link></a>
 					·
 					<router-link to="movies">Filmsida</router-link>
 					·
@@ -224,6 +224,7 @@
 
 	.footer-distributed{
 		font: bold 14px sans-serif;
+		margin-top: 10px;
 	}
 
 	.footer-distributed .footer-left,
