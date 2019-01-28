@@ -3,16 +3,16 @@
    <div class="card-body">
      <form @submit.prevent="submit" class="layout">
        <label>First name
-         <input type="text" v-model="firstname" :disabled="loading" placeholder="Enter your first name" required/>
+         <input type="text" v-model="firstname" :disabled="loading" placeholder="Skriv ditt förnamn" required/>
        </label>
        <label>Last name
-         <input type="text" v-model="lastname" :disabled="loading" placeholder="Enter your last name" required/>
+         <input type="text" v-model="lastname" :disabled="loading" placeholder="Skriv ditt efternamn" required/>
        </label>
        <label>Email
-         <input type="text" v-model="email" :disabled="loading" placeholder="Enter your email" required/>
+         <input type="text" v-model="email" :disabled="loading" placeholder="Skriv din email" required/>
        </label>
        <label>Password
-         <input type="password" v-model="password" :disabled="loading" placeholder="Enter your password" required/>
+         <input type="password" v-model="password" :disabled="loading" placeholder="Skriv ditt lösenord" required/>
        </label>
        <div>
          <div>
@@ -28,8 +28,9 @@
  </article>
 </template>
 
-<script>
+<Footer></Footer>
 
+<script>
 export default {
  name: 'register',
  data() {
@@ -69,14 +70,17 @@ export default {
 </script>
 
 <style>	
+.layout{	
+	color: white;
+}
 .card-body{
-	width: 300px;
+	width: 300px; 
 	padding: 40px;
 	position: absolute;
-	top: 50%;
+	top: 65%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background:#191919;
+	background-color: black;
 	text-align: center;
 	border-radius: 30px;
 }
