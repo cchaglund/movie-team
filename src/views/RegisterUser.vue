@@ -9,7 +9,7 @@
          <input type="text" v-model="lastname" :disabled="loading" placeholder="Enter your last name" required/>
        </label>
        <label>Email
-         <input type="email" v-model="email" :disabled="loading" placeholder="Enter your email" required/>
+         <input type="text" v-model="email" :disabled="loading" placeholder="Enter your email" required/>
        </label>
        <label>Password
          <input type="password" v-model="password" :disabled="loading" placeholder="Enter your password" required/>
@@ -68,17 +68,8 @@ export default {
 }
 </script>
 
-<style>
-	body{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background:#34495e;
-}
+<style>	
 .card-body{
-	padding-top: 200px;
-}
-.ruta{
 	width: 300px;
 	padding: 40px;
 	position: absolute;
@@ -89,12 +80,7 @@ export default {
 	text-align: center;
 	border-radius: 30px;
 }
-.ruta h2{
-	color: #3498db;
-	text-transform: uppercase;
-	font-weight: 500;
-}
-.ruta input[type = "text"],.ruta input[type = "password"] {
+.card-body input[type = "text"],.card-body input[type = "password"] {
 	border:0;
 	background:none;
 	display: block;
@@ -108,11 +94,11 @@ export default {
 	border-radius: 24px;
 	transition: 0,25s;
 }
-.ruta input[type = "text"]:focus,.ruta input[type = "password"]:focus{
+.card-body input[type = "text"]:focus,.card-body input[type = "password"]:focus{
 	width: 280px;
 	border-color: #2ecc71;
 }
-.ruta input[type = "submit"]{
+.card-body input[type = "submit"]{
 	border:0;
 	background:none;
 	display: block;
@@ -126,18 +112,18 @@ export default {
 	transition: 0,25s;
 	cursor: pointer;
 }
-.ruta input[type = "submit"]:hover{
+.card-body input[type = "submit"]:hover{
 	background:#2ecc71;
 }
 @media screen and (max-width: 400px) {
-	.ruta {
+	.card-body {
 		box-sizing: border-box;
 		width: 80%;
 	}
-	.ruta input[type = "text"]:focus,.ruta input[type = "password"] {
+	.card-body input[type = "text"]:focus,.card-body input[type = "password"] {
 		width: 160px; 
 	}
-	.ruta input[type = "text"] {
+	.card-body input[type = "text"] {
 		width:160px;
 	}
 }
