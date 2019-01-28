@@ -10,6 +10,7 @@
                     <p>Tid:</p>
                     <p>Datum:</p>
                     <p>Pris:</p>
+                    <p>Ref:</p>
                     <p>Platser:</p>
                     <p>Biljetter:</p>
                 </div>
@@ -18,6 +19,7 @@
                     <p>{{ time }}</p>
                     <p>{{ date }}</p>
                     <p>{{ price }}kr</p>
+                    <p>{{ bookingRef }}</p>
                     <p>Rad: {{ seats.row }}, plats: {{ seats.seats }}</p>
                     <p>Vuxen: {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
                 </div>
@@ -39,7 +41,8 @@ export default {
           date: '',
           price: '',
           seats: {},
-          guests: {}
+          guests: {},
+          bookingRef: ''
       }
   },
   created() {
@@ -49,6 +52,7 @@ export default {
       this.price = this.$route.params.price;
       this.seats = this.$route.params.seats;
       this.guests = this.$route.params.guests;
+      this.bookingRef = this.$route.params.bookingRef;
   }
   /*components: {
   	

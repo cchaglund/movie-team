@@ -106,7 +106,7 @@ export default new Vuex.Store({
   		let occupied = false
   		
   		for (let i = 0; i < seatsToAssign; i++) {
-  			seatsToSelect.push([ payload[0], payload[1] + i ])
+  			seatsToSelect.push([ payload.id[0], payload.id[1] + i ])
   		}
 
   		function validateSelection() {
@@ -122,7 +122,7 @@ export default new Vuex.Store({
 		  		}
 	  		}
 
-	  		let takenSeats = state.takenSeats
+	  		let takenSeats = payload.takenSeats
 	  		for (let takenSeat of takenSeats) {
 	  			for (let seat of seatsToSelect) {
 	  				let sameRow = takenSeat[0] == seat[0]

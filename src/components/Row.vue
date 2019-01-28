@@ -5,6 +5,7 @@
 			:row_num="row_num"
 			:seat_num="seat"
 			:key="seat"
+			:takenSeats="takenSeats"
 		/>
 	</div>
 </template>
@@ -20,7 +21,8 @@
 		},
 		props: {
 			total: Number,
-			row_num: Number
+			row_num: Number,
+			takenSeats: Array
 		},
 		data() {
 			return {
