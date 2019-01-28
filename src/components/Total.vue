@@ -60,7 +60,7 @@
 	padding: 1rem;
 	margin: 1rem;
 
-	border: 2px solid white;
+	border: 2px groove white;
 }
 
 .text {
