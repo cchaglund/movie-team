@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   	<div class="Bookningscomponent">
   
@@ -110,6 +111,8 @@
 
 
 
+>>>>>>> master
+=======
 >>>>>>> master
 
 <div class="Bookningscomponent">

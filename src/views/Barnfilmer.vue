@@ -1,16 +1,13 @@
 <template>
   <div class="body" style="background-color: black;">
     <div class="home">
-     <h2 class="allafilmerhtwo">Alla filmer</h2>      
-      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo> 
-      <Footer>
-      </Footer>  
+      <h2 class="allafilmerhtwo">Alla filmer</h2>      
+      MoviesInfo>     
     </div>
   </div>
 </template>
 
 <script>
-import json from '@/assets/barnfilmer.json'
 import MoviesInfo from '@/components/MoviesInfo.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -21,7 +18,7 @@ export default {
   },
   data(){
     return{
-      allMoviesJson: json
+       
     }
   }
 } 
