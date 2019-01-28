@@ -5,11 +5,11 @@
 
 			<div class="footer-left">
 
-				<img src="../images/image333.png" style="max-width:100px;">
+				<a href="/"><img src="../images/image333.png" style="max-width:100px;"></a>
 				
 
 				<p class="footer-links">
-					<router-link to="/"><i class="fas fa-home fa-1x"></i></router-link>
+					<a href="/"><router-link to="/"><i class="fas fa-home fa-1x"></i></router-link></a>
 					·
 					<router-link to="movies">Filmsida</router-link>
 					·
@@ -17,13 +17,13 @@
 					·
 					<router-link to="bokning">Bokning</router-link>
 					·
-					<router-link to="salonger">Salonger</router-link>
-					·
 					<router-link to="anvandare">Anvandare</router-link>
 					·
 					<router-link to="bekraftelse">Bekraftelse</router-link>
 					·
-					<router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1x"></i></router-link>
+					<router-link to="salonger">Salonger</router-link>
+					·
+					<router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
 				</p>
 
 				<p class="footer-company-name">&copy; Movie Team 2019</p>
@@ -69,7 +69,6 @@
 		</footer>
 	</div>
 </template>
-
 <style>
 	.footer-distributed{
 	background-color: black;
@@ -78,8 +77,9 @@
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-    padding: 55px 50px;
-	margin-top: 80px;
+
+	padding: 55px 50px;
+	margin-top: 155px;
 }
 
 .footer-distributed .footer-left,
@@ -114,6 +114,7 @@
 	margin: 20px 0 12px;
 	padding: 0;
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	font-size:20px;
 }
 
 .footer-distributed .footer-links a{
@@ -223,6 +224,7 @@
 
 	.footer-distributed{
 		font: bold 14px sans-serif;
+		margin-top: 10px;
 	}
 
 	.footer-distributed .footer-left,
@@ -236,9 +238,8 @@
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-.footer-links{
-	font-size: 17px;
+
 }
-}
+
 
 </style>
