@@ -7,12 +7,12 @@
   <div class="nav-header">
     <div class="nav-title">
 
-      <img style="max-width:100px;max-height:50px;" src="../src/images/image1.png">
+      <a href="/"><img style="max-width:100px;max-height:50px;" src="../src/images/image333.png"></a>
 
     
     </div>
   </div>
-    <form class="navbar-form navbar-left" style="padding:16px;" action="/action_page.php">
+    <form class="navbar-form navbar-left" style="padding:16px;">
       <div class="input-group">
         <input type="text" class="form-control" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;" placeholder="Search" name="search">
 
@@ -32,8 +32,7 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-     <router-link to="home">Home</router-link>
-     
+    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="bokning">Bokning</router-link>
@@ -59,10 +58,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #89ACCE;
-  min-height: 100vh;
-  height: 100%;
+  color: black;
 }
 
 * {
@@ -113,11 +109,9 @@ body {
   text-decoration: none;
   color: #efefef;
 }
-
 .nav > .nav-links > a:hover {
   background-color: white;
   color:black;
-  height: auto;
 }
 
 .nav > #nav-check {
@@ -127,7 +121,7 @@ body {
 @media (max-width:1024px) {
   .nav {
     z-index: 7000;
-    opacity: 0.9;
+    opacity: 1;
   }
   .nav > .nav-btn {
     display: inline-block;
@@ -172,12 +166,12 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
 
   @media (max-width:1024px) {
   .navbar-form.navbar-left {
     display: none;
   }
-}
 }
 </style>
 

@@ -2,15 +2,17 @@
     <div class="home">      
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo>     
     </div>
+  </div>
 </template>
 
 <script>
 import MoviesInfo from '@/components/MoviesInfo.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Movies',
   components: {
-    MoviesInfo
+    MoviesInfo, Footer
   },
   created(){
   	this.$axios.get('http://localhost/movie-team/index.php').then((response) => {
@@ -23,7 +25,7 @@ export default {
       allMovies: '',
     }
   }
-}  
+}
 </script>
 
 <style>
