@@ -3,8 +3,13 @@
     <div class="stylealong">
     <div class="card" style="width: 100%;">
       <br>
+<<<<<<< HEAD
       <h1 class="card-title">Salong 1</h1>
       <img src="https://i1.wp.com/media.xn--kersbergafilmstudio-zwb.se/2015/12/biosalong.jpg?fit=1180%2C775" class="card-img-top" alt="...">
+=======
+      <h1 class="card-title"></h1>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo6tmGUcajpJTWMM8zO7kRw2kgn5zSwcLX4Ly1XWPMgNFPOuhS" class="card-img-top" alt="...">
+>>>>>>> master
       <div class="card-body">
         <h3 class="card-title">Allmän Information</h3>
         <hr>
@@ -66,11 +71,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .card{
+<<<<<<< HEAD
     text-align: left;
     margin: auto;    
     padding: 5%;
     color: white;    
     align-items: center;
     background-color: #6f2232;
+=======
+    text-align: center;
+    margin: auto;
+    
+    padding: 60px;
+    color:black;
+>>>>>>> master
   }
 </style>
