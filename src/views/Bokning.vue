@@ -8,7 +8,10 @@
 					<h2>{{title}}, {{time}} den {{date}}</h2>
 				</div>
 
-				<Placering />
+				<Placering 
+					:screenSeats="screenSeats"
+					:takenSeats="takenSeats"
+				/>
 				<Type />
 				<Total />
 
@@ -43,50 +46,104 @@
 				'calcTotal'
 			]),
 			...mapState([
-				'choices'
-			])
+				'choices',
+				'selectedSeats'
+			]),
+			formattedSeats: function() {
+				return JSON.stringify(this.selectedSeats)
+			}
 		},
 		data() {
 			return {
-				id: 0,
+				visning: 0,
+				screenSeats: [],
+				takenSeats: [],
 				title: '',
 				date: '',
 				time: '',
 				salong: '',
 				seats: [],
 				guests: [],
-				price: ''
+				price: '',
+				bookingRef: ''
 			}
 		},
 		created() {
-			this.title = this.$route.params.title;
-			this.date = this.$route.params.date;
-			this.time = this.$route.params.time;
-			this.salong = this.$route.params.salong
-			this.seats = this.choices.seats, 
-			this.guests = this.choices.guests,
-			this.price = this.choices.calcTotal
+			this.setShowingChoices()
+			this.getSeatsForScreen()
+			this.getTakenSeats()
 		},
 		methods: {
 			buyTickets() {
-				this.bookTickets()
-				if (this.choices.ready) {
-					this.$router.push({ 
+				this.$axios.post('/bookTickets.php', {
+					visning: this.visning,
+					taken: this.formattedSeats
+				}).then((response) => {
+					this.bookingRef = response.data
+
+				    this.$router.push({ 
 						name: 'bekraftelse', 
 						params: {
 							title: this.title, 
 							date: this.date, 
 							time: this.time, 
-							salong: this.salong,
 							seats: this.seats, 
 							guests: this.guests,
-							price: this.calcTotal
+							price: this.calcTotal,
+							bookingRef: this.bookingRef
 						}
 					})
-				}
+				})				
+			},
+			getTakenSeats() {
+				this.$axios.get('/getTakenSeats.php', {
+						params: {
+							visning: this.visning
+						}
+					}).then((response) => {
+						
+						let bookings = response.data
+						let takenSeatsGroup = []
+
+						for (let booking of bookings) {
+
+							if (booking.takenSeats.length > 2) {
+								let takenSeats = JSON.parse(booking.takenSeats)
+								
+								for (let seat of takenSeats) {
+									takenSeatsGroup.push(seat)
+								}
+							}							
+						}
+
+						this.takenSeats = takenSeatsGroup
+					})
+			},
+			getSeatsForScreen() {
+				this.$axios.get('/getSalongInfo.php', {
+						params: {
+							salong: this.salong
+						}
+					}).then((response) => {
+						let stringArray = response.data[0].seatsPerRow.split(', ')
+						let seatsArray = stringArray.map((stringNumber) => {
+							return parseInt(stringNumber)
+						})
+						this.screenSeats = seatsArray
+					})
+			},
+			setShowingChoices() {
+				this.visning = this.$route.params.visning
+				this.title = this.$route.params.title
+				this.date = this.$route.params.date
+				this.time = this.$route.params.time
+				this.salong = this.$route.params.salong
+				this.seats = this.choices.seats
+				this.guests = this.choices.guests
+				this.price = this.choices.calcTotal
 			},
 			...mapActions([
-				'bookTickets'
+				// 'bookTickets'
 			])
 		}
 	}
