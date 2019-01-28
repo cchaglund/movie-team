@@ -27,7 +27,8 @@
     "https://www.youtube.com/embed/Z9AYPxH5NTM?"
     ],
     "reviews": [   
-    ]
+    ],
+    "datum": "Måndag kl 19.00"
   },
 
   {
@@ -64,7 +65,9 @@
     ], 
     "reviews": [
 
-    ]
+    ],
+    
+    "datum": "Måndag kl 19.00"
   },
 
   {
@@ -132,7 +135,7 @@
   },
 
   {
-     "title": "Ploey - ett vinteräventyr",
+    "title": "Ploey - ett vinteräventyr",
     "productionCountries": [
 
     ],
@@ -154,24 +157,145 @@
       "https://www.youtube.com/embed/gPRgdId4OlU?"
     ], 
     "reviews": [
-      {
-        "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
-        "stars": 4,
-        "max": 5
-      },
-      {
-        "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
-        "stars": 5,
-        "max": 5
-      },
-      {
-        "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
-        "stars": 4,
-        "max": 5
-      }
+
+    ]
+  },
+
+  {
+    "title": "Beautiful boy",
+    "productionCountries": [
+      "USA"
+    ],
+    "length": 121,
+    "genre": "Drama",
+    "distributor": "Scanbox",
+    "language": "engelska",
+    "subtitle": "svenska",
+    "director": "Felix van Groeningen",
+    "ageRequired": 15,
+    "actors": [
+      "Steve Carell", "Timothée Chalamet", "Maura Tierney", "Amy Ryan", "Timothy Hutton"
+    ],
+    "description": " Den framgångsrike journalisten David Sheffs har alltid försökt ge sin älskade son allt han behöver. Men vare sig David eller Nics mamma Vicki kan hindra sonen från att börja experimentera med crystal meth. När missbruket är ett faktum ger sig David och Vicki i kast med något av det svåraste föräldrar kan utsättas för. Hur ska de nå fram till sin son, och kommer de att lyckas besegra den demon som tagit över honom både fysiskt och psykiskt? Timothée Chalamet vann allas hjärtan som känslige Elio i Call Me By Your Name, en roll han Oscarsnominerades för som en av de yngsta genom tiderna. Steve Carell Oscarsnominerades för sin insats i Foxcatcher, och scenerna mellan honom och Timothée Chalamet beskrivs av amerikanska kritiker som bland de mest hjärtslitande, uppriktiga någonsin.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/28DFE9mdn-o"
+    ], 
+    "reviews": [
+      
+    ]
+  },
+
+    {
+    "title": "Beskyddarna",
+    "productionCountries": [
+      "Frankrike"
+    ],
+    "length": 138,
+    "genre": "Drama",
+    "distributor": "TriArt",
+    "language": "franska",
+    "subtitle": "svenska",
+    "director": "Felix van Groeningen",
+    "ageRequired": 11,
+    "actors": [
+      "Nathalie Baye", "Laura Smet", "Iris Bry"
+    ],
+    "description": "1915. På familjen Paradiers gård har mor och dotter tagit över sedan männen har begett sig till fronten. De sliter hårt med jordbruket, men inser att de behöver hjälp och anställer Francine, en fattig kvinna som känner att hon äntligen har hittat en familj. Gudar och människor-regissören Xavier Beauvois levererar ett mäktigt drama om kärlek, förlust och motståndskraft. ”Beskyddarna är en film om hur det var när kvinnorna tog hand om arbetet. Inte bara på landsbygden, utan även i städerna. För första gången var det de som körde tågen, arbetade i fabrikerna och framställde ammunition. De visade sig vara mer än kapabla. Men när männen återvände så fick kvinnorna återvända till sina tidigare positioner",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/7w4zDaS7inE"
+    ], 
+    "reviews": [
+      
+    ]
+  },
+
+    {
+    "title": "Bränd",
+    "productionCountries": [
+      "Sydkorea"
+    ],
+    "length": 148,
+    "genre": "Drama",
+    "distributor": "Folkets Bio",
+    "language": "koreanska",
+    "subtitle": "svenska",
+    "director": "Chang-dong Lee",
+    "ageRequired": 15,
+    "actors": [
+      "Ah-In Yoo", "Jong-seo Jeon", "Steven Yeun"
+    ],
+    "description": "Jongsu drömmer om att bli författare och kämpar med sin första roman. En dag stöter han ihop med Haemi, en tjej han känner från förr. Haemi ber honom passa hennes katt medan hon reser till Afrika. När hon kommer tillbaka har hon med sig den gåtfulle Ben. Ben är snygg, rik och kör en Porsche. Jongsu, som förälskat sig i Haemi, får finna sig i att vara femte hjulet. Men vem är Ben egentligen? Och varifrån tjänar han sina pengar? Plötsligt är Haemi försvunnen. I lägenheten finns inte ett spår. Inte ens efter katten. Jongsu blir besatt av att hitta Haemi. Filmen bygger på en novell av den japanska författaren Haruki Murakami.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/k8J1zwXpsWA"
+    ], 
+    "reviews": [
+      
+    ]
+  },
+
+  {
+    "title": "Girl",
+    "productionCountries": [
+      "Belgien"
+    ],
+    "length": 105,
+    "genre": "Drama",
+    "distributor": "Lucky Dogs",
+    "language": [
+      "Franska", "flamländska", "engelska"
+    ],
+    "subtitle": "svenska",
+    "director": "Lukas Dhont",
+    "ageRequired": 11,
+    "actors": [
+      "Victor Polster", "Arieh Worthalter", "Katelijne Damen"
+    ],
+    "description": "Den beslutsamma 15-åriga Lara är helt besatt av att bli en professionell ballerina. Hon har sin pappas stöd och vågar därför börja på en ny skola, vilket innebär ännu hårdare arbete för att förverkliga sin dröm. Laras frustration och otålighet blir ännu tydligare när hon märker att hennes kropp inte kan hänga med i de strikta disciplinerna av träningen eftersom hon föddes som pojke.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/Kdzu26tnUTc"
+    ], 
+    "reviews": [
+      
+    ]
+  },
+
+    {
+    "title": "Green book",
+    "productionCountries": [
+      "USA"
+    ],
+    "length": 130,
+    "genre": "Dramakomedi",
+    "distributor": "Nordisk Film",
+    "language": "engelska",
+    "subtitle": "svenska",
+    "director": "Peter Farrelly",
+    "ageRequired": 11,
+    "actors": [
+      "Viggo Mortensen", "Mahershala Ali", "Linda Cardellini"
+    ],
+    "description": "Tony Lip, en fd utkastare från de italiensk-amerikanska kvarteren i Bronx New York, anställs för att köra den världsberömda klassiska pianisten Don Shirley, med rötter i den afroamerikanska kulturen, på en konsertturné genom djupaste amerikanska södern. Ett minst sagt udda par. Längs vägen måste de förlita sig på 'The Green Book' för att hitta de restauranger och hotell som anses godkänna afroamerikanska gäster. På en fantastisk resa tvingas de lägga undan sina meningsskiljaktigheter när de konfronteras av rasism, fara, oväntad medmänsklighet och en hel del humor.",
+    "images": [
+
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/embed/H5L2MR6k_ho"
+    ], 
+    "reviews": [
+      
     ]
   }
+
 ]

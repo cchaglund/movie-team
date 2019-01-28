@@ -33,18 +33,6 @@
         <p>Språk: {{ movie.language }}<br>
            Text: {{ movie.subtitles }}</p>
        </div>
-
-       <div class="dropdown">
-        <button class="btn dropdown-toggle movieBookButton" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
-            <ul class="dropdown-menu scrollable">
-              <li class="whiteborder"><a href="#">Datum 1</a></li>
-              <li class="whiteborder"><a href="#">Datum 2</a></li>
-              <li class="whiteborder"><a href="#">Datum 3</a></li>
-              <li class="whiteborder"><a href="#">Datum 4</a></li>
-              <li class="whiteborder"><a href="#">Datum 5</a></li>
-              <li class="whiteborder"><a href="#">Datum 6</a></li>
-            </ul>
-        </div>
         <i id="arrowup"class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
            v-on:click="toggleExpand"></i>
@@ -70,17 +58,6 @@
           <p>Språk: {{ movie.language }}<br>
              Text: {{ movie.subtitles }}</p>
          </div>
-        <div class="dropdown">
-        <button class="btn dropdown-toggle movieBookButtontwo" type="button" data-toggle="dropdown">Boka<span class="caret"></span></button>
-            <ul class="dropdown-menu scrollable">
-              <li class="whiteborder"><a href="#">Datum 1</a></li>
-              <li class="whiteborder"><a href="#">Datum 2</a></li>
-              <li class="whiteborder"><a href="#">Datum 3</a></li>
-              <li class="whiteborder"><a href="#">Datum 4</a></li>
-              <li class="whiteborder"><a href="#">Datum 5</a></li>
-              <li class="whiteborder"><a href="#">Datum 6</a></li>
-            </ul>
-        </div>
        </div>
       </div>
 </div>

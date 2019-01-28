@@ -5,7 +5,7 @@
 			<div class="col col-lg-10 mt-3 mb-3">
 
 				<div class="header">
-					<h2>{{choices.title}}, {{choices.time}} den {{choices.date}}</h2>
+					<h2>{{title}}, {{time}} den {{date}}</h2>
 				</div>
 
 				<Placering />
@@ -46,6 +46,27 @@
 				'choices'
 			])
 		},
+		data() {
+			return {
+				id: 0,
+				title: '',
+				date: '',
+				time: '',
+				salong: '',
+				seats: [],
+				guests: [],
+				price: ''
+			}
+		},
+		created() {
+			this.title = this.$route.params.title;
+			this.date = this.$route.params.date;
+			this.time = this.$route.params.time;
+			this.salong = this.$route.params.salong
+			this.seats = this.choices.seats, 
+			this.guests = this.choices.guests,
+			this.price = this.choices.calcTotal
+		},
 		methods: {
 			buyTickets() {
 				this.bookTickets()
@@ -53,11 +74,12 @@
 					this.$router.push({ 
 						name: 'bekraftelse', 
 						params: {
-							title: this.choices.title, 
-							date: this.choices.date, 
-							time: this.choices.time, 
-							seats: this.choices.seats, 
-							guests: this.choices.guests,
+							title: this.title, 
+							date: this.date, 
+							time: this.time, 
+							salong: this.salong,
+							seats: this.seats, 
+							guests: this.guests,
 							price: this.calcTotal
 						}
 					})

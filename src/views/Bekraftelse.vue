@@ -30,6 +30,9 @@
 	
 export default {
   name: 'bekraftelse',
+  components: {
+  },
+
   props: {
   },
   data() {
@@ -50,16 +53,7 @@ export default {
       this.seats = this.$route.params.seats;
       this.guests = this.$route.params.guests;
   }
-  /*components: {
-  	
-  }*/
 }
-
-//jQuery - funkar inte
-/*$(document).ready(function() {
-    $('<p>container-left</p>').appendTo('#container-left');
-    $('<p>container-right</p>').appendTo('#container-right');
-})*/
 
 </script>
 
