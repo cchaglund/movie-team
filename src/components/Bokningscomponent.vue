@@ -7,7 +7,7 @@
 			<div class="form-group d-flex">
 				<select class="form-control" id="filmDropdown" v-model="selected.film">
 					<option disabled value="">Välj film</option>
-					<option v-for="showing in filtered" :value="showing.movie">{{showing.movie}}</option>
+					<option v-for="film in moviesFromFiltered" :value="film.id">{{film.title}}</option>
 				</select>
 				<div v-if="selected.film != ''" class="close-btn" @click="clearFilm">
 					<i class="fas fa-window-close flex-1"></i>
@@ -80,10 +80,15 @@ export default {
 		this.$axios.get('/getFilmData.php')
 		.then((response) => {
 			this.filmer = response.data
+			for(let film of this.filmer){
+				this.moviesById[film.id]= film;
+			}
+			console.log('this.moviesById', this.moviesById)
 		})
 		this.$axios.get('/getShowings.php')
 		.then((response) => {
 			this.allShowings = response.data
+			this.filtered; // just to call the getter and have 'filtered' computed
 		})
 	},
 	data() {
@@ -99,7 +104,9 @@ export default {
 				date: '',
 				time: '',
 				salong: ''
-			}
+			},
+			moviesFromFiltered: {},
+			moviesById: {}
 		}
 	},
 	computed: {
@@ -130,7 +137,13 @@ export default {
 
 				return movie && date && timeStart && screen
 			})
-			
+			console.log ('filtered', filtered)
+			this.moviesFromFiltered = {};
+			for(let f of filtered){
+				this.moviesFromFiltered[f.movie] = this.moviesById[f.movie];
+			}
+			console.log('this.moviesFromFiltered', this.moviesFromFiltered)
+
 			return filtered
 		}
 	},
