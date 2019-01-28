@@ -1,7 +1,4 @@
-<template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+<!--<template>
   	<div class="Bookningscomponent">
   
 		<div class="container">
@@ -15,7 +12,7 @@
 							    <div class="dropdown-menu">
 							     <a class ="jahed" href="#"v-for="film of filmer">{{film.title}}</a>
 
-							    <div>
+							    </div>
 						</div>
 				</div>
 	  		</div>

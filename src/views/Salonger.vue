@@ -76,25 +76,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .card{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
     text-align: left;
     margin: auto;    
     padding: 5%;
     color: white;    
     align-items: center;
     background-color: #6f2232;
-<<<<<<< HEAD
-=======
     text-align: center;
     margin: auto;
     
     padding: 60px;
     color:black;
->>>>>>> master
-=======
->>>>>>> master
   }
 </style>
