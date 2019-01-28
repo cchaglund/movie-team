@@ -1,17 +1,11 @@
 <template>
-  <div class="body" style="background-color: black;">
-    <div class="home"> 
-    <br>
-      <br>     
-      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>
-      <Footer>
-      </Footer>
+    <div class="home">      
+      <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo>     
     </div>
   </div>
 </template>
 
 <script>
-import json from '@/assets/filmer.json'
 import MoviesInfo from '@/components/MoviesInfo.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -20,9 +14,15 @@ export default {
   components: {
     MoviesInfo, Footer
   },
+  created(){
+  	this.$axios.get('http://localhost/movie-team/index.php').then((response) => {
+  		console.log(response);
+  		this.allMovies = response.data;
+  	})
+  },
   data(){
     return{
-      allMoviesJson: json
+      allMovies: '',
     }
   }
 }
@@ -31,5 +31,9 @@ export default {
 <style>
     @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
 
-
+    #app,
+    html{
+        background-color: black;
+        color: white;
+    }
 </style>
