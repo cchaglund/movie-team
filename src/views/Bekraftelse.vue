@@ -8,6 +8,7 @@
             :seats = 'seats'
             :guests = 'guests'
          />
+         <h1>Bekraftelse</h1>
     </div>
 </template>
 
