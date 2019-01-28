@@ -144,6 +144,9 @@ export default {
 			}
 			console.log('this.moviesFromFiltered', this.moviesFromFiltered)
 
+
+
+
 			return filtered
 		}
 	},
