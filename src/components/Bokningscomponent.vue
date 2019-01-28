@@ -4,28 +4,23 @@
 		<div class="container">
 		<h2>Film</h2>
 		<form>
-			<div class="form-group d-flex">
+			<div class="form-group">
 				<select class="form-control" id="filmDropdown" v-model="selected.film">
 					<option disabled value="">Välj film</option>
-					<option v-for="film in moviesFromFiltered" :value="film.id">{{film.title}}</option>
+					<!-- the asdf is just to inject js code, in this case trigger the 'filtered' computed property -->
+					<option v-for="film in moviesFromFiltered" :asdf="filtered" :value="film.id">{{film.title}}</option>
 				</select>
-				<div v-if="selected.film != ''" class="close-btn" @click="clearFilm">
-					<i class="fas fa-window-close flex-1"></i>
-				</div>
 			</div>
 		</form>
 	</div>
 	<div class="container">
 		<h2>Dag</h2>
 		<form>
-			<div class="form-group d-flex">
+			<div class="form-group">
 				<select class="form-control" id="dateDropdown" v-model="selected.date">
 				 	<option disabled value="">Välj dag</option>
-				 	<option v-for="showing in filtered">{{showing.date}}</option>		
+				 	<option v-for="date in datesFromFiltered">{{date}}</option>		
 				</select>
-				<div v-if="selected.date != ''" class="close-btn" @click="clearDate">
-					<i class="fas fa-window-close flex-1"></i>
-				</div>
 			</div>
 		</form>
 	</div>
@@ -33,37 +28,35 @@
 	<div class="container">
 		<h2>Tid</h2>
 		<form>
-			<div class="form-group d-flex">
+			<div class="form-group">
 				<select class="form-control" id="timeDropdown" v-model="selected.time">
 					<option disabled value="">Välj tid</option>
-					<option v-for="showing in filtered">{{showing.timeStart}}</option>
+					<option v-for="times in timesFromFiltered">{{times}}</option>
 				</select>
-				<div v-if="selected.time != ''" class="close-btn" @click="clearTime">
-					<i class="fas fa-window-close flex-1"></i>
-				</div>
 			</div>
 		</form>
 	</div>
-	<div class="container">
+<!-- 	<div class="container">
 		<h2>Salong</h2>
 		<form>
 			<div class="form-group d-flex">
 				<select class="form-control" id="salongDropdown" v-model="selected.salong">
 					<option disabled value="">Välj salong</option>
-					<option v-for="showing in filtered">{{showing.screen}}</option>
+					<option v-for="screen in screensFromFiltered">{{screen}}</option>
 				</select>
 				<div v-if="selected.salong != ''" class="close-btn" @click="clearSalong">
 					<i class="fas fa-window-close flex-1"></i>
 				</div>
 			</div>
 		</form>
-	</div>
+	</div> -->
 
  <template>
-    <div class="Välja Plats">
-        <h1>{{ msg }}</h1>
+    <div class="btns">
         <button @click="bokaPlatser" type="button" onclick="">Välja Plats</button>
+        <button @click="clearSelections" type="button" class="btn clear">Rensa val</button>
 
+				
     </div>
 </template>
 
@@ -100,12 +93,15 @@ export default {
 			salong: '',
 			allShowings: [],
 			selected: {
+				visning: '',
 				film: '',
 				date: '',
 				time: '',
 				salong: ''
 			},
 			moviesFromFiltered: {},
+			datesFromFiltered: {},
+			timesFromFiltered: {},
 			moviesById: {}
 		}
 	},
@@ -117,7 +113,6 @@ export default {
 				let movie = true
 				let date = true
 				let timeStart = true
-				let screen = true
 
 				if (that.selected.film != '') {
 					movie = showing.movie == that.selected.film
@@ -131,21 +126,28 @@ export default {
 					timeStart = showing.timeStart == that.selected.time
 				}
 
-				if (that.selected.salong != '') {
-					screen = showing.screen == that.selected.salong
-				}
-
-				return movie && date && timeStart && screen
+				return movie && date && timeStart
 			})
-			console.log ('filtered', filtered)
+			console.log("filtered", filtered)
+
+			console.log("filtered.length", filtered.length)
+			if (filtered.length == 1) {
+				this.selected.visning = filtered[0].id
+				this.selected.film = filtered[0].movie
+				this.selected.date = filtered[0].date
+				this.selected.time = filtered[0].timeStart
+				this.selected.salong = filtered[0].screen
+			}
+			
 			this.moviesFromFiltered = {};
+			this.datesFromFiltered = {};
+			this.timesFromFiltered = {};
 			for(let f of filtered){
 				this.moviesFromFiltered[f.movie] = this.moviesById[f.movie];
+				this.datesFromFiltered[f.date] = f.date;
+				this.timesFromFiltered[f.timeStart] = f.timeStart;
 			}
 			console.log('this.moviesFromFiltered', this.moviesFromFiltered)
-
-
-
 
 			return filtered
 		}
@@ -155,26 +157,19 @@ export default {
 			this.$router.push({ 
 				name: 'bokning', 
 				params: {
-					visning: this.filtered[0].id,
-					title: this.selected.film, 
+					visning: this.selected.visning,
+					title: this.moviesById[this.selected.film].title, 
 					date: this.selected.date, 
 					time: this.selected.time, 
 					salong: this.selected.salong
 				}
 			})
 		},
-		clearFilm() {
+		clearSelections() {
 			this.selected.film = ''
-		},
-		clearDate() {
 			this.selected.date = ''
-		},
-		clearTime() {
 			this.selected.time = ''
-		},
-		clearSalong() {
-			this.selected.salong = ''
-		},
+		}
 	}
 	
 }
@@ -201,13 +196,8 @@ export default {
 }
 
 
-.close-btn {
-	color: #DA3724;
-	font-size: 2em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-left: 0.3em;
+.clear {
+	background-color: #DA3724;
 }
 
 .jahed{
