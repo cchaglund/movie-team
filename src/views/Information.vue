@@ -2,8 +2,6 @@
     <div id="information">
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-    <h1>Information</h1>
     
     <div class="container">
         <div class="row information-panels justify-content-around">
@@ -50,7 +48,7 @@
 
 <style scoped>
 
-#app {
+#app, #information {
     background-color: black;
 }
 
@@ -62,6 +60,8 @@ h1 {
 
 h5 {
     font-weight: bold;
+    font-size: 30px !important;
+    padding-bottom: 5px;
 }
 
 .card {
@@ -101,6 +101,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
 
     .card {
         height: 26vh;
+        margin: 10px;
     }
 
     i.fa-phone, i.fa-map-marker, i.fa-envelope {
@@ -108,7 +109,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     }
 
     .container {
-        margin-top: 8vh;
+        margin-top: 3vh;
     }
     
     .card-header {
@@ -120,11 +121,19 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
         padding-top: 7%;
     }
 
+    h5 {
+        font-size: 20px !important;
+    }
+
 }
 
 @media (max-width: 1024px) {
-    h1 {
-        padding: 15%;
+    i.fa-phone, i.fa-map-marker, i.fa-envelope {
+        font-size: 40px;
+    }
+
+    h5 {
+        font-size: 25px !important;
     }
 }
 
@@ -135,7 +144,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     }
 
     i.fa-phone, i.fa-map-marker, i.fa-envelope {
-        font-size: 25px;
+        font-size: 35px;
     }
 
     h1 {
@@ -144,7 +153,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     }
 
     h5 {
-        font-size: 15px;
+        font-size: 20px !important;
         margin-bottom: 0 !important;
     }
 
@@ -158,7 +167,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     }
 
     .container {
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 }
 
