@@ -32,7 +32,7 @@
   </div>
   <input type="checkbox" id="nav-check">
   <div class="nav-links">
-     <router-link to="home">Home</router-link>
+     <router-link to="/">Home</router-link>
      
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
