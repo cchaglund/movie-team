@@ -1,8 +1,7 @@
 <template>
 
 <div class="Bookningscomponent">
-	<h1> Bokningscomponent</h1>
-	<div class="container">
+		<div class="container">
 		<h2>Film</h2>
 		<form>
 			<div class="form-group d-flex">
@@ -181,6 +180,11 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.Bookningscomponent {
+	margin-top: 50px;
+}
+
+
 .close-btn {
 	color: #DA3724;
 	font-size: 2em;
