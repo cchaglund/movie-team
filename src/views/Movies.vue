@@ -1,5 +1,6 @@
 <template>
-    <div class="home">      
+    <div class="home"> 
+      <h1>Alla filmer</h1>      
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo> <Footer></Footer>
     </div>
   </div>
