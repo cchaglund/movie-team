@@ -26,7 +26,6 @@
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
     <router-link to="anvandare">Anvandare</router-link>
-    <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
     <router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
