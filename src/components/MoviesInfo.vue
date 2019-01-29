@@ -19,14 +19,6 @@
           <p>{{ movie.description }}</p>
        </div>
 
-       <div class="rating">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-       </div>
-
        <div class="movieInfo">
         <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
 
@@ -45,13 +37,6 @@
               {{ movie.ageRequired }} år</h6>
         </div>
           <p class="Allinfotext">{{ movie.description }}</p>
-          <div class="rating">
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-        </div>
         <div class="movieInfo">
           <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
 

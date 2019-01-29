@@ -36,20 +36,6 @@
 					</div>
 				</form>
 			</div>
-		<!-- 	<div class="container">
-				<h2>Salong</h2>
-				<form>
-					<div class="form-group d-flex">
-						<select class="form-control" id="salongDropdown" v-model="selected.salong">
-							<option disabled value="">Välj salong</option>
-							<option v-for="screen in screensFromFiltered">{{screen}}</option>
-						</select>
-						<div v-if="selected.salong != ''" class="close-btn" @click="clearSalong">
-							<i class="fas fa-window-close flex-1"></i>
-						</div>
-					</div>
-				</form>
-			</div> -->
 
 		 
 		</div>
@@ -245,10 +231,5 @@ export default {
 		background-color: white;
 		border: 1px solid black;
 	}
-/*	div.btns{
-		padding: 0;
-		display: block;
-		vertical-align: text-top;
-	}*/
 }
 </style>

@@ -1,24 +1,31 @@
 <template>
     <div class="home">      
-      <MoviesInfo v-for="jsonMovie in allMoviesJson" :movie=jsonMovie></MoviesInfo>     
+      <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo> <Footer></Footer>
     </div>
+  </div>
 </template>
 
 <script>
-import json from '@/assets/filmer.json'
 import MoviesInfo from '@/components/MoviesInfo.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Movies',
   components: {
-    MoviesInfo
+    MoviesInfo, Footer
+  },
+  created(){
+    this.$axios.get('http://localhost/movie-team-server/getFilmData.php').then((response) => {
+      console.log(response);
+      this.allMovies = response.data;
+    })
   },
   data(){
     return{
-      allMoviesJson: json
+      allMovies: '',
     }
   }
-}  
+}
 </script>
 
 <style>
@@ -27,6 +34,6 @@ export default {
     #app,
     html{
         background-color: black;
-        color: black;
+        color: white;
     }
 </style>

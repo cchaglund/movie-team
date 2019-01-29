@@ -26,3 +26,11 @@ export default {
 
 </script>
 
+<style scoped>
+.home {
+	  color: black;
+  background-color: black;
+}
+	
+</style>
+
