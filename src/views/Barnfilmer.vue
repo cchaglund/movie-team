@@ -1,5 +1,5 @@
 <template>
-    <div class="home">   
+    <div class="barnfilmer">   
       <h1>Alla barnfilmer</h1> 
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo> <Footer></Footer>
     </div>
@@ -32,15 +32,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
 
-    #app,
-    html{
-        background-color: black;
-        color: white;
+    .barnfilmer {
+      padding-top: 6rem;
+      background-color: black;
+      color: white;
     }
-    h1{
-      padding-top: 100px;
-    }
+
 </style>

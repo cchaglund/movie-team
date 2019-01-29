@@ -55,6 +55,10 @@
     background-color: black;
 }
 
+.information {
+    padding-top: 6rem;
+}
+
 h1 {
     color: white;
     padding-top: 5%;

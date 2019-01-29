@@ -152,11 +152,12 @@
 
 
 
-<style>
+<style scoped>
 
 .header {
 	margin: 0;
 	border-bottom: 8px solid #6F2232;
+	padding-top: 6rem;
 }
 
 .book-btn {
@@ -170,19 +171,15 @@
 }
 
 .bokning {
-	color: #e9e9e9;
-	padding: 0;
+	background-color: black
 }
 
 .page {
 	justify-content: center;
-	background-color: #150F10;
+	background-color: black;
 	min-height: 100vh;
 }
 
-#app {
-	background-color: #6F2232;
-}
 	
 </style>
 

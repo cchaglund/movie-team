@@ -19,7 +19,7 @@
            <span class="msg" v-if="message">{{message}}</span>
          </div>
          <div>
-           <button type="submit" :disabled="loading">Register</button>
+           <button type="submit" :disabled="loading">Registrera</button>
          </div>
        </div>
 
@@ -69,66 +69,67 @@ export default {
 }
 </script>
 
-<style>	
-.layout{	
-	color: white;
+<style scoped>  
+
+.layout{  
+  color: white;  
 }
 .card-body{
-	width: 300px; 
-	padding: 40px;
-	position: absolute;
-	top: 65%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: black;
-	text-align: center;
-	border-radius: 30px;
+  width: 300px; 
+  padding: 10px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  text-align: center;
+  border-radius: 5px;
 }
 .card-body input[type = "text"],.card-body input[type = "password"] {
-	border:0;
-	background:none;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid white;
-	padding: 14px 10px;
-	width: 200px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0,25s;
+  border:0;
+  background:none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0,25s;
 }
 .card-body input[type = "text"]:focus,.card-body input[type = "password"]:focus{
-	width: 280px;
-	border-color: #2ecc71;
+  width: auto;
+  border-color: #7c956b;
 }
-.card-body input[type = "submit"]{
-	border:0;
-	background:none;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid #2ecc71;
-	padding: 14px 40px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0,25s;
-	cursor: pointer;
+.card-body button[type = "submit"]{
+  border:0;
+  background-color:black;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0,25s;
+  cursor: pointer;
 }
-.card-body input[type = "submit"]:hover{
-	background:#2ecc71;
+.card-body button[type = "submit"]:hover{
+  background:#7c956b;
 }
 @media screen and (max-width: 400px) {
-	.card-body {
-		box-sizing: border-box;
-		width: 80%;
-	}
-	.card-body input[type = "text"]:focus,.card-body input[type = "password"] {
-		width: 160px; 
-	}
-	.card-body input[type = "text"] {
-		width:160px;
-	}
+  .card-body {
+    box-sizing: border-box;
+    width: 80%;
+  }  
+  .card-body input[type = "text"]:focus,.card-body input[type = "password"] {
+    width: 160px; 
+  }
+  .card-body input[type = "text"] {
+    width:160px;
+  }
 }
 </style>

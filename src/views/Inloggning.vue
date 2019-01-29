@@ -23,6 +23,7 @@
          </div>
      </form>
 </div>
+	
 </template>
 
 
@@ -40,6 +41,13 @@ export default{
    };
  },
   created(){
+  	this.$axios.get('/checkSession.php').then(response => {
+  		if (response.data != 0) {
+  			this.$router.push({
+  				name: 'anvandare'
+  			})
+  		}
+  	})
    this.$axios.get('/login/user.php').then(response => {
      this.user = response.data;
    }).catch(e => {
@@ -98,7 +106,7 @@ export default{
  }
 };
 </script>
-<style>
+<style scoped>
 
 html{
 background-color: black;
@@ -106,6 +114,7 @@ background-color: black;
 
 .box{
   background-color: black;
+  padding-top: 6rem;
 }
 .card-body .msg{
  margin-left:10px;
