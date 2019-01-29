@@ -104,6 +104,7 @@ export default {
   .fullwidthinfo{
     margin-left:10px;
     width:97%;
+    border-radius: 5px;
   }
   .Allinfotext, .movieInfo, .description{
     text-align: left;
