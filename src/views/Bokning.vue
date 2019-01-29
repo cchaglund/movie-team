@@ -9,8 +9,7 @@
 	<div class="bokning container">
 		<div class="row no-gutters page">
 			<div class="col col-lg-10 mt-3 mb-3" style="border:5px solid white; border-top-right-radius: 15px;border-bottom-right-radius: 15px;border-top-left-radius: 15px;border-bottom-left-radius: 15px;">
-
-				<div class="header">
+             <div class="header">
 					<h2>{{choices.title}}, {{choices.time}} den {{choices.date}}</h2>
 				</div>
 

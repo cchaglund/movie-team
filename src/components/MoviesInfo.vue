@@ -116,6 +116,10 @@ export default {
 </script>
 
 <style>
+
+#app{
+  color: white;
+}
   div.block{
     border-bottom:1px solid #6F2232;
   }
@@ -148,6 +152,7 @@ export default {
   .fullwidthinfo{
     margin-left:10px;
     width:97%;
+    border-radius: 15px;
   }
   .Allinfotext, .movieInfo, .description{
     text-align: left;
