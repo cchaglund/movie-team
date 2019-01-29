@@ -6,7 +6,7 @@
      </div>
      <div v-else>
        <a v-on:click="showLogin" :disabled="loading">Login</a>
-       <router-link to="/register">Register</router-link>
+       <router-link to="/registeruser">Register</router-link>
      </div>
   <label>Email
          <input type="email" v-model="email" :disabled="loading"  required/>
