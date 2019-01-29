@@ -1,5 +1,6 @@
 <template>
-    <div class="home">      
+    <div class="home">   
+      <h1>Alla barnfilmer</h1> 
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo> <Footer></Footer>
     </div>
 </template>
@@ -38,5 +39,8 @@ export default {
     html{
         background-color: black;
         color: white;
+    }
+    h1{
+      padding-top: 100px;
     }
 </style>

@@ -16,6 +16,7 @@
                 <p class="card-text">Mån-Fre: 10.00 - 18.00</p>
                 <p class="card-text">Lördag: 14.00 - 18.00</p>
                 <p class="card-text">Söndag: Stängt</p>
+                <p class="card-text">0726-579731</p>
             </div>
         </div>
 

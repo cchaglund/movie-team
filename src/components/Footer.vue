@@ -15,14 +15,9 @@
 					·
 					<router-link to="barnfilmer">Barnfilmer</router-link>
 					·
-					<router-link to="bokning">Bokning</router-link>
-					·
 					<router-link to="salonger">Salonger</router-link>
 					·
-					<router-link to="anvandare">Anvandare</router-link>
-					·
-					<router-link to="bekraftelse">Bekraftelse</router-link>
-					·
+		
 					<router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1x"></i></router-link>
 				</p>
 
@@ -33,17 +28,17 @@
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Paris, France</p>
+					<p><span>Krokvägen 666</span>111 11, Kiruna, Sweden</p>
 				</div>
 
 				<div>
 					<i class="fa fa-phone"></i>
-					<p>+1 555 123456</p>
+					<p>0726-579731</p>
 				</div>
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@company.com</a></p>
+					<p><a href="mailto:support@company.com">movie-team@movieteam.se</a></p>
 				</div>
 
 			</div>
@@ -52,7 +47,7 @@
 
 				<p class="footer-company-about">
 					<span>Om Movie Team</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					Movie-Team ger alla möjlighet att uppleva det senaste filmerna. Vi vill engagera, roa och beröra med film som ger nya perspektiv på livet och världen.
 				</p>
 
 				<div class="footer-icons">
@@ -113,7 +108,7 @@
 	color:  #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
-	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	font-family: 'Oswald', sans-serif;
 }
 
 .footer-distributed .footer-links a{
