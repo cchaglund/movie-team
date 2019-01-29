@@ -25,7 +25,6 @@
     <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
     <router-link to="movies">Filmsida</router-link>
     <router-link to="barnfilmer">Barnfilmer</router-link>
-    <router-link to="bokning">Bokning</router-link>
     <router-link to="anvandare">Anvandare</router-link>
     <router-link to="bekraftelse">Bekraftelse</router-link>
     <router-link to="salonger">Salonger</router-link>
@@ -48,7 +47,12 @@ font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: white;
+  background-color: black
+}
+
+html {
+  background-color: black
 }
 
 * {

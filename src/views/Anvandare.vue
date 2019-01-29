@@ -1,5 +1,7 @@
 <template>
-	<Bokningsbekraftelse />
+	<div class="anvandare">
+		<Bokningsbekraftelse />
+	</div>
 	
 </template>
 
@@ -12,3 +14,12 @@
 		}
 	}
 </script>
+
+<style scoped>
+
+.anvandare {
+	padding-top: 6rem;
+	background-color: black;
+}
+
+</style>

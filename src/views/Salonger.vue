@@ -56,6 +56,7 @@ export default {
 
 .salonger{
   background-color: black;
+  padding-top: 6rem;
 }
   .card{
     text-align: left;

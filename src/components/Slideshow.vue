@@ -83,7 +83,7 @@ img {
   object-fit: fill;
   display: block;
   margin: 0 auto;
-  padding-top: 70px;
+  
 }
 
 .slide-figure {

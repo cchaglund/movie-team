@@ -69,13 +69,14 @@ export default {
 }
 </script>
 
-<style>	
+<style scoped>	
 .layout{	
 	color: white;
 }
 .card-body{
 	width: 300px; 
 	padding: 40px;
+  padding-top: 6rem;
 	position: absolute;
 	top: 65%;
 	left: 50%;

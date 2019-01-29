@@ -28,8 +28,9 @@ export default {
 
 <style scoped>
 .home {
-	  color: black;
-  background-color: black;
+	padding-top: 6rem;
+	color: black;
+  	background-color: black;
 }
 	
 </style>

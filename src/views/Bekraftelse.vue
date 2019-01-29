@@ -69,13 +69,17 @@ export default {
 
 <style scoped>
 
+.bekraftelse {
+	padding-top: 6rem;
+}
+
 .container {
   position: absolute;
   margin: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(21, 15, 16);
+  
 }
 
 h1 {
