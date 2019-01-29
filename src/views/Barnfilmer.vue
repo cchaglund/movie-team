@@ -16,7 +16,11 @@ export default {
   created(){
     this.$axios.get('http://localhost/movie-team-server/getFilmData.php').then((response) => {
       console.log(response);
-      this.allMovies = response.data;
+      let barnfilmer = response.data.filter((film) => {
+        console.log("film", film)
+        return film.Typ == 'Barn'
+      })
+      this.allMovies = barnfilmer;
     })
   },
   data(){

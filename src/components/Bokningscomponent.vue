@@ -7,8 +7,8 @@
 					<div class="form-group onedropdown">
 						<select class="form-control" id="filmDropdown" v-model="selected.film">
 							<option disabled value="">Välj film</option>
-							<!-- the asdf is just to inject js code, in this case to trigger the 'filtered' computed property -->
-							<option :asdf="filtered" v-for="film in moviesFromFiltered" :value="film.id">{{film.title}}</option>
+							<!-- the asdf is just to inject js code, in this case trigger the 'filtered' computed property -->
+							<option v-for="film in moviesFromFiltered" :asdf="filtered" :value="film.id">{{film.title}}</option>
 						</select>
 					</div>
 				</form>
@@ -36,6 +36,20 @@
 					</div>
 				</form>
 			</div>
+		<!-- 	<div class="container">
+				<h2>Salong</h2>
+				<form>
+					<div class="form-group d-flex">
+						<select class="form-control" id="salongDropdown" v-model="selected.salong">
+							<option disabled value="">Välj salong</option>
+							<option v-for="screen in screensFromFiltered">{{screen}}</option>
+						</select>
+						<div v-if="selected.salong != ''" class="close-btn" @click="clearSalong">
+							<i class="fas fa-window-close flex-1"></i>
+						</div>
+					</div>
+				</form>
+			</div> -->
 
 		 
 		</div>
@@ -58,12 +72,16 @@ export default {
 			for(let film of this.filmer){
 				this.moviesById[film.id]= film;
 			}
+			console.log('this.moviesById', this.moviesById)
+
+			this.$axios.get('/getShowings.php')
+			.then((response) => {
+				this.allShowings = response.data
+				this.filtered; // just to call the getter and have 'filtered' computed
+				console.log("this.filtered", this.filtered)
+			})
 		})
-		this.$axios.get('/getShowings.php')
-		.then((response) => {
-			this.allShowings = response.data
-			this.filtered; // just to call the getter and have 'filtered' computed
-		})
+
 	},
 	data() {
 		return {
@@ -109,7 +127,9 @@ export default {
 
 				return movie && date && timeStart
 			})
-			
+			console.log("filtered", filtered)
+
+			console.log("filtered.length", filtered.length)
 			if (filtered.length == 1) {
 				this.selected.visning = filtered[0].id
 				this.selected.film = filtered[0].movie
@@ -126,6 +146,7 @@ export default {
 				this.datesFromFiltered[f.date] = f.date;
 				this.timesFromFiltered[f.timeStart] = f.timeStart;
 			}
+			console.log('this.moviesFromFiltered', this.moviesFromFiltered)
 
 			return filtered
 		}
@@ -231,5 +252,10 @@ export default {
 		background-color: white;
 		border: 1px solid black;
 	}
+/*	div.btns{
+		padding: 0;
+		display: block;
+		vertical-align: text-top;
+	}*/
 }
 </style>
