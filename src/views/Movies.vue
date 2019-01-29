@@ -37,4 +37,7 @@ export default {
         background-color: black;
         color: white;
     }
+    h1{
+      padding-top: 100px;
+    }
 </style>
