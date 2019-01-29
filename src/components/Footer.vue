@@ -18,7 +18,7 @@
 					<router-link to="salonger">Salonger</router-link>
 					·
 					<router-link to="information">Kontakta Oss</router-link>
-		
+					·
 					<router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1x"></i></router-link>
 				</p>
 
