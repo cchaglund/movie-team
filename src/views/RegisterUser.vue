@@ -60,8 +60,8 @@ export default {
          this.message = 'Incorrect email/password';
        }
      }).catch(error => {
-       this.message = 'Error';
-       console.log('Error', error);
+       this.message = 'Skriv in en giltig email-adress';
+       console.log('Skriv in en giltig email-adress', error);
        this.loading = false;
      });
    }
