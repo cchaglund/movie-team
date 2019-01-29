@@ -1,4 +1,72 @@
- <template>
+<template>
+  <div class="bokningsbekraftelse">
+    <div class="container" id="container">
+      <div class="row justify-content-center">
+          <div class="col" id="container-left">
+              <p>Titel:</p>
+              <p>Tid:</p>
+              <p>Datum:</p>
+              <p>Pris:</p>
+              <p>Ref:</p>
+              <p>Platser:</p>
+              <p>Biljetter:</p>
+          </div>
+          <div class="col" id="container-right">
+              <p>{{ title }}</p>
+              <p>{{ time }}</p>
+              <p>{{ date }}</p>
+              <p>{{ price }}kr</p>
+              <p>{{ bookingRef }}</p>
+              <p>Rad: {{ seats[0][0] }}, plats: {{ getSeatNum }}</p>
+              <p>Vuxen: {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+  export default {
+    name: 'Bokningsbekraftelse',
+    props: {
+      title: String,
+      time: String,
+      date: String,
+      price: Number,
+      seats: Object,
+      guests: Object,
+      bookingRef: String
+    },
+    computed: {
+      getSeatNum: function() {
+        console.log("this.seats!!!", this.seats)
+        let seatsString = ""
+        for (let seat of this.seats) {
+          console.log("seat[1]", seat)
+          seatsString = seatsString + seat[1] + ', '
+        }
+        console.log("seatsString", seatsString)
+        return seatsString
+      }
+    }
+  }
+  
+</script>
+
+<style>
+
+#container-left {
+  font-size: 2em;
+}
+
+#container-right {
+  font-size: 2em;
+}
+</style>
+
+
+<!--  <template>
   <div class="Bokningsbekraftelse">
   	<h1> Bokningsbekraftelse</h1>
 		<nav><a href="#hot">Movie-team</a></nav>
@@ -53,7 +121,7 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 
 * {
@@ -139,3 +207,4 @@ nav {
 
 
 
+ -->

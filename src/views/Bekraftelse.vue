@@ -1,45 +1,35 @@
 <template>
-    <div id="bekraftelse">
+    <div class="bekraftelse">
 
         <h1>Tack för din beställning!</h1>
-
-        <div class="container" id="container">
-            <div class="row justify-content-center">
-                <div class="col" id="container-left">
-                    <p>Titel:</p>
-                    <p>Tid:</p>
-                    <p>Datum:</p>
-                    <p>Pris:</p>
-                    <p>Ref:</p>
-                    <p>Platser:</p>
-                    <p>Biljetter:</p>
-                </div>
-                <div class="col" id="container-right">
-                    <p>{{ title }}</p>
-                    <p>{{ time }}</p>
-                    <p>{{ date }}</p>
-                    <p>{{ price }}kr</p>
-                    <p>{{ bookingRef }}</p>
-                    <p>Rad: {{ seats.row }}, plats: {{ seats.seats }}</p>
-                    <p>Vuxen: {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
-                </div>
-            </div>
-        </div>
+  		<Bokningsbekraftelse 
+  			:title="title"
+  			:time="time"
+  			:date="date"
+  			:price="price"
+  			:seats="seats"
+  			:guests="guests"
+  			:bookingRef="bookingRef"
+  		/>
     </div>
 </template>
 
 <script>
+	import Bokningsbekraftelse from '@/components/Bokningsbekraftelse.vue'
 	
 export default {
   name: 'bekraftelse',
   props: {
+  },
+  components: {
+  	Bokningsbekraftelse
   },
   data() {
       return {
           title: '',
           time: '',
           date: '',
-          price: '',
+          price: 0,
           seats: {},
           guests: {},
           bookingRef: ''
@@ -53,20 +43,20 @@ export default {
       this.seats = this.$route.params.seats;
       this.guests = this.$route.params.guests;
       this.bookingRef = this.$route.params.bookingRef;
+      console.log("price", this.price)
+      console.log("seats", this.seats)
+      console.log("guests", this.guests)
   }
   /*components: {
-  	
+    
   }*/
 }
-
 //jQuery - funkar inte
 /*$(document).ready(function() {
     $('<p>container-left</p>').appendTo('#container-left');
     $('<p>container-right</p>').appendTo('#container-right');
 })*/
-
 </script>
-
 <style scoped>
 
 .bekraftelse {
@@ -74,20 +64,10 @@ export default {
 }
 
 .container {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
+  margin: 0;  
 }
 
 h1 {
-    position: absolute;
-    margin: 0;
-    top: 16%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
     font-size: 50px;
 }
@@ -98,5 +78,4 @@ h1 {
     font-size: 40px;
     color: white;
 }
-
 </style>

@@ -87,7 +87,7 @@
 							title: this.title, 
 							date: this.date, 
 							time: this.time, 
-							seats: this.seats, 
+							seats: this.selectedSeats, 
 							guests: this.guests,
 							price: this.calcTotal,
 							bookingRef: this.bookingRef

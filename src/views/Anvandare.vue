@@ -1,6 +1,15 @@
 <template>
 	<div class="anvandare">
-		<Bokningsbekraftelse />
+		<Bokningsbekraftelse 
+			v-for="bokning in bokningar"
+			:title="title"
+  			:time="time"
+  			:date="date"
+  			:price="price"
+  			:seats="seats"
+  			:guests="guests"
+  			:bookingRef="bookingRef"
+		/>
 	</div>
 	
 </template>
@@ -11,8 +20,27 @@
 		name: 'anvandare',
 		components: {
 			Bokningsbekraftelse
-		}
+		},
+		data() {
+			return {
+				bokningar: {},
+				showings: {},
+				filmer: {}
+			}
+		},
+	  created(){
+	    this.$axios.get('/getUserBookings.php').then((response) => {
+	      this.bokningar = response.data
+	    }),
+	    this.$axios.get('/getShowings.php').then((response) => {
+	      this.showings = response.data
+	    }),
+	    this.$axios.get('/getFilmData.php').then((response) => {
+	      this.filmer = response.data
+	    })
+	  }
 	}
+
 </script>
 
 <style scoped>
