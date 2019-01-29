@@ -21,6 +21,11 @@ export default {
   components: {
       Bekraftelsecomponent
   },
+  created(){
+      this.$ajax.get('http://localhost/movie-team-server/getUserShowings.php', {
+          
+      }
+  }
 }
 
 </script>

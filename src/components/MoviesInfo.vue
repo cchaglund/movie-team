@@ -1,4 +1,3 @@
-
 <template>
   <div class="home">
   <div class="block">
@@ -34,7 +33,7 @@
         <p>Språk: {{ movie.language }}<br>
            Text: {{ movie.subtitles }}</p>
        </div>
-        <i id="arrowup"class="fas fa-chevron-up"
+        <i id="arrowup" class="fas fa-chevron-up"
            v-bind:class="{'active': isActive}"
            v-on:click="toggleExpand"></i>
       </div>

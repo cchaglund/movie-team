@@ -2,7 +2,6 @@
     <div class="home">      
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo>     
     </div>
-  </div>
 </template>
 
 <script>
