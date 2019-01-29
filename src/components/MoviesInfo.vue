@@ -20,7 +20,7 @@
        </div>
 
        <div class="movieInfo">
-        <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
+        <p>Skådespelare: {{ movie.actors }}</p>
 
         <p>Språk: {{ movie.language }}<br>
            Text: {{ movie.subtitles }}</p>
@@ -38,7 +38,7 @@
         </div>
           <p class="Allinfotext">{{ movie.description }}</p>
         <div class="movieInfo">
-          <p>Skådespelare: {{ toStringFunction(movie.actors) }}</p>
+          <p>Skådespelare: {{ movie.actors }}</p>
 
           <p>Språk: {{ movie.language }}<br>
              Text: {{ movie.subtitles }}</p>
@@ -61,10 +61,6 @@ export default {
     toggleExpand() {
       console.log(this.isActive)
       this.isActive = !this.isActive;
-    },
-    toStringFunction(value) {
-      if (!value) return '' 
-      return value.join(', '); 
     }
   },
   data(){
