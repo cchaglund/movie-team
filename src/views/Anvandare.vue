@@ -1,17 +1,32 @@
 <template>
 	<div class="anvandare">
+		<h1>Kommande bokningar</h1>
 		<Bokningsbekraftelse 
 			v-for="bokning in bokningar"
-			:title="title"
-  			:time="time"
-  			:date="date"
-  			:price="price"
-  			:seats="seats"
-  			:guests="guests"
-  			:bookingRef="bookingRef"
+			v-if="new Date(bokning.date) > new Date().getDate()"
+			:title="bokning.title"
+  			:time="bokning.timeStart"
+  			:date="bokning.date"
+  			:price="bokning.price"
+  			:seats="JSON.parse(bokning.takenSeats)"
+  			:guests="JSON.parse(bokning.guests)"
+  			:bookingRef="bokning.id + '-' + bokning.visning"
 		/>
+
+		<h1 class="p-4">Historik</h1>
+		<Bokningsbekraftelse 
+			v-for="bokning in bokningar"
+			v-if="new Date(bokning.date) < new Date().getDate()"
+			:title="bokning.title"
+  			:time="bokning.timeStart"
+  			:date="bokning.date"
+  			:price="bokning.price"
+  			:seats="JSON.parse(bokning.takenSeats)"
+  			:guests="JSON.parse(bokning.guests)"
+  			:bookingRef="bokning.id + '-' + bokning.visning"
+		/>
+		
 	</div>
-	
 </template>
 
 <script>
@@ -23,22 +38,23 @@
 		},
 		data() {
 			return {
-				bokningar: {},
-				showings: {},
-				filmer: {}
+				bokningar: {}
 			}
 		},
-	  created(){
-	    this.$axios.get('/getUserBookings.php').then((response) => {
-	      this.bokningar = response.data
-	    }),
-	    this.$axios.get('/getShowings.php').then((response) => {
-	      this.showings = response.data
-	    }),
-	    this.$axios.get('/getFilmData.php').then((response) => {
-	      this.filmer = response.data
-	    })
-	  }
+		computed: {
+			seats: function(takenSeats) {
+				console.log("bokning", takenSeats)
+				// let seatsArray = JSON.parse(bokning.takenSeats)
+				// console.log("seatsArray", seatsArray)
+				// return seatsArray
+			}
+		},
+		created(){
+			this.$axios.get('/getUserBookings.php').then((response) => {
+			this.bokningar = response.data
+			console.log(this.bokningar)
+	    	})
+		}
 	}
 
 </script>
