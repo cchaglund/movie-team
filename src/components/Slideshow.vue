@@ -44,7 +44,6 @@ components: {
 
 <style>
 .slider{
-  padding-top: 80px;
   height: auto;
 }
 
