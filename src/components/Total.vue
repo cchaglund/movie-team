@@ -59,7 +59,7 @@
 .total {
 	padding: 1rem;
 	margin: 1rem;
-
+	border-radius: 5px;
 	border: 2px solid white;
 }
 

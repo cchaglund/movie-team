@@ -35,23 +35,7 @@
 						</select>
 					</div>
 				</form>
-			</div>
-		<!-- 	<div class="container">
-				<h2>Salong</h2>
-				<form>
-					<div class="form-group d-flex">
-						<select class="form-control" id="salongDropdown" v-model="selected.salong">
-							<option disabled value="">Välj salong</option>
-							<option v-for="screen in screensFromFiltered">{{screen}}</option>
-						</select>
-						<div v-if="selected.salong != ''" class="close-btn" @click="clearSalong">
-							<i class="fas fa-window-close flex-1"></i>
-						</div>
-					</div>
-				</form>
-			</div> -->
-
-		 
+			</div> 
 		</div>
 	    <div class="btns">
 	        <button @click="bokaPlatser" class="bookbutton" type="button" onclick="">Välja Plats</button>
@@ -205,6 +189,7 @@ export default {
 		border:1px solid gray;
 		border-radius: 0;
 		background-clip: border-box;
+		border-radius: 5px;
 	}
 	.bookbutton{
 		margin-top: 87.2px;
@@ -215,6 +200,7 @@ export default {
 		border: none;
 		background-color: white;
 		border: 1px solid black;
+		border-radius: 5px;
 	}
 	.bookbutton:hover{
 		border: 1px solid white;

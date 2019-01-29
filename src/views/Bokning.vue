@@ -162,6 +162,7 @@
 .book-btn {
 	font-size: 1.5em;
 	background-color: #7C956B;
+	border-radius: 5px;
 }
 
 .book-btn:hover {
