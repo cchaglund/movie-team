@@ -3,7 +3,7 @@
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-    <h1>Information</h1>
+    <h1>Kontakta oss</h1>
     
     <div class="container">
         <div class="row information-panels justify-content-around">
@@ -61,8 +61,9 @@
 
 h1 {
     color: white;
-    padding-top: 5%;
+    padding-top: 10%;
     font-size: 50px;
+
 }
 
 h5 {
