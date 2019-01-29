@@ -47,7 +47,7 @@ export default {
    submit() { // register
      this.loading = true;
      this.message = '';
-     this.$axios.post('http://localhost/movie-team-server/register.php', {
+     this.$axios.post('http://localhost/movie-team-server/users.php', {
        firstname: this.firstname,
        lastname: this.lastname,
        email: this.email,
@@ -60,8 +60,8 @@ export default {
          this.message = 'Incorrect email/password';
        }
      }).catch(error => {
-       this.message = 'Skriv in en giltig email-adress';
-       console.log('Skriv in en giltig email-adress', error);
+       this.message = 'Error';
+       console.log('Error', error);
        this.loading = false;
      });
    }
