@@ -7,7 +7,7 @@
   <div class="nav-header">
     <div class="nav-title">
 
-      <a href="/"><img style="max-width:100px;max-height:50px;" src="../src/images/image333.png"></a>
+      <a href="/"><img style="max-width:100px;max-height:60px;" src="../src/images/image333.png"></a>
 
     
     </div>
