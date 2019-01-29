@@ -22,10 +22,9 @@ export default {
       Bekraftelsecomponent
   },
   created(){
-      this.$ajax.get('http://localhost/movie-team-server/getUserShowings.php', {
+      //this.$ajax.get('http://localhost/movie-team-server/getUserShowings.php', {
           
       }
-  }
 }
 
 </script>

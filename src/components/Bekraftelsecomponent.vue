@@ -62,13 +62,19 @@ export default {
 
 <style scoped>
 
+#Bekraftelsecomponent {
+    height: 100vh;
+    background-color: black;
+}
+
 .container {
   position: absolute;
   margin: 0;
+  border-radius: 5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(21, 15, 16);
+  background-color: #6F2232;
 }
 
 h1 {
