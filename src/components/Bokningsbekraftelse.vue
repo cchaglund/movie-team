@@ -2,24 +2,16 @@
   <div class="bokningsbekraftelse">
     <div class="container" id="container">
       <div class="row justify-content-center">
-          <div class="col" id="container-left">
-              <p>Titel:</p>
-              <p>Tid:</p>
-              <p>Datum:</p>
-              <p>Pris:</p>
-              <p>Ref:</p>
-              <p>Platser:</p>
-              <p>Biljetter:</p>
+          <div id="container">
+              <p><strong>Titel:</strong>   {{ title }}</p>
+              <p><strong>Tid:</strong>   {{ time }}</p>
+              <p><strong>Datum:</strong>   {{ date }}</p>
+              <p><strong>Pris:</strong>   {{ price }}kr</p>
+              <p><strong>Ref:</strong>   {{ bookingRef }}</p>
+              <p><strong>Platser:</strong> Rad:   {{ seats[0][0] }}, plats: {{ getSeatNum }}</p>
+              <p><strong>Biljetter:</strong> Vuxen:   {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
           </div>
-          <div class="col" id="container-right">
-              <p>{{ title }}</p>
-              <p>{{ time }}</p>
-              <p>{{ date }}</p>
-              <p>{{ price }}kr</p>
-              <p>{{ bookingRef }}</p>
-              <p>Rad: {{ seats[0][0] }}, stol: {{ getSeatNum }}</p>
-              <p>{{ guests.adults }} vuxen, {{ guests.pensioners }} pensionär, {{ guests.children || '0' }}, barn </p>
-          </div>
+          
       </div>
     </div>
   </div>
@@ -61,20 +53,18 @@ export default {
 
 <style>
 
-.bokningsbekraftelse {
-   margin-top: 2rem;
-   padding: 1rem;
-   border: 2px solid white;
-   border-radius: 5px
+#container{
+  font-size: 24px;
+  text-align: center;
+  margin-top: 40px;
+}
+@media (max-width: 600px){
+  #container{
+    margin-top: 20px;
+    font-size: 16px;
+  }
 }
 
-#container-left {
-  font-size: 2em;
-}
-
-#container-right {
-  font-size: 2em;
-}
 </style>
 
 
