@@ -81,11 +81,10 @@ export default {
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
   text-align: center;
-  border-radius: 5px;
+  
 }
-.card-body input[type = "text"],.card-body input[type = "password"] {
+.card-body input, .card-body button{
   border:0;
   background:none;
   display: block;
@@ -99,26 +98,17 @@ export default {
   border-radius: 5px;
   transition: 0,25s;
 }
-.card-body input[type = "text"]:focus,.card-body input[type = "password"]:focus{
+.card-body input:focus{
   width: auto;
   border-color: #7c956b;
 }
-.card-body button[type = "submit"]{
-  border:0;
+.card-body button{
   background-color:black;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid white;
-  padding: 14px 40px;
-  outline: none;
-  color: white;
-  border-radius: 5px;
-  transition: 0,25s;
   cursor: pointer;
 }
-.card-body button[type = "submit"]:hover{
-  background:#7c956b;
+.card-body button:hover{
+  background:white;
+  color:black;
 }
 @media screen and (max-width: 400px) {
   .card-body {
