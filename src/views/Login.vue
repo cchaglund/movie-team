@@ -87,6 +87,9 @@ export default{
           this.$router.push({ 
             name: 'bokning'})
           this.user = response.data.user;
+          this.$router.push({
+            name: 'home'
+          })
         } else {
           this.message = 'Incorrect email/password';
         }
@@ -119,7 +122,7 @@ export default{
 </script>
 
 
-<style>
+<style scoped>
 html {
   background-color: black;
 }
