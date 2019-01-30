@@ -41,18 +41,9 @@
 				bokningar: {}
 			}
 		},
-		computed: {
-			seats: function(takenSeats) {
-				console.log("bokning", takenSeats)
-				// let seatsArray = JSON.parse(bokning.takenSeats)
-				// console.log("seatsArray", seatsArray)
-				// return seatsArray
-			}
-		},
 		created(){
 			this.$axios.get('/getUserBookings.php').then((response) => {
 			this.bokningar = response.data
-			console.log(this.bokningar)
 	    	})
 		}
 	}

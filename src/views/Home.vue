@@ -7,6 +7,11 @@
   <Bokningscomponent>
   </Bokningscomponent>
 
+  <div class="contact-help">
+	  <h2>Hjälp att boka? </h2>
+	  <h4><router-link to="information">Klicka här</router-link></h4>
+  </div>
+
   <Footer>
   </Footer>
 </div>
@@ -31,6 +36,12 @@ export default {
 	padding-top: 6rem;
 	color: black;
   	background-color: black;
+}
+
+.contact-help {
+	margin: 1rem;
+	padding: 1rem;
+	color: white;
 }
 	
 </style>

@@ -20,15 +20,15 @@
       <span></span>
     </label>
   </div>
-  <input type="checkbox" id="nav-check">
+  <input type="checkbox"  id="nav-check">
   <div class="nav-links">
-    <router-link to="/"><i class="fas fa-home fa-2x"></i></router-link>
-    <router-link to="movies">Filmsida</router-link>
-    <router-link to="barnfilmer">Barnfilmer</router-link>
-    <router-link to="anvandare">Anvandare</router-link>
-    <router-link to="salonger">Salonger</router-link>
-    <router-link to="information">Kontakta Oss</router-link>
-    <router-link to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
+    <router-link v-on:click.native="closeNav" to="/"><i class="fas fa-home fa-2x"></i></router-link>
+    <router-link v-on:click.native="closeNav" to="movies">Filmsida</router-link>
+    <router-link v-on:click.native="closeNav" to="barnfilmer">Barnfilmer</router-link>
+    <router-link v-on:click.native="closeNav" to="salonger">Salonger</router-link>
+    <router-link v-on:click.native="closeNav" to="information">Kontakta Oss</router-link>
+    <router-link v-on:click.native="closeNav" to="anvandare">Min Sida</router-link>
+    <router-link v-on:click.native="closeNav" to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
 </div>
 
@@ -38,6 +38,24 @@
   </div>
   
 </template>
+
+<script>
+  
+  export default {
+    name: 'app',
+    computed: {
+      isChecked: function() {
+
+      }
+    },
+    methods: {
+      closeNav() {
+        $('#nav-check').prop('checked', false)
+      }
+    }
+  }
+
+</script>
 
 
 
