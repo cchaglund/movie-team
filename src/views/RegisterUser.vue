@@ -89,6 +89,7 @@ export default {
   text-align: center;
   background-color: #6F2232;
   border-radius: 5px;
+  margin-bottom: 20px;
   
 }
 .card-body input{
@@ -133,6 +134,7 @@ export default {
   .card-body {
     box-sizing: border-box;
     width: 80%;
+    margin-top: 60px;
   }  
   .card-body input[type = "text"]:focus,.card-body input[type = "password"] {
     width: 160px; 

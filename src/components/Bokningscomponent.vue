@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="bokningscomponentcolor">
 		<div class="Bookningscomponent">
 			<div class="container onedropdown">
 				<h2>Film</h2>
@@ -36,6 +36,7 @@
 					</div>
 				</form>
 			</div> 
+
 		</div>
 	    <div class="btns">
 	        <button @click="bokaPlatser" class="bookbutton" type="button" onclick="">Välja Plats</button>
@@ -165,8 +166,10 @@ export default {
 		align-items: center;
 		padding-left: 0.3em;
 	}
+	.bokningscomponentcolor{
+		background-color: #6F2232;
+	}
 	.Bookningscomponent{
-		background-color: black;
 		color: white;
 		display: flex;
 		padding-left: 40px;
@@ -187,7 +190,10 @@ export default {
 		border-radius: 5px;
 	}
 	.bookbutton{
-		margin-top: 87.2px;
+		margin-top: 20px;
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-bottom: 20px;
 		padding-top: 6.7px;
 		padding-bottom: 6.7px;
 		padding-left: 50px;
@@ -205,7 +211,7 @@ export default {
 	div.container.onedropdown{
 		display: inline-block;
 		margin: 5px;
-		margin-top: 50px;
+		margin-top: 20px;
 	}
 	div.container.onedropdown.leftdrop{
 		margin-left: 20%;
@@ -215,16 +221,17 @@ export default {
 		width: 40%;
 		margin-left: 2px;
 		margin-right: 2px;
-		margin-top: 20px;
+		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 	.Bookningscomponent{
-		background-color: black;
+		background-color: #6F2232;
 		color: white;
 		display: inline-block;
 		width: 100%;
 		padding-left: 0;
 		padding-right: 0;
+		padding-top:20px;
 	}
 	button.bookbutton{
 		margin-top: 10px;
@@ -232,6 +239,12 @@ export default {
 		border: none;
 		background-color: white;
 		border: 1px solid black;
+	}
+	.bookbutton{
+		padding-left: 30px;
+		margin-right: 10px;
+		margin-left: 10px;
+		padding-right: 30px;
 	}
 /*	div.btns{
 		padding: 0;

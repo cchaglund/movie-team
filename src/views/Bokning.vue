@@ -154,25 +154,30 @@
 
 
 <style scoped>
-
+h2{
+	background-color: #6F2232;
+	border-radius:5px;
+	padding:20px;
+}
 .header {
 	margin: 0;
-	border-bottom: 8px solid #6F2232;
 	padding-top: 6rem;
 }
 
 .book-btn {
 	font-size: 1.5em;
-	background-color: #7C956B;
+	background-color: white;
 	border-radius: 5px;
 }
 
 .book-btn:hover {
-	background-color: #93b07f
+	background-color: black;
+	border:1px solid white;
+	color:white;
 }
 
 .bokning {
-	background-color: black
+	background-color: black;
 }
 
 .page {

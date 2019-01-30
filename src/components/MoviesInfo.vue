@@ -72,9 +72,9 @@ export default {
 </script>
 
 <style>
-  div.block{
+  /*div.block{
     border-bottom:1px solid #6F2232;
-  }
+  }*/
   .block{
     width:100%;
     margin-right:5px;
@@ -82,7 +82,7 @@ export default {
     display: flex;
     flex-direction: row;
     margin:0;
-    padding:70px 90px 70px 90px;
+    padding:35px 90px 35px 90px;
   }
   #myDIV:not(.active){
     display: none;
@@ -118,35 +118,6 @@ export default {
   }
   .movieInfo{
     font-size: 16px;
-  }
-  /*---------Boka knapp---------*/
-  .movieBookButton, .movieBookButtontwo{
-    background-color: #6F2232;
-    margin-bottom: 10px;
-    color: white;
-  }
-  .scrollable {
-    height: auto;
-    overflow-x: hidden;
-    max-height: 140px;
-    border:2px solid #6F2232;
-    width:60.5%;
-    text-align: center;
-    background-color: black;
-  }
-  .btn:focus{
-    box-shadow:none;
-    background-color:red;
-    color:black;
-  }
-  .whiteborder{
-    border-bottom:2px solid #6F2232;
-  }
-  li.whiteborder a{
-    color:white;
-  }
-  .dropdown-menu{
-    border-radius:0;
   }
   /*---------Videospelare---------*/
   iframe{

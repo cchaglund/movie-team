@@ -1,14 +1,14 @@
 <template>
+    <div id="home">
     <div id="information">
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-    <h1>Kontakta oss</h1>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">   
     
     <div class="container">
+        <h1>Kontakta oss</h1>
         <div class="row information-panels justify-content-around">
         <div class="card ring-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-            <div class="card-header">
+            <div class="card-c">
                 <i class="fa fa-phone"></i>
             </div>
             <div class="card-body">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="card hitta-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-            <div class="card-header">
+            <div class="card-c">
                 <i class="fa fa-map-marker"></i>
             </div>
             <div class="card-body">
@@ -33,46 +33,56 @@
         </div>
 
         <div class="card maila-oss text-white col-xs-12 col-s-12 col-md-8 col-lg-4 col-xl-3">
-            <div class="card-header">
+            <div class="card-c">
                 <i class="fa fa-envelope"></i>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Maila oss</h5>
-                <p class="card-text">movie-team@movieteam.se</p>
+                <p class="card-text">movie-team@team.se</p>
                 <p class="card-text">Mån-Sön: 00.00 - 23.59</p>
                 <p class="card-text">Svar inom 1-2 arbetsdagar</p>
             </div>
         </div>
         </div>
     </div>
-
+    <Footer></Footer>
     </div>
+</div>
 </template>
-
+<script>
+    import Footer from '@/components/Footer.vue'
+    export default{
+        name: 'information',
+        components: {
+            Footer
+        }
+    }
+</script>
 <style scoped>
 
-#app {
-    background-color: black;
+.information {
 }
 
-.information {
-    padding-top: 6rem;
+.information-panels {
+    background-color: yellow;
+    background-color: #6F2232;
+    padding:20px;
+    border-radius: 5px;
 }
 
 h1 {
     color: white;
-    padding-top: 10%;
     font-size: 50px;
+    padding-bottom: 20px;
 
 }
-
 h5 {
     font-weight: bold;
 }
 
 .card {
-    background-color: black;
-    border-radius: 0;
+    background-color: #6F2232;
+    border:none;
 }
 
 .card p, h5 {
@@ -81,20 +91,8 @@ h5 {
     font-size: 22px;
 }
 
-.card-header {
-    background-color: black;
-}
-
-.card-body {
-    padding: 10px !important;
-}
-
 .container {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+padding-top: 80px;
 }
 
 i.fa-phone, i.fa-map-marker, i.fa-envelope {
@@ -112,11 +110,6 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     i.fa-phone, i.fa-map-marker, i.fa-envelope {
         font-size: 30px;
     }
-
-    .container {
-        margin-top: 8vh;
-    }
-    
     .card-header {
         padding: 0;
         padding-top: 10px;
@@ -127,25 +120,15 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
     }
 
 }
-
-@media (max-width: 1024px) {
-    h1 {
-        padding: 15%;
-    }
-}
-
 @media (max-width: 768px) {
     .card {
-        margin: 2vh;
         height: 23vh !important;
     }
-
     i.fa-phone, i.fa-map-marker, i.fa-envelope {
         font-size: 25px;
     }
 
     h1 {
-        padding-top: 20%;
         font-size: 30px;
     }
 
@@ -163,9 +146,7 @@ i.fa-phone, i.fa-map-marker, i.fa-envelope {
         padding-top: 5px;
     }
 
-    .container {
-        margin-top: 10vh;
-    }
+
 }
 
 </style>

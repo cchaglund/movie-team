@@ -1,6 +1,6 @@
 <template>
     <div class="movies"> 
-      <h1>Alla filmer</h1>      
+      <h1>Filmer</h1>      
       <MoviesInfo v-for="allmovies in allMovies" :movie=allmovies></MoviesInfo> <Footer></Footer>
     </div>
   </div>
@@ -35,7 +35,7 @@ export default {
     .movies {
       padding-top: 6rem;
       background-color: black;
-        color: white;
+      color: white;
     }
 
 </style>

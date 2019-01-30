@@ -39,7 +39,7 @@
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">movie-team@movieteam.se</a></p>
+					<p><a href="mailto:support@company.com">movie-team@team.se</a></p>
 				</div>
 
 			</div>
@@ -74,7 +74,7 @@
 	width: 100%;
 	text-align: left;
 	font: 16px sans-serif;
-    padding: 55px 50px;
+    padding: 10px 50px;
 	margin-top: 80px;
 }
 
@@ -219,6 +219,7 @@
 
 	.footer-distributed{
 		font: bold 14px sans-serif;
+		margin-top: 0px;
 	}
 
 	.footer-distributed .footer-left,

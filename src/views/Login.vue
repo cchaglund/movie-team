@@ -23,7 +23,7 @@
             <button type="cancel" v-on:click="cancelLogin">Avbryt</button>
             <button type="submit" :disabled="loading">Logga in</button>
             <div>
-              <p>Klicka här för att <router-link to="/registeruser">Registrera</router-link></p>
+              <p>Klicka här för att <router-link class="registerlink" to="/registeruser">Registrera</router-link></p>
             </div>
           </div>
         </div>
@@ -118,6 +118,10 @@ export default{
 
 
 <style scoped>
+.registerlink{
+  color:#6F2232;
+  font-weight: bolder;
+}
 html {
   background-color: black;
 }
