@@ -15,9 +15,9 @@ export default new Vuex.Store({
   		seats: {}
   	},
   	prices: {
-  		adults: 100,
-  		pensioners: 80,
-  		children: 60
+      adults: 85,
+      pensioners: 75,
+      children: 65
   	},
 	hoveredSeat: [],
 	hoveredSeats: [],
