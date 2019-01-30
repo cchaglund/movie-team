@@ -3,10 +3,10 @@
   <div class="box">
     <form @submit.prevent="submit" class="layout">
    <div v-if="user.firstname" class="logout">
-        <a v-on:click="logout" :disabled="loading">SIGN OUT</a>
+        <a v-on:click="logout" :disabled="loading">Logga ut</a>
       </div>
       <div class="login" v-else>
-        <a v-on:click="showLogin" :disabled="loading">SIGN IN</a>
+        <a v-on:click="showLogin" :disabled="loading">Logga in</a>
        
       </div>
       <div v-if="!user.firstname && showingLogin" class="card-body">
@@ -20,15 +20,10 @@
     <span class="msg" v-if="message">{{message}}</span>
   </div>
           <div>
-            <button type="cancel" v-on:click="cancelLogin">CANCEL</button>
-            <button type="submit" :disabled="loading">SIGN IN</button>
+            <button type="cancel" v-on:click="cancelLogin">Avbryt</button>
+            <button type="submit" :disabled="loading">Logga in</button>
             <div>
-              <p>Click here to <router-link to="/registeruser">REGISTER</router-link></p>
-            </div>
-            <div class="social">
-              <i class="fab fa-facebook fa-2x"></i>
-              <i class="fab fa-instagram fa-2x"></i>
-              <i class="fab fa-twitter fa-2x"></i>
+              <p>Klicka här för att <router-link to="/registeruser">Registrera</router-link></p>
             </div>
           </div>
         </div>
@@ -157,7 +152,7 @@ background-color: black;
     color: white;
     border-radius: 5px;
     width: 70px;
-    font-size: 19px;
+    
 }
 .layout{
     display: inline-grid;
@@ -176,6 +171,14 @@ background-color: black;
   margin-right:5px;
   margin-top:10px;
   margin-bottom:10px;
+  background-color:white;
+  cursor: pointer;
+  color:black;
+  border:1px solid white;
+}
+.layout button:hover{
+  background:black;
+  color:white;
 }
 .layout>*{
   display: flex;

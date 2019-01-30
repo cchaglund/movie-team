@@ -1,17 +1,19 @@
 <template>
  <article>
-   <div class="card-body">
+  <div class="backgroundred">
+    <div class="card-body">
+    <h1>Registrera</h1>
      <form @submit.prevent="submit" class="layout">
-       <label>First name
+       <label>Förnamn
          <input type="text" v-model="firstname" :disabled="loading" placeholder="Skriv ditt förnamn" required/>
        </label>
-       <label>Last name
+       <label>Efternamn
          <input type="text" v-model="lastname" :disabled="loading" placeholder="Skriv ditt efternamn" required/>
        </label>
        <label>Email
          <input type="email" v-model="email" :disabled="loading" placeholder="Skriv din email" required/>
        </label>
-       <label>Password
+       <label>Lösenord
          <input type="password" v-model="password" :disabled="loading" placeholder="Skriv ditt lösenord" required/>
        </label>
        <div>
@@ -25,6 +27,7 @@
 
      </form>
    </div>
+  </div>
  </article>
 </template>
 
@@ -73,7 +76,6 @@ export default {
 </script>
 
 <style scoped>  
-
 .layout{  
   color: white;  
 }
@@ -85,32 +87,47 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background-color: #6F2232;
+  border-radius: 5px;
   
 }
-.card-body input, .card-body button{
+.card-body input{
   border:0;
   background:none;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid white;
+  border: 2px solid black;
   padding: 14px 10px;
   width: 200px;
   outline: none;
   color: white;
   border-radius: 5px;
 }
+.card-body input{
+  
+  background-color:black;
+  color: white;
+}
 .card-body input:focus{ 
-  border-color: #6F2232;
+  border-color: white;
 }
 .card-body button{
-  background-color:white;
+  background-color:black;
   cursor: pointer;
-  color:black;
+  color:white;
+  border:0;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 14px 10px;
+  outline: none;
+  border-radius: 5px;
 }
 .card-body button:hover{
-  background:black;
-  color:white;
+  background:white;
+  color:black;
 }
 @media screen and (max-width: 400px) {
   .card-body {
