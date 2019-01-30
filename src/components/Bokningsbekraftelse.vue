@@ -7,9 +7,9 @@
               <p><strong>Tid:</strong>   {{ time }}</p>
               <p><strong>Datum:</strong>   {{ date }}</p>
               <p><strong>Pris:</strong>   {{ price }}kr</p>
-              <p><strong>Boknings#:</strong>   {{ bookingRef }}</p>
               <p><strong>Platser:</strong> Rad:   {{ seats[0][0] }}, plats: {{ getSeatNum }}</p>
               <p><strong>Biljetter:</strong> Vuxen:   {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
+              <p><strong>BokningRef:</strong>   {{ bookingRef }}</p>
           
           
       </div>
