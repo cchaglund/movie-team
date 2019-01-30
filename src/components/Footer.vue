@@ -79,7 +79,7 @@
 	font: bold 16px sans-serif;
 
 	padding: 55px 50px;
-	margin-top: 155px;
+	margin-top: 200px;
 }
 
 .footer-distributed .footer-left,
