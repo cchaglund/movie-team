@@ -43,19 +43,9 @@ export default {
       this.seats = this.$route.params.seats;
       this.guests = this.$route.params.guests;
       this.bookingRef = this.$route.params.bookingRef;
-      console.log("price", this.price)
-      console.log("seats", this.seats)
-      console.log("guests", this.guests)
   }
-  /*components: {
-    
-  }*/
 }
-//jQuery - funkar inte
-/*$(document).ready(function() {
-    $('<p>container-left</p>').appendTo('#container-left');
-    $('<p>container-right</p>').appendTo('#container-right');
-})*/
+
 </script>
 <style scoped>
 

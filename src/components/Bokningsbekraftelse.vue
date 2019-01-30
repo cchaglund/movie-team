@@ -17,8 +17,8 @@
               <p>{{ date }}</p>
               <p>{{ price }}kr</p>
               <p>{{ bookingRef }}</p>
-              <p>Rad: {{ seats[0][0] }}, plats: {{ getSeatNum }}</p>
-              <p>Vuxen: {{ guests.adults }}, pensionär: {{ guests.pensioners }}, barn: {{ guests.children }} </p>
+              <p>Rad: {{ seats[0][0] }}, stol: {{ getSeatNum }}</p>
+              <p>{{ guests.adults }} vuxen, {{ guests.pensioners }} pensionär, {{ guests.children || '0' }}, barn </p>
           </div>
       </div>
     </div>
@@ -27,26 +27,31 @@
 
 <script>
 
-  export default {
-    name: 'Bokningsbekraftelse',
-    props: {
+export default {
+   name: 'Bokningsbekraftelse',
+   props: {
       title: String,
       time: String,
       date: String,
-      price: Number,
-      seats: Object,
+      price: String,
+      seats: [Object, Array],
       guests: Object,
       bookingRef: String
     },
-    computed: {
+   computed: {
       getSeatNum: function() {
-        console.log("this.seats!!!", this.seats)
         let seatsString = ""
+
+        let counter = 0
         for (let seat of this.seats) {
-          console.log("seat[1]", seat)
-          seatsString = seatsString + seat[1] + ', '
+          counter++
+            if (counter < this.seats.length) {
+               seatsString = seatsString + seat[1] + ', '  
+            } else {
+               seatsString += seat[1]
+            }
         }
-        console.log("seatsString", seatsString)
+
         return seatsString
       }
     }
@@ -55,6 +60,13 @@
 </script>
 
 <style>
+
+.bokningsbekraftelse {
+   margin-top: 2rem;
+   padding: 1rem;
+   border: 2px solid white;
+   border-radius: 5px
+}
 
 #container-left {
   font-size: 2em;

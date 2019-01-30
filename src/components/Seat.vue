@@ -36,8 +36,6 @@
 			...mapState([
 				'msg',
 				'choices'
-				// alternatively
-				// customName: 'msg'
 			]),
 			...mapGetters([
 				'shouldHover',

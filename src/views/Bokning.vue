@@ -77,7 +77,10 @@
 			buyTickets() {
 				this.$axios.post('/bookTickets.php', {
 					visning: this.visning,
-					taken: this.formattedSeats
+					taken: this.formattedSeats,
+					guests: JSON.stringify(this.guests),
+					price: this.calcTotal
+
 				}).then((response) => {
 					this.bookingRef = response.data
 
@@ -100,8 +103,7 @@
 						params: {
 							visning: this.visning
 						}
-					}).then((response) => {
-						
+					}).then((response) => {						
 						let bookings = response.data
 						let takenSeatsGroup = []
 
@@ -115,7 +117,6 @@
 								}
 							}							
 						}
-
 						this.takenSeats = takenSeatsGroup
 					})
 			},
@@ -125,11 +126,11 @@
 							salong: this.salong
 						}
 					}).then((response) => {
-						let stringArray = response.data[0].seatsPerRow.split(', ')
-						let seatsArray = stringArray.map((stringNumber) => {
-							return parseInt(stringNumber)
-						})
-						this.screenSeats = seatsArray
+						let seatsPerRow = JSON.parse(response.data[0].seatsPerRow)
+
+						this.setSalong(seatsPerRow)
+
+						this.screenSeats = seatsPerRow
 					})
 			},
 			setShowingChoices() {
@@ -143,7 +144,7 @@
 				this.price = this.choices.calcTotal
 			},
 			...mapActions([
-				// 'bookTickets'
+				'setSalong'
 			])
 		}
 	}

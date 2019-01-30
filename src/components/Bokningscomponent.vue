@@ -56,13 +56,11 @@ export default {
 			for(let film of this.filmer){
 				this.moviesById[film.id]= film;
 			}
-			console.log('this.moviesById', this.moviesById)
 
 			this.$axios.get('/getShowings.php')
 			.then((response) => {
 				this.allShowings = response.data
 				this.filtered; // just to call the getter and have 'filtered' computed
-				console.log("this.filtered", this.filtered)
 			})
 		})
 
@@ -111,9 +109,7 @@ export default {
 
 				return movie && date && timeStart
 			})
-			console.log("filtered", filtered)
 
-			console.log("filtered.length", filtered.length)
 			if (filtered.length == 1) {
 				this.selected.visning = filtered[0].id
 				this.selected.film = filtered[0].movie
@@ -130,7 +126,6 @@ export default {
 				this.datesFromFiltered[f.date] = f.date;
 				this.timesFromFiltered[f.timeStart] = f.timeStart;
 			}
-			console.log('this.moviesFromFiltered', this.moviesFromFiltered)
 
 			return filtered
 		}
