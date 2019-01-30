@@ -104,12 +104,13 @@ export default {
   border-color: #6F2232;
 }
 .card-body button{
-  background-color:black;
+  background-color:white;
   cursor: pointer;
+  color:black;
 }
 .card-body button:hover{
-  background:white;
-  color:black;
+  background:black;
+  color:white;
 }
 @media screen and (max-width: 400px) {
   .card-body {
