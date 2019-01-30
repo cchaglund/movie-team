@@ -99,11 +99,9 @@ export default {
   outline: none;
   color: white;
   border-radius: 5px;
-  transition: 0,25s;
 }
-.card-body input:focus{
-  width: auto;
-  border-color: #7c956b;
+.card-body input:focus{ 
+  border-color: #6F2232;
 }
 .card-body button{
   background-color:black;
