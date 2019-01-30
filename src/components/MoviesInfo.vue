@@ -170,15 +170,6 @@ export default {
     color:#6F2232;
     text-shadow: 0 0 10px #ffffff;
   }
-  /*---------Inte använt---------*/
-  .fa-star{
-    color: gold;
-    font-size: 25px;
-    margin: 2px 2px 16px 2px;
-  }
-  .rating{
-    display: none;
-  }
   @media screen and (max-width: 1024px) {
     .block{
       width:100%;

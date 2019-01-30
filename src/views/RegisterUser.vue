@@ -9,7 +9,7 @@
          <input type="text" v-model="lastname" :disabled="loading" placeholder="Skriv ditt efternamn" required/>
        </label>
        <label>Email
-         <input type="text" v-model="email" :disabled="loading" placeholder="Skriv din email" required/>
+         <input type="email" v-model="email" :disabled="loading" placeholder="Skriv din email" required/>
        </label>
        <label>Password
          <input type="password" v-model="password" :disabled="loading" placeholder="Skriv ditt lösenord" required/>
@@ -56,6 +56,9 @@ export default {
        this.loading = false;
        if(response.data) {
          this.message = 'Registered';
+         this.$router.push({
+          name: 'home'
+         })
        } else {
          this.message = 'Incorrect email/password';
        }
