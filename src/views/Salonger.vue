@@ -1,5 +1,6 @@
 <template>
  <div class="salonger">
+  <h1 class="mb-4">Salonger</h1>
     <div class="stylealong"> 
     
     <div class="card" style="width: 100%;">  
