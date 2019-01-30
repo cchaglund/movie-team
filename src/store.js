@@ -44,6 +44,11 @@ export default new Vuex.Store({
   	},
    setSalong (state, payload) {
       state.salong = payload
+   },
+   clearGuests (state) {
+    state.choices.guests.adults = 1
+    state.choices.guests.pensioners = 0
+    state.choices.guests.children = 0
    }
   },
 
@@ -95,7 +100,10 @@ export default new Vuex.Store({
   		}
   		commit('selectSeats', seatsToSelect)
   	},
-   
+    clearSelections ({commit}) {
+      commit('clearSelectedSeats', [])
+      commit('clearGuests')
+    },   
   	addGuest ({commit}, payload) {
   		commit('clearSelectedSeats')
   		commit('addGuest', payload)

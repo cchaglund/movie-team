@@ -1,6 +1,6 @@
 <template>
  <article>
-  <div class="backgroundred">
+  <div class="backgroundred d-flex flex-column align-items-center">
     <div class="card-body">
     <h1>Registrera</h1>
      <form @submit.prevent="submit" class="layout">
@@ -82,14 +82,12 @@ export default {
 .card-body{
   width: 300px; 
   padding: 10px;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
   text-align: center;
   background-color: #6F2232;
   border-radius: 5px;
   margin-bottom: 20px;
+  margin-top: 6rem;
   
 }
 .card-body input{

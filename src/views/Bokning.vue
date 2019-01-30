@@ -69,6 +69,7 @@
 			}
 		},
 		created() {
+			this.clearSelections()
 			this.setShowingChoices()
 			this.getSeatsForScreen()
 			this.getTakenSeats()
@@ -144,7 +145,8 @@
 				this.price = this.choices.calcTotal
 			},
 			...mapActions([
-				'setSalong'
+				'setSalong',
+				'clearSelections'
 			])
 		}
 	}

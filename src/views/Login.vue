@@ -36,7 +36,7 @@
 
 
 
-<script>
+<script scoped>
   import Footer from '@/components/Footer.vue'
 export default{
   name: 'login',
@@ -55,7 +55,10 @@ export default{
   },
    created(){
     this.$axios.get('login/user.php').then(response => {
-      this.user = response.data;
+      if (response.data === true) {
+        this.user = {firstname: 'filler'}
+        console.log("logged in")
+      }
     }).catch(e => {
       // not logged in
     });
@@ -75,7 +78,6 @@ export default{
         email: this.email,
         password: this.password,
       }).then(response => {
-        console.log(response.data)
         this.loading = false;
         this.showingLogin = true;
         if(response.data.loggedIn) {
@@ -95,8 +97,10 @@ export default{
       });
     },
     logout() {
+      console.log("hej")
       this.loading = true;
       this.$axios.post('login/logout.php').then(response => {
+        console.log("response", response.data)
         this.loading = false;
         this.user = {};
       }).catch(error => {
