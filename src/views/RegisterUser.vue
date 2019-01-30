@@ -47,7 +47,7 @@ export default {
    submit() { // register
      this.loading = true;
      this.message = '';
-     this.$axios.post('http://localhost/movie-team-server/users.php', {
+     this.$axios.post('login/register.php', {
        firstname: this.firstname,
        lastname: this.lastname,
        email: this.email,

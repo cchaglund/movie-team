@@ -23,7 +23,7 @@
             <button type="cancel" v-on:click="cancelLogin">CANCEL</button>
             <button type="submit" :disabled="loading">SIGN IN</button>
             <div>
-              <p>Click here to <router-link to="/register">REGISTER</router-link></p>
+              <p>Click here to <router-link to="/registeruser">REGISTER</router-link></p>
             </div>
             <div class="social">
               <i class="fab fa-facebook fa-2x"></i>
@@ -59,7 +59,7 @@ export default{
     };
   },
    created(){
-    this.$axios.get('user.php').then(response => {
+    this.$axios.get('login/user.php').then(response => {
       this.user = response.data;
     }).catch(e => {
       // not logged in
@@ -76,7 +76,7 @@ export default{
     submit() { // login
       this.loading = true;
       this.message = '';
-      this.$axios.post('login.php', {
+      this.$axios.post('login/login.php', {
         email: this.email,
         password: this.password,
       }).then(response => {
@@ -98,7 +98,7 @@ export default{
     },
     logout() {
       this.loading = true;
-      this.$axios.post('logout.php').then(response => {
+      this.$axios.post('login/logout.php').then(response => {
         this.loading = false;
         this.user = {};
       }).catch(error => {
