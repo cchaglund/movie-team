@@ -76,28 +76,31 @@
 		},
 		methods: {
 			buyTickets() {
-				this.$axios.post('/bookTickets.php', {
+				
+				if (this.selectedSeats.length != 0) {
+					this.$axios.post('/bookTickets.php', {
 					visning: this.visning,
 					taken: this.formattedSeats,
 					guests: JSON.stringify(this.guests),
 					price: this.calcTotal
 
-				}).then((response) => {
-					this.bookingRef = response.data
+					}).then((response) => {
+						this.bookingRef = response.data
 
-				    this.$router.push({ 
-						name: 'bekraftelse', 
-						params: {
-							title: this.title, 
-							date: this.date, 
-							time: this.time, 
-							seats: this.selectedSeats, 
-							guests: this.guests,
-							price: this.calcTotal,
-							bookingRef: this.bookingRef
-						}
-					})
-				})				
+					    this.$router.push({ 
+							name: 'bekraftelse', 
+							params: {
+								title: this.title, 
+								date: this.date, 
+								time: this.time, 
+								seats: this.selectedSeats, 
+								guests: this.guests,
+								price: this.calcTotal,
+								bookingRef: this.bookingRef
+							}
+						})
+					})	
+				}
 			},
 			getTakenSeats() {
 				this.$axios.get('/getTakenSeats.php', {
