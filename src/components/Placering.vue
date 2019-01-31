@@ -59,7 +59,7 @@
 				'bookTickets'
 			])
 		}
-	}
+	};
 </script>
 
 

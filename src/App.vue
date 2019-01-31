@@ -52,7 +52,7 @@
         $('#nav-check').prop('checked', false)
       }
     }
-  }
+  };
 
 </script>
 

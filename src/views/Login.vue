@@ -30,7 +30,7 @@
           </div>
         </div>
       </form>
-      <Footer>
+      <Footer class="footer">
   </Footer>
 </div>
 </div>
@@ -120,8 +120,10 @@ export default{
 };
 </script>
 
-
 <style scoped>
+.footer {
+  margin-top:390px;
+}
 .registerlink{
   color:#6F2232;
   font-weight: bolder;
