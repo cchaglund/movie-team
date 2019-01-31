@@ -27,7 +27,6 @@
     <router-link v-on:click.native="closeNav" to="barnfilmer">Barnfilmer</router-link>
     <router-link v-on:click.native="closeNav" to="salonger">Salonger</router-link>
     <router-link v-on:click.native="closeNav" to="information">Kontakta Oss</router-link>
-    <router-link v-on:click.native="closeNav" to="anvandare">Min Sida</router-link>
     <router-link v-on:click.native="closeNav" to="inloggning"><i class="fas fa-sign-in-alt fa-1.5x"></i></router-link>
   </div>
 </div>

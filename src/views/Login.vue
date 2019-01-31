@@ -3,6 +3,8 @@
   <div class="box">
     <form @submit.prevent="submit" class="layout">
    <div v-if="user.firstname" class="logout">
+    <router-link class="startlink" to="/">Boka film</router-link>
+          <router-link class="anvandarelink" to="/anvandare">Mina bokningar</router-link>
         <a v-on:click="logout" :disabled="loading">Logga ut</a>
       </div>
       <div class="login" v-else>
@@ -81,8 +83,6 @@ export default{
         this.loading = false;
         this.showingLogin = true;
         if(response.data.loggedIn) {
-          this.$router.push({ 
-            name: 'bokning'})
           this.user = response.data.user;
           this.$router.push({
             name: 'home'
@@ -125,6 +125,9 @@ export default{
 .registerlink{
   color:#6F2232;
   font-weight: bolder;
+}
+.startlink, .anvandarelink{
+  margin-bottom: 20px;
 }
 html {
   background-color: black;
