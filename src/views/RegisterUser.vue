@@ -30,7 +30,6 @@
    </div>
    <Footer></Footer>
   </div>
-  <Footer></Footer>
  </article>
 </template>
 
