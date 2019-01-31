@@ -85,7 +85,7 @@
 				this.updateHoveredSeat(this.id)
 			}
 		}
-	}
+	};
 </script>
 
 

@@ -15,6 +15,7 @@
        </label>
        <label>Lösenord
          <input type="password" v-model="password" :disabled="loading" placeholder="Skriv ditt lösenord" required/>
+         <password v-model="password" :strength-meter-only="true"/>
        </label>
        <div>
          <div>
@@ -27,7 +28,7 @@
 
      </form>
    </div>
-
+   <Footer></Footer>
   </div>
   <Footer></Footer>
  </article>
@@ -36,13 +37,15 @@
 
 
 <script>
-  import Footer from '@/components/Footer.vue'
+import Password from 'vue-password-strength-meter'
+import Footer from '@/components/Footer.vue'
 export default {
  name: 'register',
- components: {
-  Footer
- },
+ components: { 
+    Password, Footer 
+  },
  data() {
+  password: null;
    return {
      firstname: '',
      lastname: '',

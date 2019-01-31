@@ -46,7 +46,7 @@
 			this.bokningar = response.data
 	    	})
 		}
-	}
+	};
 
 </script>
 

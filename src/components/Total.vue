@@ -51,7 +51,7 @@
 				'updateTotal'
 			])
 		}
-	}
+	};
 </script>
 
 
