@@ -27,15 +27,21 @@
 
      </form>
    </div>
+
   </div>
+  <Footer></Footer>
  </article>
 </template>
 
-<Footer></Footer>
+
 
 <script>
+  import Footer from '@/components/Footer.vue'
 export default {
  name: 'register',
+ components: {
+  Footer
+ },
  data() {
    return {
      firstname: '',
